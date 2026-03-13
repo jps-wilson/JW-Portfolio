@@ -260,3 +260,15 @@ img {
   letter-spacing: var(--tracking-mono);
   text-transform: uppercase;
 }
+
+/* --- LAYOUT UTILITIES --- */
+.container {
+  width: 100%;
+  padding-left: var(--grid-margin-desktop);
+  padding-right: var(--grid-margin-desktop);
+}
+
+.section {
+  padding-top: var(--space-120);
+  padding-bottom: var(--space-120);
+}
