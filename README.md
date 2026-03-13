@@ -1,2 +1,1 @@
-# Jess Wilson Portfolio
-
+# JW Portfolio
