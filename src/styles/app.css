@@ -1,0 +1,13 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--color-void);
+  color: var(--color-cream);
+  font-family: var(--font-satoshi);
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  flex: 1;
+  padding-top: 72px;
+}
