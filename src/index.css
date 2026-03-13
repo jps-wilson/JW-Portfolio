@@ -2,8 +2,7 @@
 
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../public/fonts/neue-montreal/PPNeueMontreal-Thin.woff2")
-    format("woff2");
+  src: url("/fonts/neue-montreal/PPNeueMontreal-Thin.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -11,8 +10,7 @@
 
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../public/fonts/neue-montreal/PPNeueMontreal-Book.woff2")
-    format("woff2");
+  src: url("/fonts/neue-montreal/PPNeueMontreal-Book.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -20,8 +18,7 @@
 
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../public/fonts/neue-montreal/PPNeueMontreal-Medium.woff2")
-    format("woff2");
+  src: url("/fonts/neue-montreal/PPNeueMontreal-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -29,8 +26,7 @@
 
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../public/fonts/neue-montreal/PPNeueMontreal-Bold.woff2")
-    format("woff2");
+  src: url("/fonts/neue-montreal/PPNeueMontreal-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -38,8 +34,7 @@
 
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../public/fonts/neue-montreal/PPNeueMontreal-Italic.woff2")
-    format("woff2");
+  src: url("/fonts/neue-montreal/PPNeueMontreal-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -47,7 +42,7 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("../public/fonts/satoshi/Satoshi\ Variable.woff2");
+  src: url("/fonts/satoshi/Satoshi-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -55,8 +50,7 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("../public/fonts/satoshi/Satoshi\ Variable.woff2 Variable.woff2")
-    format("woff2");
+  src: url("/fonts/satoshi/Satoshi-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -64,8 +58,7 @@
 
 @font-face {
   font-family: "Fragment Mono";
-  src: url("../public/fonts/fragment-mono/FragmentMono-Regular.woff2")
-    format("woff2");
+  src: url("/fonts/fragment-mono/FragmentMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -73,8 +66,7 @@
 
 @font-face {
   font-family: "Fragment Mono";
-  src: url("../public/fonts/fragment-mono/FragmentMono-Italic.woff2")
-    format("woff2");
+  src: url("/fonts/fragment-mono/FragmentMono-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
