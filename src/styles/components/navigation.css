@@ -1,0 +1,117 @@
+/* --- NAVIGATION --- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: var(--color-void);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding-left: var(--grid-margin-desktop);
+  padding-right: var(--grid-margin-desktop);
+}
+
+.nav__logo {
+  font-family: var(--font-montreal);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-cream);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.nav__logo:hover {
+  color: var(--color-ember);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-40);
+}
+
+.nav__link {
+  font-family: var(--font-montreal);
+  font-weight: 500;
+  font-size: var(--text-nav);
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--color-ember);
+}
+
+.nav__link--active {
+  color: var(--color-ember);
+}
+
+/* Hamburger */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav__hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-cream);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.nav__hamburger-line--open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav__hamburger-line--open:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__hamburger-line--open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.nav__mobile {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding: var(--space-40) var(--grid-margin-mobile);
+  background-color: var(--color-void);
+}
+
+.nav__mobile--open {
+  display: flex;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__inner {
+    padding-left: var(--grid-margin-mobile);
+    padding-right: var(--grid-margin-mobile);
+  }
+}
