@@ -272,3 +272,24 @@ img {
   padding-top: var(--space-120);
   padding-bottom: var(--space-120);
 }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  :root {
+    --text-hero: 48px;
+    --text-display: 36px;
+    --text-heading: 28px;
+    --text-subheading: 20px;
+    --text-body-lg: 16px;
+  }
+
+  .container {
+    padding-left: var(--grid-margin-mobile);
+    padding-right: var(--grid-margin-mobile);
+  }
+
+  .section {
+    padding-top: var(--space-80);
+    padding-bottom: var(--space-80);
+  }
+}
