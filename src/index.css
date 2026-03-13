@@ -78,3 +78,70 @@
   font-style: italic;
   font-display: swap;
 }
+
+/* --- DESIGN TOKENS --- */
+
+:root {
+  /* Colors */
+  --color-void: #141414;
+  --color-surface: #1e1e1e;
+  --color-warm-dark: #2a1f1f;
+  --color-ember: #c45c2e;
+  --color-cream: #f0ede8;
+
+  /* Project Accent Colors */
+  --color-pressure: #c6a16e;
+  --color-deadwax: #1ea7ff;
+  --color-nontendo: #fcb952;
+  --color-momentum: #e06c6c;
+
+  /* Fonts */
+  --font-montreal: "PP Neue Montreal", sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
+  --font-mono: "Fragment Mono", monospace;
+
+  /* Font Sizes */
+  --text-hero: 96px;
+  --text-display: 64px;
+  --text-heading: 48px;
+  --text-subheading: 24px;
+  --text-nav: 13px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-caption: 13px;
+  --text-mono-label: 11px;
+
+  /* Line Heights */
+  --leading-hero: 100%;
+  --leading-display: 105%;
+  --leading-heading: 110%;
+  --leading-subheading: 120%;
+  --leading-nav: 100%;
+  --leading-body: 170%;
+  --leading-caption: 150%;
+  --leading-mono: 140%;
+
+  /* Letter Spacing */
+  --tracking-hero: -0.02em;
+  --tracking-display: -0.015em;
+  --tracking-heading: -0.01em;
+  --tracking-subheading: -0.005em;
+  --tracking-nav: 0.08em;
+  --tracking-body: 0;
+  --tracking-caption: 0.005em;
+  --tracking-mono: 0.03em;
+
+  /* Spacing */
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-40: 40px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-120: 120px;
+
+  /* Grid */
+  --grid-margin-desktop: 80px;
+  --grid-margin-mobile: 20px;
+  --grid-gutter: 24px;
+}
