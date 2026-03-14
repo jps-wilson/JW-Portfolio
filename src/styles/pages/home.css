@@ -1,0 +1,175 @@
+/* Opening Section */
+.home-opening {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-80);
+  position: relative;
+}
+
+.home-opening__line {
+  font-family: var(--font-montreal);
+  font-size: var(--text-display);
+  font-weight: 300;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-cream);
+  max-width: 950px;
+  margin-bottom: var(--space-24);
+}
+
+.home-opening__name {
+  font-family: var(--font-montreal);
+  font-size: var(--text-nav);
+  font-weight: 500;
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  margin-bottom: var(--space-8);
+}
+
+.home-opening__role {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-caption);
+  color: var(--color-ember);
+  letter-spacing: var(--tracking-caption);
+}
+
+/* Thesis Section */
+.home-thesis {
+  padding: var(--space-64) var(--grid-margin-desktop);
+}
+
+.home-thesis__manifesto {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--color-cream);
+  max-width: 680px;
+  margin-top: var(--space-40);
+  margin-bottom: var(--space-64);
+}
+
+.home-thesis__values {
+  display: flex;
+  gap: var(--space-64);
+  align-items: flex-start;
+}
+
+.home-thesis__value {
+  font-family: var(--font-montreal);
+  font-size: var(--text-subheading);
+  font-weight: 400;
+  color: var(--color-cream);
+  cursor: pointer;
+  position: relative;
+  padding-bottom: var(--space-8);
+  transition: color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-thesis__value::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-ember);
+}
+
+.home-thesis__value:hover {
+  color: var(--color-ember);
+}
+
+.home-thesis__value-tooltip {
+  width: 280px;
+  font-family: var(--font-satoshi);
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--color-cream);
+  font-style: italic;
+  margin-top: var(--space-8);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.home-thesis__value:hover .home-thesis__value-tooltip {
+  max-height: 100px;
+  opacity: 0.7;
+}
+
+.home-thesis__link {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-caption);
+  color: var(--color-ember);
+  letter-spacing: var(--tracking-caption);
+  transition: opacity 0.3s ease;
+  display: block;
+  margin-top: var(--space-8);
+  width: fit-content;
+  align-self: flex-end;
+}
+
+.home-thesis__link:hover {
+  opacity: 0.7;
+}
+
+/* Still Here Section */
+.home-still-here {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-120) var(--grid-margin-desktop);
+}
+
+.home-still-here__heading {
+  font-family: var(--font-montreal);
+  font-size: var(--text-heading);
+  font-weight: 500;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-cream);
+  margin-bottom: var(--space-24);
+}
+
+.home-still-here__email {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  color: var(--color-ember);
+  transition: opacity 0.3s ease;
+}
+
+.home-still-here__email:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-opening {
+    padding: var(--space-40);
+  }
+
+  .home-opening__line {
+    font-size: var(--text-heading);
+  }
+
+  .home-thesis {
+    padding: var(--space-80);
+  }
+
+  .home-thesis__values {
+  }
+}
