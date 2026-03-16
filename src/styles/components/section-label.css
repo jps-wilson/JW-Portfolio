@@ -7,7 +7,7 @@
 .section-label__line {
   width: 3px;
   height: 12px;
-  background-color: var(--color-amber);
+  background-color: var(--color-ember);
   flex-shrink: 0;
 }
 
