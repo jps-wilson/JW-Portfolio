@@ -16,4 +16,21 @@ export const projects = [
       "Pressure exists because I believe technology should translate the world for you, not just report it. Data without empathy is just noise.",
     next: { title: "Deadwax", path: "/work/deadwax" },
   },
+  {
+    id: "deadwax",
+    number: "02",
+    title: "Deadwax",
+    idea: "What if playing music felt like a ritual again?",
+    stack: "HTML — CSS — JS — SPOTIFY API",
+    accent: "#1EA7FF",
+    path: "/work/deadwax",
+    year: "2026",
+    problem:
+      "Streaming made music effortless and in doing so it made it weightless. I missed the ritual of it — choosing a record, placing the needle, committing to an album from start to finish. I wanted to bring that feeling back through a digital turntable that made playing music feel intentional again.",
+    solution:
+      "I built a working turntable interface that connects to Spotify's API, allowing users to browse and play records as though they were handling physical vinyl. The visual design was as important as the functionality — every interaction needed to feel analog and warm in a digital space. The challenge was making an API feel like a piece of furniture.",
+    belief:
+      "Deadwax exists because I believe the way we interact with things changes how much we value them. Technology can restore ritual, not just replace it.",
+    next: { title: "Nontendo", path: "/work/nontendo" },
+  },
 ];
