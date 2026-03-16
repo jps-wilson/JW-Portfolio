@@ -33,4 +33,38 @@ export const projects = [
       "Deadwax exists because I believe the way we interact with things changes how much we value them. Technology can restore ritual, not just replace it.",
     next: { title: "Nontendo", path: "/work/nontendo" },
   },
+  {
+    id: "nontendo",
+    number: "03",
+    title: "Nontendo",
+    idea: "What if joy needed no explanation?",
+    stack: "HTML — CSS — JS",
+    accent: "#FCB952",
+    path: "/work/nontendo",
+    year: "2026",
+    problem:
+      "Most games today demand your full attention, your time, your money. I wanted to build something that asked for none of those things — just a moment of pure uncomplicated joy. Snake is a game everyone knows. I wanted to give it a home that felt worthy of the nostalgia it carries.",
+    solution:
+      "I built a fully functional Game Boy interface from scratch using HTML and CSS, with Snake running inside it. Every detail of the hardware was considered — the buttons, the screen, the proportions. The challenge was making something that felt tactile and physical using nothing but code.",
+    belief:
+      "Nontendo exists because I believe joy is a legitimate design goal. Not every interaction needs to be productive. Sometimes the best thing technology can do is make you smile.",
+    next: { title: "Momentum", path: "/work/momentum" },
+  },
+  {
+    id: "momentum",
+    number: "04",
+    title: "Momentum",
+    idea: "What if your tasks stayed yours and yours alone?",
+    stack: "HTML — CSS — JS",
+    accent: "#E06C6C",
+    path: "/work/momentum",
+    year: "2026",
+    problem:
+      "Most productivity apps want your email address before they'll let you write a single task. Then they store your data, sell your habits, and call it a service. I wanted to build something that simply worked — no account, no tracking, no data mining. Just you and your list.",
+    solution:
+      "I built Momentum using local storage so tasks persist between sessions without ever leaving the user's device. No backend, no database, no account required. The interface is intentionally calm and uncluttered — because a task app should reduce anxiety, not create it.",
+    belief:
+      "Momentum exists because I believe your data belongs to you. Privacy isn't a premium feature. It's the baseline.",
+    next: null,
+  },
 ];
