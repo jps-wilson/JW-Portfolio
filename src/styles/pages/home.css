@@ -156,6 +156,32 @@
   opacity: 0.7;
 }
 
+/* Featured Work Styling */
+.home-featured {
+  padding: var(--space-120) var(--grid-margin-desktop);
+}
+
+.home-featured__card {
+  margin-top: var(--space-40);
+  max-width: 680px;
+}
+
+.home-featured__see-all {
+  display: block;
+  text-align: right;
+  max-width: 680px;
+  margin-top: var(--space-24);
+  font-family: var(--font-satoshi);
+  font-size: var(--text-caption);
+  color: var(--color-ember);
+  letter-spacing: var(--tracking-caption);
+  transition: opacity 0.3s ease;
+}
+
+.home-featured__see-all:hover {
+  opacity: 0.7;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .home-opening {
@@ -173,6 +199,10 @@
   .home-thesis__values {
     flex-direction: column;
     gap: var(--space-24);
+  }
+
+  .home-featured {
+    padding: var(--space-80) var(--grid-margin-mobile);
   }
 
   .home-still-here {
