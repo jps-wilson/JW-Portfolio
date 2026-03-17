@@ -1,3 +1,4 @@
+import { screenshots } from "../data/screenshots";
 import ProjectCard from "../components/ui/ProjectCard";
 import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
@@ -62,17 +63,35 @@ function Home() {
 
       {/* Featured Work Section */}
       <section className='home-featured'>
-        <SectionLabel text='Featured Work' />
-        <div className='home-featured__card'>
-          <ProjectCard
-            number={projects[0].number}
-            title={projects[0].title}
-            idea={projects[0].idea}
-            stack={projects[0].stack}
-            accent={projects[0].accent}
-            path={projects[0].path}
-          />
-        </div>
+        <Link to={projects[0].path} className='home-featured__banner'>
+          {/* Accent bar */}
+          <span
+            className='home-featured__accent'
+            style={{ backgroundColor: projects[0].accent }}
+          ></span>
+
+          {/* Text content */}
+          <div className='home-featured__content'>
+            <SectionLabel text='Featured Work' />
+            <h2 className='home-featured__title'>{projects[0].title}</h2>
+            <p className='home-featured__idea'>{projects[0].idea}</p>
+            <div className='home-featured__footer'>
+              <span className='home-featured__stack'>{projects[0].stack}</span>
+              <span className='home-featured__arrow'>→</span>
+            </div>
+          </div>
+
+          {/* Image */}
+          <div className='home-featured__image-wrap'>
+            <div className='home-featured__image-fade'></div>
+            <img
+              src={screenshots[projects[0].id]}
+              alt={projects[0].title}
+              className='home-featured__image'
+            />
+          </div>
+        </Link>
+
         <Link to='/work' className='home-featured__see-all'>
           See all work →
         </Link>
