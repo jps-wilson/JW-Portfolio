@@ -66,6 +66,15 @@
   color: var(--color-ember);
 }
 
+.project-card__stack {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  line-height: var(--leading-mono);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-ember);
+}
+
 .project-card__arrow {
   font-family: var(--font-montreal);
   font-size: 20px;

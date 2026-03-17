@@ -4,7 +4,7 @@ export const projects = [
     number: "01",
     title: "Pressure",
     idea: "What if your weather app understood how you feel?",
-    stack: "HTML - CSS - JS - OPEN-METEO API",
+    stack: "HTML — CSS — JS — OPEN-METEO API",
     accent: "#c6a16e",
     path: "/work/pressure",
     year: "2026",
