@@ -39,7 +39,7 @@ export const projects = [
     title: "Nontendo",
     idea: "What if joy needed no explanation?",
     stack: "HTML — CSS — JS",
-    accent: "#FCB952",
+    accent: "#E8840A",
     path: "/work/nontendo",
     year: "2026",
     problem:

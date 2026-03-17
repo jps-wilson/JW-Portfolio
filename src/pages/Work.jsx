@@ -8,7 +8,7 @@ const CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
 
 const constraints = [
-  "No numbers.\nOnly feelings.",
+  "No charts.\nNo numbers.\nNo Noise.",
   "No streaming.\nNo shuffle.\nNo skip.",
   "No objective.\nNo reward.\nNo point.",
   "No account.\nNo backend.\nNo data.",
@@ -16,7 +16,7 @@ const constraints = [
 
 function ScrambleCard({ project, constraint }) {
   const [hovered, setHovered] = useState(false);
-  const [scrambled, setScrambled] = useState(constraint);
+  const [displayText, setDisplayText] = useState(constraint);
   const [revealed, setRevealed] = useState(false);
   const timerRef = useRef(null);
   const navigate = useNavigate();
@@ -40,10 +40,10 @@ function ScrambleCard({ project, constraint }) {
           result += CHARS[Math.floor(Math.random() * CHARS.length)];
         }
       }
-      setScrambled(result);
+      setDisplayText(result);
       if (iteration >= total) {
         clearInterval(timerRef.current);
-        setScrambled(target);
+        setDisplayText(target);
         setRevealed(true);
       }
     }, 40);
@@ -53,7 +53,7 @@ function ScrambleCard({ project, constraint }) {
     setHovered(false);
     setRevealed(false);
     clearInterval(timerRef.current);
-    setScrambled(constraint);
+    setDisplayText(constraint);
   };
 
   useEffect(() => {
@@ -66,39 +66,52 @@ function ScrambleCard({ project, constraint }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => navigate(project.path)}
+      style={{ "--card-accent": project.accent }}
     >
+      {/* Accent bar */}
       <span
         className='work-card__accent'
         style={{ backgroundColor: project.accent }}
       ></span>
 
-      {/* Constraint / scramble view */}
-      <div
-        className={`work-card__front ${revealed ? "work-card__front--hidden" : ""}`}
-      >
-        <p className='work-card__constraint'>
-          {hovered && !revealed
-            ? scrambled
-            : constraint.split("\n").map((line, i) => (
+      {/* Top — number fades in on reveal */}
+      <div className='work-card__top'>
+        <span
+          className={`work-card__number ${revealed ? "work-card__number--visible" : ""}`}
+        >
+          {project.number}
+        </span>
+      </div>
+
+      {/* Middle — scramble text, same position always */}
+      <div className='work-card__middle'>
+        <p className='work-card__main-text'>
+          {!hovered
+            ? constraint.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
                   {i < constraint.split("\n").length - 1 && <br />}
                 </span>
-              ))}
+              ))
+            : displayText}
         </p>
-        <span className='work-card__hint'>Hover to reveal →</span>
+        <p
+          className={`work-card__idea ${revealed ? "work-card__idea--visible" : ""}`}
+        >
+          {project.idea}
+        </p>
       </div>
 
-      {/* Revealed project details */}
-      <div
-        className={`work-card__back ${revealed ? "work-card__back--visible" : ""}`}
-      >
-        <span className='work-card__number'>{project.number}</span>
-        <div>
-          <h3 className='work-card__title'>{project.title}</h3>
-          <p className='work-card__idea'>{project.idea}</p>
-        </div>
-        <div className='work-card__footer'>
+      {/* Bottom — stack fades in on reveal, hint fades out */}
+      <div className='work-card__bottom'>
+        <span
+          className={`work-card__hint ${hovered ? "work-card__hint--hidden" : ""}`}
+        >
+          Hover to reveal →
+        </span>
+        <div
+          className={`work-card__footer ${revealed ? "work-card__footer--visible" : ""}`}
+        >
           <span className='work-card__stack'>{project.stack}</span>
           <span className='work-card__arrow'>→</span>
         </div>
@@ -111,7 +124,7 @@ function Work() {
   return (
     <div className='work'>
       <div className='work__header'>
-        <SectionLabel text='work' />
+        <SectionLabel text='Work' />
         <p className='work__subtitle'>Four projects. One belief.</p>
       </div>
 
