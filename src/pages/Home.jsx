@@ -54,10 +54,10 @@ function Home() {
                 </span>
               </div>
             ))}
-            <Link to='/about' className='home-thesis__link'>
-              The story behind them →
-            </Link>
           </div>
+          <Link to='/about' className='home-thesis__link'>
+            The story behind them →
+          </Link>
         </div>
       </section>
 

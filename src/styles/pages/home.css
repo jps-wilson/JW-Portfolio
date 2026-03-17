@@ -115,9 +115,8 @@
   letter-spacing: var(--tracking-caption);
   transition: opacity 0.3s ease;
   display: block;
-  margin-top: var(--space-8);
+  margin-top: var(--space-40);
   width: fit-content;
-  align-self: flex-end;
 }
 
 .home-thesis__link:hover {
