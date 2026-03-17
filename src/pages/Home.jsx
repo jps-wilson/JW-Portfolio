@@ -48,17 +48,15 @@ function Home() {
           <div className='home-thesis__values'>
             {values.map((value) => (
               <div key={value.label} className='home-thesis__value'>
-                {value.label}
-                <span className='home-thesis__value-tooltip'>
-                  {value.tooltip}
-                </span>
+                <span className='home-thesis__value-label'>{value.label}</span>
+                <span className='home-thesis__value-desc'>{value.tooltip}</span>
               </div>
             ))}
           </div>
-          <Link to='/about' className='home-thesis__link'>
-            The story behind them →
-          </Link>
         </div>
+        <Link to='/about' className='home-thesis__link'>
+          The story behind them →
+        </Link>
       </section>
 
       {/* Featured Work Section */}
