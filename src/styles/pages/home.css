@@ -172,10 +172,16 @@
   position: relative;
   text-decoration: none;
   transition: border-color 0.3s ease;
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .home-featured__banner:hover {
-  border-color: var(--color-ember);
+  border-color: transparent;
+  box-shadow:
+    0 0 0 2px #c6a16e,
+    0 0 20px 0 color-mix(in srgb, #c6a16e 20%, transparent);
 }
 
 .home-featured__accent {
@@ -184,8 +190,12 @@
   left: 0;
   width: 3px;
   height: 100%;
-  opacity: 0.8;
+  transition: opacity 0.4s ease;
   z-index: 2;
+}
+
+.home-featured__banner:hover .home-featured__accent {
+  opacity: 0;
 }
 
 .home-featured__content {
