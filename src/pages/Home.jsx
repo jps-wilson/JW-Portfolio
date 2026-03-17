@@ -1,3 +1,5 @@
+import ProjectCard from "../components/ui/ProjectCard";
+import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/home.css";
@@ -56,6 +58,24 @@ function Home() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Featured Work Section */}
+      <section className='home-featured'>
+        <SectionLabel text='Featured Work' />
+        <div className='home-featured__card'>
+          <ProjectCard
+            number={projects[0].number}
+            title={projects[0].title}
+            idea={projects[0].idea}
+            stack={projects[0].stack}
+            accent={projects[0].accent}
+            path={projects[0].path}
+          />
+        </div>
+        <Link to='/work' className='home-featured__see-all'>
+          See all work →
+        </Link>
       </section>
 
       {/* Still Here Section */}
