@@ -71,8 +71,10 @@ function Home() {
           {/* Text content */}
           <div className='home-featured__content'>
             <SectionLabel text='Featured Work' />
-            <h2 className='home-featured__title'>{projects[0].title}</h2>
-            <p className='home-featured__idea'>{projects[0].idea}</p>
+            <div className='home-featured__body'>
+              <h2 className='home-featured__title'>{projects[0].title}</h2>
+              <p className='home-featured__idea'>{projects[0].idea}</p>
+            </div>
             <div className='home-featured__footer'>
               <span className='home-featured__stack'>{projects[0].stack}</span>
               <span className='home-featured__arrow'>→</span>
