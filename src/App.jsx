@@ -7,7 +7,7 @@ import AnimatedPage from "./components/ui/AnimatedPage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Work from "./pages/Work";
-import Contact from "./pages/Work";
+import Contact from "./pages/Contact";
 import Pressure from "./pages/Pressure";
 import Deadwax from "./pages/Deadwax";
 import Nontendo from "./pages/Nontendo";
