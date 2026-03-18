@@ -41,7 +41,7 @@ function About() {
       </section>
 
       {/* Act 2 – How I Work */}
-      <section className='about-act about-act__two-col'>
+      <section className='about-act about-act--two-col'>
         <div className='about-act__header'>
           <SectionLabel text='Curiosity' />
           <span className='about-act__descriptor'>How I Work</span>
@@ -55,7 +55,6 @@ function About() {
             feels in someone's hands. That's not a soft skill. That's the whole
             point.
           </p>
-          <div className='about-act__divider'></div>
           <div className='about-skills'>
             <div className='about-skills__group'>
               <span className='about-skills__category'>Languages</span>
