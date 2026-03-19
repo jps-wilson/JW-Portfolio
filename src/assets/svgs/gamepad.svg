@@ -1,0 +1,13 @@
+<svg width="600" height="537" viewBox="0 0 600 537" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.2">
+<circle cx="300" cy="300" r="300" fill="#FCB952" fill-opacity="0.2"/>
+<circle cx="301.493" cy="301.492" r="62.6866" fill="#FCB952" fill-opacity="0.2"/>
+<path d="M247.761 46.8358C247.761 39.1038 254.029 32.8358 261.761 32.8358H338.239C345.971 32.8358 352.239 39.1038 352.239 46.8358V214.925H247.761V46.8358Z" fill="#FCB952" fill-opacity="0.2"/>
+<rect x="247.761" y="388.06" width="104.478" height="182.09" rx="8" fill="#FCB952" fill-opacity="0.2"/>
+<rect x="388.06" y="352.239" width="104.478" height="182.09" rx="14" transform="rotate(-90 388.06 352.239)" fill="#FCB952" fill-opacity="0.2"/>
+<rect x="32.8359" y="352.239" width="104.478" height="182.09" rx="14" transform="rotate(-90 32.8359 352.239)" fill="#FCB952" fill-opacity="0.2"/>
+<path opacity="0.4" d="M298.5 81L330.11 135.75H266.89L298.5 81Z" fill="#FCB952" fill-opacity="0.4"/>
+<path opacity="0.4" d="M537 296.5L482.25 264.89V328.11L537 296.5Z" fill="#FCB952" fill-opacity="0.4"/>
+<path opacity="0.4" d="M66 296.5L120.75 264.89V328.11L66 296.5Z" fill="#FCB952" fill-opacity="0.4"/>
+</g>
+</svg>

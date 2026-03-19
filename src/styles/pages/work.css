@@ -61,6 +61,8 @@
 /* Top */
 .work-card__top {
   min-height: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .work-card__number {
@@ -85,12 +87,14 @@
   justify-content: flex-start;
   gap: var(--space-8);
   padding-top: var(--space-16);
+  position: relative;
+  z-index: 1;
 }
 
 .work-card__main-text {
   font-family: var(--font-montreal);
   font-size: var(--text-subheading);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
   color: var(--color-cream);
 }
@@ -113,6 +117,7 @@
 .work-card__bottom {
   position: relative;
   min-height: 24px;
+  z-index: 1;
 }
 
 .work-card__hint {
@@ -159,6 +164,73 @@
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
+}
+
+.work-card__icon {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 350px;
+  height: auto;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.work-card__icon-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.work-card--hovered .work-card__icon {
+  opacity: 0.1;
+}
+
+/* Position icons so that only the top ~20% is visible (top of icon reaches card midpoint) */
+.work-card__icon--gauge {
+  transform: translateX(-50%) translateY(140px); /* Gauge SVG height ~577px scaled, top ~115px visible */
+}
+
+.work-card__icon--record {
+  transform: translateX(-50%) translateY(160px); /* Record SVG height ~537px scaled, top ~107px visible */
+}
+
+.work-card__icon--gamepad {
+  transform: translateX(-50%) translateY(150px); /* Gamepad SVG height ~537px scaled, top ~107px visible */
+}
+
+.work-card__icon--notification {
+  transform: translateX(-50%) translateY(155px); /* Notification SVG height ~537px scaled, top ~107px visible */
+}
+
+.work-card__icon-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.work-card--hovered .work-card__icon {
+  opacity: 0.1;
+}
+
+/* Position icons so that only the top ~20% is visible (top of icon reaches card midpoint) */
+.work-card__icon--gauge {
+  transform: translateX(-50%) translateY(140px); /* Gauge SVG height ~577px scaled, top ~115px visible */
+}
+
+.work-card__icon--record {
+  transform: translateX(-50%) translateY(160px); /* Record SVG height ~537px scaled, top ~107px visible */
+}
+
+.work-card__icon--gamepad {
+  transform: translateX(-50%) translateY(150px); /* Gamepad SVG height ~537px scaled, top ~107px visible */
+}
+
+.work-card__icon--notification {
+  transform: translateX(-50%) translateY(155px); /* Notification SVG height ~537px scaled, top ~107px visible */
 }
 
 .work-card--hovered .work-card__arrow {

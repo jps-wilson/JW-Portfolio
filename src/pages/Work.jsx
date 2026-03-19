@@ -1,11 +1,22 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
+import Gauge from "../components/ui/Gauge";
+import Gamepad from "../components/ui/Gamepad";
+import Notification from "../components/ui/Notification";
+import Record from "../components/ui/Record";
 import { projects } from "../data/projects";
 import "../styles/pages/work.css";
 
 const CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+
+const ICONS_BY_ID = {
+  pressure: Gauge,
+  nontendo: Gamepad,
+  momentum: Notification,
+  deadwax: Record,
+};
 
 const constraints = [
   "No charts.\nNo numbers.\nNo Noise.",
@@ -14,7 +25,7 @@ const constraints = [
   "No account.\nNo backend.\nNo data.",
 ];
 
-function ScrambleCard({ project, constraint }) {
+function ScrambleCard({ project, constraint, Icon }) {
   const [hovered, setHovered] = useState(false);
   const [displayText, setDisplayText] = useState(constraint);
   const [revealed, setRevealed] = useState(false);
@@ -74,6 +85,16 @@ function ScrambleCard({ project, constraint }) {
         style={{ backgroundColor: project.accent }}
       ></span>
 
+      {/* Icon */}
+      {Icon && (
+        <div
+          className={`work-card__icon work-card__icon--${project.id}`}
+          style={{ color: project.accent }}
+        >
+          <Icon className='work-card__icon-svg' />
+        </div>
+      )}
+
       {/* Top — number fades in on reveal */}
       <div className='work-card__top'>
         <span
@@ -129,13 +150,17 @@ function Work() {
       </div>
 
       <div className='work__grid'>
-        {projects.map((project, index) => (
-          <ScrambleCard
-            key={project.id}
-            project={project}
-            constraint={constraints[index]}
-          />
-        ))}
+        {projects.map((project, index) => {
+          const Icon = ICONS_BY_ID[project.id];
+          return (
+            <ScrambleCard
+              key={project.id}
+              project={project}
+              constraint={constraints[index]}
+              Icon={Icon}
+            />
+          );
+        })}
       </div>
     </div>
   );
