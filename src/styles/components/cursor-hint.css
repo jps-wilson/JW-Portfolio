@@ -1,31 +1,32 @@
 .cursor-hint {
-  position: absolute;
+  position: fixed;
   pointer-events: none;
-  z-index: 100;
+  z-index: 9999;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
   opacity: 0;
-  transition: opacity 0.4s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  transition: opacity 0.5s ease;
 }
 
 .cursor-hint--visible {
   opacity: 1;
-  animation: cursor-glide 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: cursor-glide 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 .cursor-hint--hidden {
   opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 @keyframes cursor-glide {
   from {
-    transform: translate(calc(-50% - 120px), calc(-50% + 60px));
+    transform: translate(calc(-50% + 300px), calc(-50% - 200px));
     opacity: 0;
   }
-  30% {
+  20% {
     opacity: 1;
   }
-  to {
+  100% {
     transform: translate(-50%, -50%);
     opacity: 1;
   }

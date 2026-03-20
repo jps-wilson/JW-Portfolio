@@ -26,7 +26,8 @@ const values = [
 ];
 
 function Home() {
-  const creativityRef = useRef(null);
+  const compassionRef = useRef(null);
+  const thesisSectionRef = useRef(null);
 
   return (
     <div>
@@ -42,7 +43,7 @@ function Home() {
       </section>
 
       {/* Thesis Section */}
-      <section className='home-thesis'>
+      <section className='home-thesis' ref={thesisSectionRef}>
         <SectionLabel text='The Thesis' />
         <p className='home-thesis__manifesto'>
           I build things that treat people like people. Curious, warm, private,
@@ -54,14 +55,14 @@ function Home() {
               <div
                 key={value.label}
                 className='home-thesis__value'
-                ref={index === 0 ? creativityRef : null}
+                ref={index === 2 ? compassionRef : null}
               >
                 <span className='home-thesis__value-label'>{value.label}</span>
                 <span className='home-thesis__value-desc'>{value.tooltip}</span>
               </div>
             ))}
           </div>
-          <CursorHint targetRef={creativityRef} />
+          <CursorHint targetRef={compassionRef} sectionRef={thesisSectionRef} />
         </div>
         <Link to='/about' className='home-thesis__link'>
           The story behind them →
