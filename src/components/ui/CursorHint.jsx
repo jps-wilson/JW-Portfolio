@@ -7,10 +7,20 @@ function CursorHint({ targetRef }) {
   const [arrived, setArrived] = useState(false);
 
   useEffect(() => {
+    console.log("CursorHint mounted");
+    console.log("targetRef:", targetRef);
+    console.log("targetRef.current:", targetRef.current);
+
     const seen = localStorage.getItem("cursorHintSeen");
+    console.log("seen:", seen);
     if (seen) return;
 
+    let fadeTimer;
+    let arrivedTimer;
+
     const timer = setTimeout(() => {
+      console.log("timer fired");
+      console.log("targetRef.current inside timer:", targetRef.current);
       if (targetRef.current) {
         const rect = targetRef.current.getBoundingClientRect();
         setPos({
@@ -20,17 +30,19 @@ function CursorHint({ targetRef }) {
       }
       setVisible(true);
 
-      // Mark as arrived after glide duration
-      setTimeout(() => setArrived(true), 1000);
+      arrivedTimer = setTimeout(() => setArrived(true), 1000);
 
-      // Fade out and mark as seen
-      setTimeout(() => {
+      fadeTimer = setTimeout(() => {
         setVisible(false);
         localStorage.setItem("cursorHintSeen", "true");
       }, 2400);
     }, 1800);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(fadeTimer);
+      clearTimeout(arrivedTimer);
+    };
   }, [targetRef]);
 
   if (!visible && !arrived) return null;
