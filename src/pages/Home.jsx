@@ -1,5 +1,3 @@
-import { useRef } from "react";
-import CursorHint from "../components/ui/CursorHint";
 import { screenshots } from "../data/screenshots";
 import ProjectCard from "../components/ui/ProjectCard";
 import { projects } from "../data/projects";
@@ -26,9 +24,6 @@ const values = [
 ];
 
 function Home() {
-  const compassionRef = useRef(null);
-  const thesisSectionRef = useRef(null);
-
   return (
     <div>
       {/* Opening Section */}
@@ -43,7 +38,7 @@ function Home() {
       </section>
 
       {/* Thesis Section */}
-      <section className='home-thesis' ref={thesisSectionRef}>
+      <section className='home-thesis'>
         <SectionLabel text='The Thesis' />
         <p className='home-thesis__manifesto'>
           I build things that treat people like people. Curious, warm, private,
@@ -51,18 +46,13 @@ function Home() {
         </p>
         <div className='home-thesis__values-wrap'>
           <div className='home-thesis__values'>
-            {values.map((value, index) => (
-              <div
-                key={value.label}
-                className='home-thesis__value'
-                ref={index === 2 ? compassionRef : null}
-              >
+            {values.map((value) => (
+              <div key={value.label} className='home-thesis__value'>
                 <span className='home-thesis__value-label'>{value.label}</span>
                 <span className='home-thesis__value-desc'>{value.tooltip}</span>
               </div>
             ))}
           </div>
-          <CursorHint targetRef={compassionRef} sectionRef={thesisSectionRef} />
         </div>
         <Link to='/about' className='home-thesis__link'>
           The story behind them →
