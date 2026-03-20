@@ -61,7 +61,9 @@ function About() {
               <span className='about-skills__list'>HTML, CSS, JavaScript</span>
             </div>
             <div className='about-skills__group'>
-              <span className='about-skills__category'>Frameworks</span>
+              <span className='about-skills__category'>
+                Frameworks/Libraries
+              </span>
               <span className='about-skills__list'>
                 React, React Native, GSAP
               </span>
