@@ -1,0 +1,196 @@
+.project-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-hero__accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.project-hero__content {
+  padding: var(--space-120) var(--grid-margin-desktop);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.project-hero__title {
+  font-family: var(--font-montreal);
+  font-size: var(--text-display);
+  font-weight: 500;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-cream);
+}
+
+.project-hero__idea {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--color-cream);
+  opacity: 0.7;
+  max-width: 480px;
+}
+
+.project-hero__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 480px;
+  margin-top: var(--space-8);
+}
+
+.project-hero__stack {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  line-height: var(--leading-mono);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-ember);
+}
+
+.project-hero__year {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-caption);
+  color: var(--color-cream);
+  opacity: 0.4;
+}
+
+.project-hero__image-wrap {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.project-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.project-hero__image-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(to right, var(--color-void) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.project-case {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--space-120) var(--grid-margin-desktop);
+  gap: var(--space-64);
+  position: relative;
+  border-top: 1px solid var(--color-warm-dark);
+}
+
+.project-case__divider {
+  position: absolute;
+  top: var(--space-120);
+  left: 50%;
+  width: 1px;
+  height: calc(100% - var(--space-120) * 2);
+  background-color: var(--color-warm-dark);
+}
+
+.project-case__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+.project-case__copy {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--color-cream);
+  opacity: 0.85;
+}
+
+.project-belief {
+  padding: var(--space-120) var(--grid-margin-desktop);
+  border-top: 1px solid var(--color-warm-dark);
+  max-width: 800px;
+}
+
+.project-belief__copy {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--color-cream);
+  opacity: 0.85;
+  margin-top: var(--space-40);
+}
+
+.project-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-64) var(--grid-margin-desktop);
+  border-top: 1px solid var(--color-warm-dark);
+}
+
+.project-nav__link {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-caption);
+  color: var(--color-ember);
+  letter-spacing: var(--tracking-caption);
+  transition: opacity 0.3s ease;
+}
+
+.project-nav__link:hover {
+  opacity: 0.7;
+}
+
+.project-nav__link--dim {
+  opacity: 0.4;
+  color: var(--color-cream);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .project-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .project-hero__content {
+    padding: var(--space-80) var(--grid-margin-mobile);
+  }
+
+  .project-hero__image-wrap {
+    height: 400px;
+  }
+
+  .project-case {
+    grid-template-columns: 1fr;
+    padding: var(--space-80) var(--grid-margin-mobile);
+  }
+
+  .project-case__divider {
+    display: none;
+  }
+
+  .project-belief {
+    padding: var(--space-80) var(--grid-margin-mobile);
+  }
+
+  .project-nav {
+    padding: var(--space-40) var(--grid-margin-mobile);
+  }
+}
