@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useOpeningAnimation } from "../hooks/useOpeningAnimation";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { screenshots } from "../data/screenshots";
 import { projects } from "../data/projects";
@@ -24,6 +26,8 @@ const values = [
 ];
 
 function Home() {
+  const [ready] = useState(true);
+  const { lineRef, nameRef, roleRef } = useOpeningAnimation(ready);
   const thesisRef = useScrollAnimation();
   const featuredRef = useScrollAnimation();
   const stillHereRef = useScrollAnimation();
@@ -33,11 +37,15 @@ function Home() {
       {/* Opening Section */}
       <section className='home-opening'>
         <div className='home-opening__content'>
-          <p className='home-opening__line'>
+          <p className='home-opening__line' ref={lineRef}>
             Code is the craft. People are the point.
           </p>
-          <p className='home-opening__name'>Jess Wilson</p>
-          <p className='home-opening__role'>Web Developer</p>
+          <p className='home-opening__name' ref={nameRef}>
+            Jess Wilson
+          </p>
+          <p className='home-opening__role' ref={roleRef}>
+            Web Developer
+          </p>
         </div>
       </section>
 
