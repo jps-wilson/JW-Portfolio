@@ -1,4 +1,3 @@
-// Importing React Router
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navigation from "./components/layout/Navigation";
@@ -12,10 +11,12 @@ import Pressure from "./pages/Pressure";
 import Deadwax from "./pages/Deadwax";
 import Nontendo from "./pages/Nontendo";
 import Momentum from "./pages/Momentum";
+import { useScrollWarmth } from "./hooks/useScrollWarmth";
 import "./styles/app.css";
 
 function App() {
   const location = useLocation();
+  useScrollWarmth();
 
   return (
     <div className='app'>
