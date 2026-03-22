@@ -1,12 +1,18 @@
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
 import headshot from "../assets/images/jess.jpg";
 import "../styles/pages/about.css";
 
 function About() {
+  const openingRef = useScrollAnimation();
+  const act1Ref = useScrollAnimation();
+  const act2Ref = useScrollAnimation();
+  const act3Ref = useScrollAnimation();
+
   return (
     <div>
       {/* Opening */}
-      <section className='about-opening'>
+      <section className='about-opening' ref={openingRef}>
         <div className='about-opening__content'>
           <SectionLabel text='About' />
           <h1 className='about-opening__heading'>
@@ -27,7 +33,7 @@ function About() {
       </section>
 
       {/* Act 1 — Where I Come From */}
-      <section className='about-act'>
+      <section className='about-act' ref={act1Ref}>
         <div className='about-act__header'>
           <SectionLabel text='Creativity' />
           <span className='about-act__descriptor'>Where I come from</span>
@@ -41,7 +47,7 @@ function About() {
       </section>
 
       {/* Act 2 – How I Work */}
-      <section className='about-act about-act--two-col'>
+      <section className='about-act about-act--two-col' ref={act2Ref}>
         <div className='about-act__header'>
           <SectionLabel text='Curiosity' />
           <span className='about-act__descriptor'>How I Work</span>
@@ -85,7 +91,7 @@ function About() {
       </section>
 
       {/* Act 3 — Where I'm Going */}
-      <section className='about-act'>
+      <section className='about-act' ref={act3Ref}>
         <div className='about-act__header'>
           <SectionLabel text='Compassion' />
           <span className='about-act__descriptor'>Where I'm Going</span>

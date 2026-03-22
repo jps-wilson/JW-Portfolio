@@ -1,3 +1,4 @@
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
@@ -142,14 +143,17 @@ function ScrambleCard({ project, constraint, Icon }) {
 }
 
 function Work() {
+  const headerRef = useScrollAnimation();
+  const gridRef = useScrollAnimation();
+
   return (
     <div className='work'>
-      <div className='work__header'>
+      <div className='work__header' ref={headerRef}>
         <SectionLabel text='Work' />
         <p className='work__subtitle'>Four projects. One belief.</p>
       </div>
 
-      <div className='work__grid'>
+      <div className='work__grid' ref={gridRef}>
         {projects.map((project, index) => {
           const Icon = ICONS_BY_ID[project.id];
           return (

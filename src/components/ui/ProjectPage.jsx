@@ -1,12 +1,17 @@
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import SectionLabel from "./SectionLabel";
 import "../../styles/pages/project.css";
 
 function ProjectPage({ project, screenshot }) {
+  const heroRef = useScrollAnimation();
+  const caseRef = useScrollAnimation();
+  const beliefRef = useScrollAnimation();
+
   return (
     <div>
       {/* Hero */}
-      <section className='project-hero'>
+      <section className='project-hero' ref={heroRef}>
         <span
           className='project-hero__accent-line'
           style={{ backgroundColor: project.accent }}
@@ -33,7 +38,7 @@ function ProjectPage({ project, screenshot }) {
       </section>
 
       {/* Problem and Solution */}
-      <section className='project-case'>
+      <section className='project-case' ref={caseRef}>
         <div className='project-case__divider'></div>
         <div className='project-case__column'>
           <SectionLabel text='Problem' />
@@ -46,7 +51,7 @@ function ProjectPage({ project, screenshot }) {
       </section>
 
       {/* Belief */}
-      <section className='project-belief'>
+      <section className='project-belief' ref={beliefRef}>
         <SectionLabel text='Belief' />
         <p className='project-belief__copy'>{project.belief}</p>
       </section>

@@ -1,14 +1,17 @@
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/contact.css";
 
 function Contact() {
+  const mainRef = useScrollAnimation();
+
   return (
     <div className='contact'>
       <div className='contact__label'>
         <SectionLabel text='Contact' />
       </div>
 
-      <div className='contact__main'>
+      <div className='contact__main' ref={mainRef}>
         <p className='contact__intro'>You made it this far.</p>
         <h1 className='contact__heading'>
           Ready

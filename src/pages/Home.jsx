@@ -1,5 +1,5 @@
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { screenshots } from "../data/screenshots";
-import ProjectCard from "../components/ui/ProjectCard";
 import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
@@ -24,6 +24,10 @@ const values = [
 ];
 
 function Home() {
+  const thesisRef = useScrollAnimation();
+  const featuredRef = useScrollAnimation();
+  const stillHereRef = useScrollAnimation();
+
   return (
     <div>
       {/* Opening Section */}
@@ -38,7 +42,7 @@ function Home() {
       </section>
 
       {/* Thesis Section */}
-      <section className='home-thesis'>
+      <section className='home-thesis' ref={thesisRef}>
         <SectionLabel text='The Thesis' />
         <p className='home-thesis__manifesto'>
           I build things that treat people like people. Curious, warm, private,
@@ -60,7 +64,7 @@ function Home() {
       </section>
 
       {/* Featured Work Section */}
-      <section className='home-featured'>
+      <section className='home-featured' ref={featuredRef}>
         <Link to={projects[0].path} className='home-featured__banner'>
           {/* Accent bar */}
           <span
@@ -98,7 +102,7 @@ function Home() {
       </section>
 
       {/* Still Here Section */}
-      <section className='home-still-here'>
+      <section className='home-still-here' ref={stillHereRef}>
         <h2 className='home-still-here__heading'> Still here? Good.</h2>
         <a
           href='mailto:info.jessicapswilson@gmail.com'
