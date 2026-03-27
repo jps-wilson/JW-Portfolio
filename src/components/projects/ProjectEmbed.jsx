@@ -343,3 +343,56 @@ function ProjectEmbed({ url }) {
 }
 
 // TODO: insert function highlightCode below
+function highlightCode(code, type) {
+  const escaped = code
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  if (type === "html") {
+    return escaped
+      .replace(
+        /(&lt;\/?[a-zA-Z][a-zA-Z0-9]*)/g,
+        '<span class="token tag">$1</span>',
+      )
+      .replace(
+        /(class|id|href|src|alt|type|allow|loading|lang|charset|content|name|rel)=/g,
+        '<span class="token attr">$1</span>',
+      )
+      .replace(/("([^"]*)")/g, '<span class="token string">$1</span>')
+      .replace(
+        /(&lt;!--[\s\S]*?--&gt;)/g,
+        '<span class="token comment">$1</span>',
+      );
+  }
+
+  if (type === "css") {
+    return escaped
+      .replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="token comment">$1</span>')
+      .replace(
+        /([.#]?[a-zA-Z-]+)(\s*\{)/g,
+        '<span class="token selector">$1</span>$2',
+      )
+      .replace(
+        /([\w-]+)(\s*:)(?![^{]*\{)/g,
+        '<span class="token property">$1</span>$2',
+      )
+      .replace(/:\s*([^;{}\n]+)/g, ': <span class="token value">$1</span>');
+  }
+
+  if (type === "js") {
+    return escaped
+      .replace(/(\/\/[^\n]*)/g, '<span class="token comment">$1</span>')
+      .replace(
+        /\b(const|let|var|function|return|if|else|async|await|new|this|document|window|true|false|null|undefined)\b/g,
+        '<span class="token keyword">$1</span>',
+      )
+      .replace(/("([^"]*)")/g, '<span class="token string">$1</span>')
+      .replace(/('([^']*)')/g, '<span class="token string">$1</span>')
+      .replace(/\b(\d+)\b/g, '<span class="token number">$1</span>');
+  }
+
+  return escaped;
+}
+
+export default ProjectEmbed;

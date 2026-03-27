@@ -4,7 +4,12 @@ import screenshot from "../assets/screenshots/pressure.png";
 
 function Pressure() {
   const project = projects.find((p) => p.id === "pressure");
-  return <ProjectPage project={project} screenshot={screenshot} />;
+  return (
+    <>
+      <ProjectPage project={project} screenshot={screenshot} />
+      <ProjectEmbed url='https://pressure-app.vercel.app/' />
+    </>
+  );
 }
 
 export default Pressure;
