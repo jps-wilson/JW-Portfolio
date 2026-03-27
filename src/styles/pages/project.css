@@ -7,15 +7,6 @@
   overflow: hidden;
 }
 
-.project-hero__accent-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  opacity: 0.6;
-}
-
 .project-hero__content {
   padding: var(--space-120) var(--grid-margin-desktop);
   position: relative;

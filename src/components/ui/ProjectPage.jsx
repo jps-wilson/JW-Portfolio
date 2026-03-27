@@ -12,10 +12,6 @@ function ProjectPage({ project, screenshot, embedUrl }) {
     <div>
       {/* Hero */}
       <section className='project-hero' ref={heroRef}>
-        <span
-          className='project-hero__accent-line'
-          style={{ backgroundColor: project.accent }}
-        ></span>
         <div className='project-hero__content'>
           <SectionLabel text={project.title} />
           <h1 className='project-hero__title'>{project.title}</h1>
