@@ -18,6 +18,17 @@ function ProjectPage({ project, screenshot, embedUrl }) {
           <p className='project-hero__idea'>{project.idea}</p>
           <div className='project-hero__meta'>
             <span className='project-hero__stack'>{project.stack}</span>
+            {project.url && (
+              <a
+                href={project.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='project-hero__url'
+              >
+                <span className='project-hero__url-dot'></span>
+                View Live →
+              </a>
+            )}
             <span className='project-hero__year'>{project.year}</span>
           </div>
         </div>
