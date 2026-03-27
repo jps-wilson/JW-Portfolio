@@ -1,9 +1,9 @@
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import SectionLabel from "./SectionLabel";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "../../styles/pages/project.css";
 
-function ProjectPage({ project, screenshot }) {
+function ProjectPage({ project, screenshot, embedUrl }) {
   const heroRef = useScrollAnimation();
   const caseRef = useScrollAnimation();
   const beliefRef = useScrollAnimation();
@@ -25,13 +25,23 @@ function ProjectPage({ project, screenshot }) {
             <span className='project-hero__year'>{project.year}</span>
           </div>
         </div>
-        <div className='project-hero__page-wrap'>
-          {screenshot && (
-            <img
-              src={screenshot}
-              alt={`${project.title} screenshot`}
-              className='project-hero__image'
+        <div className='project-hero__image-wrap'>
+          {embedUrl ? (
+            <iframe
+              src={embedUrl}
+              className='project-hero__embed'
+              title={`${project.title} — Live Preview`}
+              allow='geolocation'
+              loading='lazy'
             />
+          ) : (
+            screenshot && (
+              <img
+                src={screenshot}
+                alt={`${project.title} screenshot`}
+                className='project-hero__image'
+              />
+            )
           )}
           <div className='project-hero__image-fade'></div>
         </div>
