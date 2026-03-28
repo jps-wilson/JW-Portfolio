@@ -1,0 +1,121 @@
+.cs {
+  padding: var(--space-120) var(--grid-margin-desktop);
+  border-top: 1px solid var(--color-warm-dark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-80);
+}
+
+.cs__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  max-width: 720px;
+}
+
+.cs__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cs__label-line {
+  width: 3px;
+  height: 12px;
+  background-color: var(--color-ember);
+  flex-shrink: 0;
+}
+
+.cs__label-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-ember);
+}
+
+.cs__heading {
+  font-family: var(--font-montreal);
+  font-size: var(--text-subheading);
+  font-weight: 400;
+  line-height: var(--leading-subheading);
+  letter-spacing: var(--tracking-subheading);
+  color: var(--color-cream);
+}
+
+.cs__copy {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--color-cream);
+  opacity: 0.75;
+}
+
+/* Snippet */
+.cs-snippet {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-warm-dark);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: var(--space-8);
+}
+
+.cs-snippet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-8) var(--space-16);
+  border-bottom: 1px solid var(--color-warm-dark);
+  background-color: var(--color-void);
+}
+
+.cs-snippet__filename {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-ember);
+}
+
+.cs-snippet__lang {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.2;
+}
+
+.cs-snippet__pre {
+  margin: 0;
+  padding: var(--space-24);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--color-cream);
+  opacity: 0.85;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Syntax tokens */
+.cs-token-kw {
+  color: #1ea7ff;
+}
+.cs-token-str {
+  color: #98c379;
+}
+.cs-token-num {
+  color: #fcb952;
+}
+.cs-token-comment {
+  color: #5c6370;
+  font-style: italic;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .cs {
+    padding: var(--space-80) var(--grid-margin-mobile);
+  }
+}
