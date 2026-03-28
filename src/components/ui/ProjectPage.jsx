@@ -31,6 +31,11 @@ function ProjectPage({ project, screenshot, embedUrl, children }) {
             )}
             <span className='project-hero__year'>{project.year}</span>
           </div>
+          {embedUrl && (
+            <div className='project-hero__live-label'>
+              LIVE <span className='project-hero__live-cursor'></span>
+            </div>
+          )}
         </div>
         <div className='project-hero__image-wrap'>
           {embedUrl ? (

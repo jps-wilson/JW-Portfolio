@@ -115,6 +115,7 @@
   height: 100%;
   border: none;
   display: block;
+  overflow: hidden;
 }
 
 .project-hero__image-fade {
@@ -125,6 +126,27 @@
   height: 100%;
   background: linear-gradient(to right, var(--color-void) 0%, transparent 100%);
   z-index: 1;
+}
+
+.project-hero__live-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.4;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: var(--space-8);
+}
+
+.project-hero__live-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 12px;
+  background: var(--color-ember);
+  animation: blink-cursor 1s step-end infinite;
 }
 
 .project-case {
@@ -252,5 +274,15 @@
   50% {
     opacity: 0.5;
     transform: scale(0.8);
+  }
+}
+
+@keyframes blink-cursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }
