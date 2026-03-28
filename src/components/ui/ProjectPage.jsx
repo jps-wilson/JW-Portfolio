@@ -1,14 +1,14 @@
-import { useTextReveal } from "../../hooks/useTextReveal";
 import { Link } from "react-router-dom";
 import SectionLabel from "./SectionLabel";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { useTextReveal } from "../../hooks/useTextReveal";
 import "../../styles/pages/project.css";
 
 function ProjectPage({ project, screenshot, embedUrl, children }) {
   const heroRef = useScrollAnimation();
-  const titleRef = useTextReveal();
   const caseRef = useScrollAnimation();
   const beliefRef = useScrollAnimation();
+  const beliefTextRef = useTextReveal();
 
   return (
     <div>
@@ -16,9 +16,7 @@ function ProjectPage({ project, screenshot, embedUrl, children }) {
       <section className='project-hero' ref={heroRef}>
         <div className='project-hero__content'>
           <SectionLabel text={project.title} />
-          <h1 className='project-hero__title' ref={titleRef}>
-            {project.title}
-          </h1>
+          <h1 className='project-hero__title'>{project.title}</h1>
           <p className='project-hero__idea'>{project.idea}</p>
           <div className='project-hero__meta'>
             <span className='project-hero__stack'>{project.stack}</span>
@@ -84,7 +82,9 @@ function ProjectPage({ project, screenshot, embedUrl, children }) {
       {/* Belief */}
       <section className='project-belief' ref={beliefRef}>
         <SectionLabel text='Belief' />
-        <p className='project-belief__copy'>{project.belief}</p>
+        <p className='project-belief__copy' ref={beliefTextRef}>
+          {project.belief}
+        </p>
       </section>
 
       {/* Additional content slot */}
