@@ -1,4 +1,10 @@
+import { useEffect, useRef } from "react";
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
+import "highlight.js/styles/atom-one-dark.min.css";
 import "../../styles/components/case-study.css";
+
+hljs.registerLanguage("javascript", javascript);
 
 const sections = [
   {
@@ -15,7 +21,7 @@ const sections = [
       filename: "script.js",
       language: "JavaScript",
       code: `function setStrain(pressure) {
-            dial.classList.remove("calm", "moderate", "heavy");
+  dial.classList.remove("calm", "moderate", "heavy");
 
   if (pressure > 1018) {
     dial.classList.add("calm");
@@ -33,7 +39,7 @@ const sections = [
     insight.textContent =
       "Low pressure detected. Fatigue and headaches are more likely today.";
   }
-          }`,
+}`,
     },
   },
   {
@@ -53,28 +59,15 @@ window.pressureDriftInterval = setInterval(() => {
   },
 ];
 
-function highlight(code, language) {
-  const escaped = code
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-
-  if (language === "JavaScript") {
-    return escaped
-      .replace(/(\/\/[^\n]*)/g, '<span class="cs-token-comment">$1</span>')
-      .replace(
-        /\b(function|const|let|var|if|else|return|window|Math)\b/g,
-        '<span class="cs-token-kw">$1</span>',
-      )
-      .replace(/("([^"]*)")/g, '<span class="cs-token-str">$1</span>')
-      .replace(/(`[^`]*`)/g, '<span class="cs-token-str">$1</span>')
-      .replace(/\b(\d+\.?\d*)\b/g, '<span class="cs-token-num">$1</span>');
-  }
-
-  return escaped;
-}
-
 function CodeSnippet({ snippet }) {
+  const codeRef = useRef(null);
+
+  useEffect(() => {
+    if (codeRef.current) {
+      hljs.highlightElement(codeRef.current);
+    }
+  }, [snippet.code]);
+
   return (
     <div className='cs-snippet'>
       <div className='cs-snippet__header'>
@@ -82,11 +75,9 @@ function CodeSnippet({ snippet }) {
         <span className='cs-snippet__lang'>{snippet.language}</span>
       </div>
       <pre className='cs-snippet__pre'>
-        <code
-          dangerouslySetInnerHTML={{
-            __html: highlight(snippet.code, snippet.language),
-          }}
-        />
+        <code ref={codeRef} className='language-javascript'>
+          {snippet.code}
+        </code>
       </pre>
     </div>
   );

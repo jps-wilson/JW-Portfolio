@@ -51,7 +51,7 @@
   opacity: 0.75;
 }
 
-/* Snippet */
+/* snippet style */
 .cs-snippet {
   background-color: var(--color-surface);
   border: 1px solid var(--color-warm-dark);
@@ -96,21 +96,6 @@
   opacity: 0.85;
   white-space: pre;
   overflow-x: auto;
-}
-
-/* Syntax tokens */
-.cs-token-kw {
-  color: #1ea7ff;
-}
-.cs-token-str {
-  color: #98c379;
-}
-.cs-token-num {
-  color: #fcb952;
-}
-.cs-token-comment {
-  color: #5c6370;
-  font-style: italic;
 }
 
 /* Mobile Responsive */
