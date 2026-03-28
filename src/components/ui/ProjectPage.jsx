@@ -31,31 +31,36 @@ function ProjectPage({ project, screenshot, embedUrl, children }) {
             )}
             <span className='project-hero__year'>{project.year}</span>
           </div>
-          {embedUrl && (
-            <div className='project-hero__live-label'>
-              LIVE <span className='project-hero__live-cursor'></span>
-            </div>
-          )}
         </div>
         <div className='project-hero__image-wrap'>
           {embedUrl ? (
-            <iframe
-              src={embedUrl}
-              className='project-hero__embed'
-              title={`${project.title} — Live Preview`}
-              allow='geolocation'
-              loading='lazy'
-            />
+            <>
+              <iframe
+                src={embedUrl}
+                className='project-hero__embed'
+                title={`${project.title} — Live Preview`}
+                allow='geolocation'
+                loading='lazy'
+              />
+              <div className='project-hero__image-fade'></div>
+              <div className='project-hero__caption'>
+                <span className='project-hero__caption-text'>
+                  ↑ Live app — interact directly
+                </span>
+              </div>
+            </>
           ) : (
             screenshot && (
-              <img
-                src={screenshot}
-                alt={`${project.title} screenshot`}
-                className='project-hero__image'
-              />
+              <>
+                <img
+                  src={screenshot}
+                  alt={`${project.title} screenshot`}
+                  className='project-hero__image'
+                />
+                <div className='project-hero__image-fade'></div>
+              </>
             )
           )}
-          <div className='project-hero__image-fade'></div>
         </div>
       </section>
 
