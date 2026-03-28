@@ -3,7 +3,7 @@ import SectionLabel from "./SectionLabel";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "../../styles/pages/project.css";
 
-function ProjectPage({ project, screenshot, embedUrl }) {
+function ProjectPage({ project, screenshot, embedUrl, children }) {
   const heroRef = useScrollAnimation();
   const caseRef = useScrollAnimation();
   const beliefRef = useScrollAnimation();
@@ -72,6 +72,9 @@ function ProjectPage({ project, screenshot, embedUrl }) {
         <SectionLabel text='Belief' />
         <p className='project-belief__copy'>{project.belief}</p>
       </section>
+
+      {/* Additional content slot */}
+      {children}
 
       {/* Project Navigation */}
       <nav className='project-nav'>
