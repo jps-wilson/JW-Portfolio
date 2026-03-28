@@ -26,6 +26,7 @@ export function useTextReveal() {
       trigger: element,
       start: "top 85%",
       onEnter: () => {
+        console.log("text reveal triggered");
         gsap.to(wordSpans, {
           opacity: 1,
           y: 0,

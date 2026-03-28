@@ -1,3 +1,4 @@
+import { useTextReveal } from "../../hooks/useTextReveal";
 import { Link } from "react-router-dom";
 import SectionLabel from "./SectionLabel";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
@@ -5,6 +6,7 @@ import "../../styles/pages/project.css";
 
 function ProjectPage({ project, screenshot, embedUrl, children }) {
   const heroRef = useScrollAnimation();
+  const titleRef = useTextReveal();
   const caseRef = useScrollAnimation();
   const beliefRef = useScrollAnimation();
 
@@ -14,7 +16,9 @@ function ProjectPage({ project, screenshot, embedUrl, children }) {
       <section className='project-hero' ref={heroRef}>
         <div className='project-hero__content'>
           <SectionLabel text={project.title} />
-          <h1 className='project-hero__title'>{project.title}</h1>
+          <h1 className='project-hero__title' ref={titleRef}>
+            {project.title}
+          </h1>
           <p className='project-hero__idea'>{project.idea}</p>
           <div className='project-hero__meta'>
             <span className='project-hero__stack'>{project.stack}</span>

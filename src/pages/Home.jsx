@@ -1,3 +1,4 @@
+import { useTextReveal } from "../hooks/useTextReveal";
 import { useState } from "react";
 import { useOpeningAnimation } from "../hooks/useOpeningAnimation";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
@@ -29,6 +30,7 @@ function Home() {
   const [ready] = useState(true);
   const { lineRef, nameRef, roleRef } = useOpeningAnimation(ready);
   const thesisRef = useScrollAnimation();
+  const manifestoRef = useTextReveal();
   const featuredRef = useScrollAnimation();
   const stillHereRef = useScrollAnimation();
 
@@ -52,7 +54,7 @@ function Home() {
       {/* Thesis Section */}
       <section className='home-thesis' ref={thesisRef}>
         <SectionLabel text='The Thesis' />
-        <p className='home-thesis__manifesto'>
+        <p className='home-thesis__manifesto' ref={manifestoRef}>
           I build things that treat people like people. Curious, warm, private,
           alive. On purpose.
         </p>
