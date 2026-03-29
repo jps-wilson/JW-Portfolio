@@ -1,0 +1,141 @@
+import { useEffect, useRef } from "react";
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
+import css from "highlight.js/lib/languages/css";
+import "highlight.js/styles/atom-one-dark.min.css";
+import "../../styles/components/case-study.css";
+
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("css", css);
+
+const sections = [
+  {
+    label: "The Idea",
+    heading: "What if the game was the container, not just the content?",
+    copy: "Most browser games exist on a blank page. Nontendo started from a different question — what if the hardware was part of the experience?The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had feel physical before the fame felt fun.",
+    snippet: "null",
+  },
+  {
+    label: "The Design",
+    heading: "Building hardware with CSS",
+    copy: "The Game Boy is built entirely from CSS — no images, no SVGs, no assets. Every surface, shadow, button, and screen is a div with carefully layered gradients, border-radius, and box-shadows. The goal was physical realism: the kind of depth you get from holding something in your hands. The power LED pulses. The screen has a scanline overlay. The buttons depress when you press them. None of it is necessary for the game to work. All of it is necessary for the game to feel right.",
+    snippet: {
+      filename: "styles.css",
+      language: "css",
+      code: `.dial{
+            width: min(420px, 85vw);
+  height: min(420px, 85vw);
+  border-radius: 50%;
+  border: 2px solid rgba(220, 210, 195, 0.35);
+  box-shadow:
+    0 0 80px var(--temp-mild-glow),
+    inset 0 0 40px var(--temp-mild-glow);
+  animation: breathe 11s ease-in-out infinite;
+  backdrop-filter: blur(6px);
+}
+
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 6;
+          }`,
+    },
+  },
+  {
+    label: "The Build",
+    heading: "Snake is a solved problem. Making it feel real isn't.",
+    copy: "The Snake game itself is vanilla JavaScript on an HTML canvas — grid-based movement, collision detection, food spawning, score tracking. The interesting engineering was everything around it. The boot sequence runs a loading bar animation before revealing the NONTENDO logo, then awaits for the user to press START. The power switch toggles the screen on and off with an LED fade. Touch events mirror keyboard input so the D-pad works on mobile. Every state transition — idle, booting, playing, paused, game over — is handled explicitly so nothing ever looks broken.",
+    snippet: {
+      filename: "gameboy.js",
+      language: "javascript",
+      code: `function startLoading(duration = 1200) {
+  screenDiv.classList.add("loading", "booting");
+
+  const loader = document.createElement("div");
+  loader.className = "loader";
+  const bar = document.createElement("div");
+  bar.className = "bar";
+  bar.style.animationDuration = \`\${duration}ms\`;
+  loader.appendChild(bar);
+  screenDiv.appendChild(loader);
+
+  loadingTimeout = setTimeout(() => {
+    loader.remove();
+    screenDiv.classList.remove("loading", "booting");
+    screenDiv.classList.add("ready");
+
+    setTimeout(() => {
+      const logo = document.createElement("div");
+      logo.className = "nontendo-text";
+      logo.textContent = "NONTENDO";
+      screenDiv.appendChild(logo);
+      requestAnimationFrame(() => logo.classList.add("show"));
+
+      const pressStart = document.createElement("div");
+      pressStart.className = "press-start";
+      pressStart.textContent = "PRESS START";
+      screenDiv.appendChild(pressStart);
+    }, 1000);
+  }, duration);
+}`,
+    },
+  },
+];
+
+function CodeSnippet({ snippet }) {
+  const codeRef = useRef(null);
+
+  useEffect(() => {
+    if (codeRef.current) {
+      hljs.highlightElement(codeRef.current);
+    }
+  }, [snippet.code]);
+
+  return (
+    <div className='cs-snippet'>
+      <div className='cs-snippet__header'>
+        <span className='cs-snippet__filename'>{snippet.filename}</span>
+        <span className='cs-snippet__lang'>{snippet.language}</span>
+      </div>
+      <pre className='cs-snippet__pre'>
+        <code
+          ref={codeRef}
+          className={`language-${snippet.language.toLowerCase()}`}
+        >
+          {snippet.code}
+        </code>
+      </pre>
+    </div>
+  );
+}
+
+function NontendoCaseStudy() {
+  return (
+    <div className='cs'>
+      {sections.map((section, index) => (
+        <div key={index} className='cs__section'>
+          <div className='cs__label'>
+            <span className='cs__label-line'></span>
+            <span className='cs__label-text'> {section.label}</span>
+          </div>
+          <h2 className='cs__heading'>{section.heading}</h2>
+          <p className='cs__copy'>{section.copy}</p>
+          {section.snippet && <CodeSnippet snippet={section.snippet} />}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default NontendoCaseStudy;
