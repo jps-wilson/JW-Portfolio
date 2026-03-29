@@ -13,7 +13,7 @@ const sections = [
     label: "The Idea",
     heading: "What if the game was the container, not just the content?",
     copy: "Most browser games exist on a blank page. Nontendo started from a different question — what if the hardware was part of the experience?The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had feel physical before the fame felt fun.",
-    snippet: "null",
+    snippet: null,
   },
   {
     label: "The Design",
@@ -22,16 +22,24 @@ const sections = [
     snippet: {
       filename: "styles.css",
       language: "css",
-      code: `.dial{
-            width: min(420px, 85vw);
-  height: min(420px, 85vw);
-  border-radius: 50%;
-  border: 2px solid rgba(220, 210, 195, 0.35);
+      code: `.wrapper {
+  width: 306px;
+  height: 498px;
+  background: linear-gradient(
+    145deg,
+    #fdd682 0%,
+    var(--light-yellow) 50%,
+    #fcb952 100%
+  );
+  border-radius: 12px 12px 50px 12px;
+  border: 6px solid #000;
   box-shadow:
-    0 0 80px var(--temp-mild-glow),
-    inset 0 0 40px var(--temp-mild-glow);
-  animation: breathe 11s ease-in-out infinite;
-  backdrop-filter: blur(6px);
+    20px 20px 0px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.15),
+    inset 2px 2px 8px rgba(255, 255, 255, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .screen::after {
@@ -49,7 +57,7 @@ const sections = [
   opacity: 0.35;
   pointer-events: none;
   z-index: 6;
-          }`,
+}`,
     },
   },
   {
