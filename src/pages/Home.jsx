@@ -38,7 +38,7 @@ function Home() {
       <section className='home-opening'>
         <div className='home-opening__content'>
           <p className='home-opening__line' ref={lineRef}>
-            Code is my craft. People are the point.
+            Code is the craft. People are the point.
           </p>
           <p className='home-opening__name' ref={nameRef}>
             Jess Wilson
