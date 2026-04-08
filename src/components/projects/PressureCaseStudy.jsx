@@ -14,7 +14,7 @@ const sections = [
     copy: "The hardest design decision wasn't visual — it was linguistic. Raw pressure readings are meaningless to most people. The real design challenge was building a translation layer between the data and the person reading it. CALM. MODERATE. HEAVY. Three words that tell you how today might feel before you've even stepped outside. The atmospheric glow reinforces this — the interface shifts temperature with the weather, cold blue for low temperatures, warm amber for high. The data doesn't just update. It changes the mood of the whole screen.",
     snippet: {
       filename: "script.js",
-      language: "JavaScript",
+      language: "javascript",
       code: `function setStrain(pressure) {
   dial.classList.remove("calm", "moderate", "heavy");
 
@@ -43,7 +43,7 @@ const sections = [
     copy: "Location from the browser Geolocation API. Pressure and temperature from WeatherAPI. Your city from OpenStreetMap's Nominatim. The hardest part wasn't the APIs — it was making the interface behave like something real. Continuous micro-drift keeps the pressure reading from feeling static. The app idles before you grant location access rather than showing empty fields. Every state transition is handled so the experience feels deliberate, not broken.",
     snippet: {
       filename: "script.js",
-      language: "JavaScript",
+      language: "javascript",
       code: `// Continuous micro-drift to simulate live conditions
 window.pressureDriftInterval = setInterval(() => {
   const microShift = pressure + (Math.random() * 0.6 - 0.3);

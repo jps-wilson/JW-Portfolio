@@ -5,7 +5,7 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if the game was the container, not just the content?",
-    copy: "Most browser games exist on a blank page. Nontendo started from a different question — what if the hardware was part of the experience?The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had feel physical before the fame felt fun.",
+    copy: "Most browser games exist on a blank page. Nontendo started from a different question — what if the hardware was part of the experience? The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had to feel physical before the game felt fun.",
     snippet: null,
   },
   {

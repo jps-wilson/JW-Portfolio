@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import "../../styles/components/project-card.css";
 
 function ProjectCard({ number, title, idea, stack, accent, path }) {

@@ -1,17 +1,19 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { lazy, Suspense } from "react";
 import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
 import AnimatedPage from "./components/ui/AnimatedPage";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Work from "./pages/Work";
-import Contact from "./pages/Contact";
-import Pressure from "./pages/Pressure";
-import Deadwax from "./pages/Deadwax";
-import Nontendo from "./pages/Nontendo";
-import Momentum from "./pages/Momentum";
-import NotFound from "./pages/NotFound";
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Work = lazy(() => import("./pages/Work"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Pressure = lazy(() => import("./pages/Pressure"));
+const Deadwax = lazy(() => import("./pages/Deadwax"));
+const Nontendo = lazy(() => import("./pages/Nontendo"));
+const Momentum = lazy(() => import("./pages/Momentum"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 import "./styles/app.css";
 
@@ -22,6 +24,7 @@ function App() {
     <div className='app'>
       <Navigation />
       <main className='app__main'>
+        <Suspense fallback={null}>
         <AnimatePresence mode='wait'>
           <Routes location={location} key={location.pathname}>
             <Route
@@ -98,6 +101,7 @@ function App() {
             />
           </Routes>
         </AnimatePresence>
+        </Suspense>
       </main>
       <Footer />
     </div>
