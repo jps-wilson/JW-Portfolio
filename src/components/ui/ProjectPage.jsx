@@ -4,7 +4,7 @@ import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { useTextReveal } from "../../hooks/useTextReveal";
 import "../../styles/pages/project.css";
 
-function ProjectPage({ project, screenshot, embedUrl, children }) {
+function ProjectPage({ project, screenshot, children }) {
   const heroRef = useScrollAnimation();
   const caseRef = useScrollAnimation();
   const beliefRef = useScrollAnimation();
@@ -35,33 +35,15 @@ function ProjectPage({ project, screenshot, embedUrl, children }) {
           </div>
         </div>
         <div className='project-hero__image-wrap'>
-          {embedUrl ? (
+          {screenshot && (
             <>
-              <iframe
-                src={embedUrl}
-                className='project-hero__embed'
-                title={`${project.title} — Live Preview`}
-                allow='geolocation'
-                loading='lazy'
+              <img
+                src={screenshot}
+                alt={`${project.title} screenshot`}
+                className='project-hero__image'
               />
               <div className='project-hero__image-fade'></div>
-              <div className='project-hero__caption'>
-                <span className='project-hero__caption-text'>
-                  ↑ Live app — interact directly
-                </span>
-              </div>
             </>
-          ) : (
-            screenshot && (
-              <>
-                <img
-                  src={screenshot}
-                  alt={`${project.title} screenshot`}
-                  className='project-hero__image'
-                />
-                <div className='project-hero__image-fade'></div>
-              </>
-            )
           )}
         </div>
       </section>

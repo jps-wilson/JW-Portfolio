@@ -112,19 +112,6 @@
   object-position: center top;
 }
 
-.project-hero__embed {
-  width: 100%;
-  flex: 1;
-  border: none;
-  display: block;
-  overflow: hidden;
-  scrollbar-width: none;
-}
-
-.project-hero__embed::-webkit-scrollbar {
-  display: none;
-}
-
 .project-hero__image-fade {
   position: absolute;
   top: 0;
@@ -135,21 +122,6 @@
   z-index: 1;
 }
 
-.project-hero__caption {
-  padding: var(--space-8) var(--space-16);
-  border-top: 1px solid var(--color-warm-dark);
-  background-color: var(--color-void);
-  text-align: center;
-}
-
-.project-hero__caption-text {
-  font-family: var(--font-mono);
-  font-size: var(--text-mono-label);
-  letter-spacing: var(--tracking-mono);
-  text-transform: uppercase;
-  color: var(--color-cream);
-  opacity: 0.3;
-}
 
 .project-case {
   display: grid;
