@@ -72,12 +72,23 @@ function ScrambleCard({ project, constraint, Icon }) {
     return () => clearInterval(timerRef.current);
   }, []);
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      navigate(project.path);
+    }
+  };
+
   return (
     <div
       className={`work-card ${hovered ? "work-card--hovered" : ""}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => navigate(project.path)}
+      onKeyDown={handleKeyDown}
+      role='link'
+      tabIndex={0}
+      aria-label={project.title}
       style={{ "--card-accent": project.accent }}
     >
       {/* Accent bar */}

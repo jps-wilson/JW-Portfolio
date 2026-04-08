@@ -1,18 +1,11 @@
-import { useEffect, useRef } from "react";
-import hljs from "highlight.js/lib/core";
-import javascript from "highlight.js/lib/languages/javascript";
-import css from "highlight.js/lib/languages/css";
-import "highlight.js/styles/atom-one-dark.min.css";
+import CodeSnippet from "../ui/CodeSnippet";
 import "../../styles/components/case-study.css";
-
-hljs.registerLanguage("javascript", javascript);
-hljs.registerLanguage("css", css);
 
 const sections = [
   {
     label: "The Idea",
     heading: "What if the game was the container, not just the content?",
-    copy: "Most browser games exist on a blank page. Nontendo started from a different question — what if the hardware was part of the experience?The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had feel physical before the fame felt fun.",
+    copy: "Most browser games exist on a blank page. Nontendo started from a different question — what if the hardware was part of the experience? The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had to feel physical before the game felt fun.",
     snippet: null,
   },
   {
@@ -100,33 +93,6 @@ const sections = [
     },
   },
 ];
-
-function CodeSnippet({ snippet }) {
-  const codeRef = useRef(null);
-
-  useEffect(() => {
-    if (codeRef.current) {
-      hljs.highlightElement(codeRef.current);
-    }
-  }, [snippet.code]);
-
-  return (
-    <div className='cs-snippet'>
-      <div className='cs-snippet__header'>
-        <span className='cs-snippet__filename'>{snippet.filename}</span>
-        <span className='cs-snippet__lang'>{snippet.language}</span>
-      </div>
-      <pre className='cs-snippet__pre'>
-        <code
-          ref={codeRef}
-          className={`language-${snippet.language.toLowerCase()}`}
-        >
-          {snippet.code}
-        </code>
-      </pre>
-    </div>
-  );
-}
 
 function NontendoCaseStudy() {
   return (

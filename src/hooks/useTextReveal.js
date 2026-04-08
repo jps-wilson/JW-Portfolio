@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function useTextReveal() {
   const ref = useRef(null);
@@ -28,7 +31,10 @@ export function useTextReveal() {
         duration: 0.5,
         ease: "power2.out",
         stagger: 0.04,
-        delay: 0.2,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+        },
       },
     );
   }, []);
