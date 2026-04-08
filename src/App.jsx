@@ -11,6 +11,7 @@ import Pressure from "./pages/Pressure";
 import Deadwax from "./pages/Deadwax";
 import Nontendo from "./pages/Nontendo";
 import Momentum from "./pages/Momentum";
+import NotFound from "./pages/NotFound";
 
 import "./styles/app.css";
 
@@ -84,6 +85,14 @@ function App() {
               element={
                 <AnimatedPage>
                   <Momentum />
+                </AnimatedPage>
+              }
+            />
+            <Route
+              path='*'
+              element={
+                <AnimatedPage>
+                  <NotFound />
                 </AnimatedPage>
               }
             />
