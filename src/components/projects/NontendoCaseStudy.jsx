@@ -116,10 +116,14 @@ function CodeSnippet({ snippet }) {
         <span className='cs-snippet__filename'>{snippet.filename}</span>
         <span className='cs-snippet__lang'>{snippet.language}</span>
       </div>
-      <pre className='cs-snippet__pre'>
+      <pre
+        className='cs-snippet__pre'
+        aria-label={`Code snippet: ${snippet.filename}`}
+      >
         <code
           ref={codeRef}
           className={`language-${snippet.language.toLowerCase()}`}
+          tabIndex='0'
         >
           {snippet.code}
         </code>
