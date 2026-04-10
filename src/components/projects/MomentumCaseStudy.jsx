@@ -1,4 +1,4 @@
-import CodeSnippet from "../ui/CodeSnippet";
+import CsSection from "../ui/CsSection";
 import "../../styles/components/case-study.css";
 
 const sections = [
@@ -100,15 +100,7 @@ function MomentumCaseStudy() {
   return (
     <div className='cs'>
       {sections.map((section, index) => (
-        <div key={index} className='cs__section'>
-          <div className='cs__label'>
-            <span className='cs__label-line'></span>
-            <span className='cs__label-text'> {section.label}</span>
-          </div>
-          <h2 className='cs__heading'>{section.heading}</h2>
-          <p className='cs__copy'>{section.copy}</p>
-          {section.snippet && <CodeSnippet snippet={section.snippet} />}
-        </div>
+        <CsSection key={index} section={section} />
       ))}
     </div>
   );

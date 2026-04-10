@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
 import AnimatedPage from "./components/ui/AnimatedPage";
+import BackToTop from "./components/ui/BackToTop";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -25,85 +26,86 @@ function App() {
       <Navigation />
       <main className='app__main'>
         <Suspense fallback={null}>
-        <AnimatePresence mode='wait'>
-          <Routes location={location} key={location.pathname}>
-            <Route
-              path='/'
-              element={
-                <AnimatedPage>
-                  <Home />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='/about'
-              element={
-                <AnimatedPage>
-                  <About />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='/work'
-              element={
-                <AnimatedPage>
-                  <Work />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='/contact'
-              element={
-                <AnimatedPage>
-                  <Contact />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='/work/pressure'
-              element={
-                <AnimatedPage>
-                  <Pressure />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='/work/deadwax'
-              element={
-                <AnimatedPage>
-                  <Deadwax />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='/work/nontendo'
-              element={
-                <AnimatedPage>
-                  <Nontendo />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='/work/momentum'
-              element={
-                <AnimatedPage>
-                  <Momentum />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path='*'
-              element={
-                <AnimatedPage>
-                  <NotFound />
-                </AnimatedPage>
-              }
-            />
-          </Routes>
-        </AnimatePresence>
+          <AnimatePresence mode='wait'>
+            <Routes location={location} key={location.pathname}>
+              <Route
+                path='/'
+                element={
+                  <AnimatedPage>
+                    <Home />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='/about'
+                element={
+                  <AnimatedPage>
+                    <About />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='/work'
+                element={
+                  <AnimatedPage>
+                    <Work />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='/contact'
+                element={
+                  <AnimatedPage>
+                    <Contact />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='/work/pressure'
+                element={
+                  <AnimatedPage>
+                    <Pressure />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='/work/deadwax'
+                element={
+                  <AnimatedPage>
+                    <Deadwax />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='/work/nontendo'
+                element={
+                  <AnimatedPage>
+                    <Nontendo />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='/work/momentum'
+                element={
+                  <AnimatedPage>
+                    <Momentum />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path='*'
+                element={
+                  <AnimatedPage>
+                    <NotFound />
+                  </AnimatedPage>
+                }
+              />
+            </Routes>
+          </AnimatePresence>
         </Suspense>
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

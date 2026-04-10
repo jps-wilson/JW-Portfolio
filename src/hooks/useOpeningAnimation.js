@@ -10,6 +10,14 @@ export function useOpeningAnimation(ready) {
     if (!ready) return;
     if (!lineRef.current || !nameRef.current || !roleRef.current) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set([lineRef.current, nameRef.current, roleRef.current], {
+        opacity: 1,
+        y: 0,
+      });
+      return;
+    }
+
     gsap.set([lineRef.current, nameRef.current, roleRef.current], {
       opacity: 0,
       y: 30,

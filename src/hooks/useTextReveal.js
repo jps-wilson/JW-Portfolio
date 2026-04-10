@@ -13,6 +13,8 @@ export function useTextReveal() {
     if (element.dataset.revealed) return;
     element.dataset.revealed = "true";
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const text = element.textContent;
     const words = text.split(" ");
 

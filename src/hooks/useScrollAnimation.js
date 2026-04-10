@@ -11,6 +11,11 @@ export function useScrollAnimation() {
     const element = ref.current;
     if (!element) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set(element, { opacity: 1, y: 0 });
+      return;
+    }
+
     const trigger = ScrollTrigger.create({
       trigger: element,
       start: "top 85%",

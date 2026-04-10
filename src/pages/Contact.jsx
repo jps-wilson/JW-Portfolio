@@ -27,7 +27,7 @@ function Contact() {
           href='mailto:info.jessicapswilson@gmail.com'
           className='contact__email'
         >
-          info.jessicapswilson@gmail.com
+          contact@jessicapswilson.com
         </a>
         <div className='contact__social'>
           <a

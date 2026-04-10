@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useOpeningAnimation } from "../hooks/useOpeningAnimation";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useHeroScroll } from "../hooks/useHeroScroll";
 import { screenshots } from "../data/screenshots";
 import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
@@ -28,6 +29,7 @@ const values = [
 function Home() {
   const [ready] = useState(true);
   const { lineRef, nameRef, roleRef } = useOpeningAnimation(ready);
+  const heroScrollRef = useHeroScroll();
   const thesisRef = useScrollAnimation();
   const featuredRef = useScrollAnimation();
   const stillHereRef = useScrollAnimation();
@@ -36,7 +38,7 @@ function Home() {
     <div>
       {/* Opening Section */}
       <section className='home-opening'>
-        <div className='home-opening__content'>
+        <div className='home-opening__content' ref={heroScrollRef}>
           <p className='home-opening__line' ref={lineRef}>
             Code is the craft. People are the point.
           </p>
@@ -50,11 +52,13 @@ function Home() {
       </section>
 
       {/* Thesis Section */}
-      <section className='home-thesis' ref={thesisRef}>
-        <SectionLabel text='The Thesis' />
+      <section className='home-thesis' id='thesis' ref={thesisRef}>
+        <a href='#thesis' className='home-thesis__label-link'>
+          <SectionLabel text='The Thesis' />
+        </a>
         <p className='home-thesis__manifesto'>
-          I build things that treat people like people. Curious, warm, private,
-          alive. On purpose.
+          I build things that treat people like people. Curious, warm,
+          considered, alive. On purpose.
         </p>
         <div className='home-thesis__values-wrap'>
           <div className='home-thesis__values'>
@@ -111,12 +115,15 @@ function Home() {
 
       {/* Still Here Section */}
       <section className='home-still-here' ref={stillHereRef}>
-        <h2 className='home-still-here__heading'> Still here? Good.</h2>
+        <h2 className='home-still-here__heading'>Still here? Good.</h2>
+        <p className='home-still-here__sub'>
+          That probably means something. Let&apos;s find out.
+        </p>
         <a
           href='mailto:info.jessicapswilson@gmail.com'
           className='home-still-here__email'
         >
-          info.jessicapswilson@gmail.com
+          contact@jessicapswilson.com
         </a>
       </section>
     </div>
