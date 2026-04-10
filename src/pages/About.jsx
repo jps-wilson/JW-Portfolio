@@ -40,9 +40,9 @@ function About() {
         </div>
         <p className='about-act__copy'>
           I come from a family rooted in the arts. Growing up surrounded by
-          creativity shaped how I see the world. Adversity has a way of sharpening how
-          you see things, and I've had enough of it to know that my perspective
-          is the most valuable thing I bring into any room.
+          creativity shaped how I see the world. Adversity has a way of
+          sharpening how you see things, and I've had enough of it to know that
+          my perspective is the most valuable thing I bring into any room.
         </p>
       </section>
 
@@ -109,7 +109,7 @@ function About() {
           href='mailto:info.jessicapswilson@gmail.com'
           className='about-act__email'
         >
-          info.jessicapswilson@gmail.com
+          contact@jessicapswilson.com
         </a>
       </section>
     </div>

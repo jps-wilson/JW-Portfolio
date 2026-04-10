@@ -8,7 +8,7 @@ function Footer() {
       </p>
 
       <a href='mailto:info.jessicapswilson@gmail.com' className='footer__email'>
-        info.jessicapswilson@gmail.com
+        contact@jessicapswilson.com
       </a>
 
       <div className='footer__icons'>

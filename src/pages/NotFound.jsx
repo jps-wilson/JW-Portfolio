@@ -5,12 +5,12 @@ function NotFound() {
   return (
     <div className='not-found'>
       <p className='not-found__code'>404</p>
-      <h1 className='not-found__heading'>Page not found.</h1>
+      <h1 className='not-found__heading'>You found the void.</h1>
       <p className='not-found__copy'>
-        Whatever you were looking for, it&apos;s not here.
+        Impressive. But this page doesn&apos;t exist — at least not yet.
       </p>
       <Link to='/' className='not-found__link'>
-        Go home →
+        Take me somewhere real →
       </Link>
     </div>
   );

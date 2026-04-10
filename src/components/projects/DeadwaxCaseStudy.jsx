@@ -77,14 +77,23 @@ function DeadwaxCaseStudy() {
   return (
     <div className='cs'>
       {sections.map((section, index) => (
-        <div key={index} className='cs__section'>
-          <div className='cs__label'>
-            <span className='cs__label-line'></span>
-            <span className='cs__label-text'>{section.label}</span>
+        <div
+          key={index}
+          className={`cs__section ${section.snippet ? "cs__section--split" : "cs__section--intro"}`}
+        >
+          <div className='cs__section-text'>
+            <div className='cs__label'>
+              <span className='cs__label-line'></span>
+              <span className='cs__label-text'>{section.label}</span>
+            </div>
+            <h2 className='cs__heading'>{section.heading}</h2>
+            <p className='cs__copy'>{section.copy}</p>
           </div>
-          <h2 className='cs__heading'>{section.heading}</h2>
-          <p className='cs__copy'>{section.copy}</p>
-          {section.snippet && <CodeSnippet snippet={section.snippet} />}
+          {section.snippet && (
+            <div className='cs__section-code'>
+              <CodeSnippet snippet={section.snippet} />
+            </div>
+          )}
         </div>
       ))}
     </div>
