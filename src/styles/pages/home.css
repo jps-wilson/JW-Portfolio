@@ -186,15 +186,6 @@
   margin-bottom: var(--space-24);
 }
 
-.home-still-here__sub {
-  font-family: var(--font-satoshi);
-  font-size: var(--text-body-lg);
-  line-height: var(--leading-body);
-  color: var(--color-cream);
-  opacity: 0.5;
-  margin-bottom: var(--space-48);
-}
-
 .home-still-here__email {
   font-family: var(--font-satoshi);
   font-size: var(--text-body-lg);
