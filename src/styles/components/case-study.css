@@ -48,6 +48,7 @@
   position: sticky;
   top: 30vh;
   align-self: start;
+  opacity: 0;
 }
 
 .cs__label {

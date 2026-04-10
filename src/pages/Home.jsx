@@ -57,8 +57,8 @@ function Home() {
           <SectionLabel text='The Thesis' />
         </a>
         <p className='home-thesis__manifesto'>
-          I build things that treat people like people. Curious, warm, private,
-          alive. On purpose.
+          I build things that treat people like people. Curious, warm,
+          considered, alive. On purpose.
         </p>
         <div className='home-thesis__values-wrap'>
           <div className='home-thesis__values'>
@@ -115,7 +115,10 @@ function Home() {
 
       {/* Still Here Section */}
       <section className='home-still-here' ref={stillHereRef}>
-        <h2 className='home-still-here__heading'> Still here? Good.</h2>
+        <h2 className='home-still-here__heading'>Still here? Good.</h2>
+        <p className='home-still-here__sub'>
+          That probably means something. Let&apos;s find out.
+        </p>
         <a
           href='mailto:info.jessicapswilson@gmail.com'
           className='home-still-here__email'

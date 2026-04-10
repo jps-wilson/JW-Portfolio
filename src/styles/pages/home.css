@@ -166,23 +166,33 @@
 
 /* Still Here Section */
 .home-still-here {
-  min-height: 50vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: var(--space-120) var(--grid-margin-desktop);
+  border-top: 1px solid var(--color-warm-dark);
 }
 
 .home-still-here__heading {
   font-family: var(--font-montreal);
-  font-size: var(--text-heading);
-  font-weight: 500;
-  line-height: var(--leading-heading);
-  letter-spacing: var(--tracking-heading);
+  font-size: clamp(40px, 7vw, 96px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--color-cream);
   margin-bottom: var(--space-24);
+}
+
+.home-still-here__sub {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--color-cream);
+  opacity: 0.5;
+  margin-bottom: var(--space-48);
 }
 
 .home-still-here__email {
@@ -368,10 +378,6 @@
 
   .home-still-here {
     padding: var(--space-80) var(--grid-margin-mobile);
-  }
-
-  .home-still-here__heading {
-    font-size: var(--text-subheading);
   }
 
   .home-featured__banner {
