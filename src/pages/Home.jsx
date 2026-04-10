@@ -116,9 +116,6 @@ function Home() {
       {/* Still Here Section */}
       <section className='home-still-here' ref={stillHereRef}>
         <h2 className='home-still-here__heading'>Still here? Good.</h2>
-        <p className='home-still-here__sub'>
-          That probably means something. Let&apos;s find out.
-        </p>
         <a
           href='mailto:info.jessicapswilson@gmail.com'
           className='home-still-here__email'
