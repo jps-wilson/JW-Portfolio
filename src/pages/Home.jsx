@@ -58,7 +58,7 @@ function Home() {
         </a>
         <p className='home-thesis__manifesto'>
           I build things that treat people like people. Curious, warm,
-          considered, alive. On purpose.
+          considered, alive.
         </p>
         <div className='home-thesis__values-wrap'>
           <div className='home-thesis__values'>
