@@ -44,9 +44,7 @@ function About() {
             Hard things came with it — health, struggle, the kind of life that
             sharpens how you see the world.
           </p>
-          <p>
-            My parents fought their battles and still made beautiful things.
-          </p>
+          <p>My family fought their battles and still made beautiful things.</p>
           <p>So do I.</p>
         </div>
       </section>
@@ -71,16 +69,24 @@ function About() {
               <span className='about-skills__list'>HTML, CSS, JavaScript</span>
             </div>
             <div className='about-skills__group'>
-              <span className='about-skills__category'>Frameworks / Libraries</span>
-              <span className='about-skills__list'>React, React Native, GSAP</span>
+              <span className='about-skills__category'>
+                Frameworks / Libraries
+              </span>
+              <span className='about-skills__list'>
+                React, React Native, GSAP, THREE.js
+              </span>
             </div>
             <div className='about-skills__group'>
               <span className='about-skills__category'>Tools</span>
-              <span className='about-skills__list'>Figma, Git, GitHub, VS Code, Chrome DevTools</span>
+              <span className='about-skills__list'>
+                Figma, Git, GitHub, VS Code, Chrome DevTools
+              </span>
             </div>
             <div className='about-skills__group'>
               <span className='about-skills__category'>Design</span>
-              <span className='about-skills__list'>Design Systems, UI Layout, Typography, Colour Theory</span>
+              <span className='about-skills__list'>
+                Design Systems, UI Layout, Typography, Colour Theory
+              </span>
             </div>
           </div>
         </div>
