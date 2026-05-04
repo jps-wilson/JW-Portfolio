@@ -1,4 +1,4 @@
-import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -194,7 +194,11 @@ function ScrambleCard({ project, constraint, Icon, index }) {
 }
 
 function Work() {
-  useDocumentTitle("Work — Jess Wilson");
+  usePageMeta({
+    title: "Work — Jess Wilson",
+    description:
+      "Projects by Jess Wilson — web experiences built with intention.",
+  });
   const headerRef = useScrollAnimation();
 
   return (

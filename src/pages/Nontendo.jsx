@@ -2,10 +2,14 @@ import ProjectPage from "../components/ui/ProjectPage";
 import NontendoCaseStudy from "../components/projects/NontendoCaseStudy";
 import { projects } from "../data/projects";
 import screenshot from "../assets/screenshots/nontendo.webp";
-import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function Nontendo() {
-  useDocumentTitle("Nontendo — Jess Wilson");
+  usePageMeta({
+    title: "Nontendo — Jess Wilson",
+    description:
+      "A fully functional Game Boy interface with playable Snake, built in HTML and CSS.",
+  });
   const project = projects.find((p) => p.id === "nontendo");
   return (
     <ProjectPage project={project} screenshot={screenshot}>

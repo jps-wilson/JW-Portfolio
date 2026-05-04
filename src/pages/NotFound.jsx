@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import "../styles/pages/not-found.css";
-import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function NotFound() {
-  useDocumentTitle("404 — Jess Wilson");
+  usePageMeta({
+    title: "404 — Jess Wilson",
+    description: "This page doesn't exist.",
+  });
   return (
     <div className='not-found'>
       <p className='not-found__code'>404</p>

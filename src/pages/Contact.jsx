@@ -1,10 +1,14 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/contact.css";
-import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function Contact() {
-  useDocumentTitle("Contact — Jess Wilson");
+  usePageMeta({
+    title: "Contact — Jess Wilson",
+    description:
+      "Get in touch with Jess Wilson, web developer based in Vancouver, BC.",
+  });
   const mainRef = useScrollAnimation();
 
   return (

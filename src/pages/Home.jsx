@@ -7,7 +7,7 @@ import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/home.css";
-import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const values = [
   {
@@ -28,7 +28,11 @@ const values = [
 ];
 
 function Home() {
-  useDocumentTitle("Jess Wilson — Web Developer");
+  usePageMeta({
+    title: "Jess Wilson — Web Developer",
+    description:
+      "Web developer building thoughtful, human-centered interfaces. Vancouver, BC.",
+  });
   const [ready] = useState(true);
   const { lineRef, nameRef, roleRef } = useOpeningAnimation(ready);
   const heroScrollRef = useHeroScroll();
