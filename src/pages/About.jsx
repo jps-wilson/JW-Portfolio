@@ -1,6 +1,6 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
-import headshot from "../assets/images/jess.jpg";
+import headshot from "../assets/images/jess.webp";
 import "../styles/pages/about.css";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
