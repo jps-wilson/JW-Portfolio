@@ -117,7 +117,7 @@ function Home() {
       <section className='home-still-here' ref={stillHereRef}>
         <h2 className='home-still-here__heading'>Still here? Good.</h2>
         <a
-          href='mailto:info.jessicapswilson@gmail.com'
+          href='mailto:contact@jessicapswilson.com'
           className='home-still-here__email'
         >
           contact@jessicapswilson.com

@@ -24,7 +24,7 @@ function Contact() {
 
       <div className='contact__bottom'>
         <a
-          href='mailto:info.jessicapswilson@gmail.com'
+          href='mailto:contact@jessicapswilson.com'
           className='contact__email'
         >
           contact@jessicapswilson.com

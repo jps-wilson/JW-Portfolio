@@ -7,7 +7,7 @@ function Footer() {
         Vancouver, BC - probably still at my desk
       </p>
 
-      <a href='mailto:info.jessicapswilson@gmail.com' className='footer__email'>
+      <a href='mailto:contact@jessicapswilson.com' className='footer__email'>
         contact@jessicapswilson.com
       </a>
 
