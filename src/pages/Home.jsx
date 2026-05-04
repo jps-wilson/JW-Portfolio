@@ -110,6 +110,7 @@ function Home() {
               src={screenshots[projects[0].id]}
               alt={projects[0].title}
               className='home-featured__image'
+              loading='lazy'
             />
           </div>
         </Link>
