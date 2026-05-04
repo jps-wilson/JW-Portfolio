@@ -46,6 +46,8 @@ function Navigation() {
           className='nav__hamburger'
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label='Toggle menu'
+          aria-expanded={menuOpen}
+          aria-controls='nav-mobile-menu'
         >
           <span
             className={`nav__hamburger-line ${menuOpen ? "nav__hamburger-line--open" : ""}`}
@@ -60,7 +62,10 @@ function Navigation() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`nav__mobile ${menuOpen ? "nav__mobile--open" : ""}`}>
+      <div
+        id='nav-mobile-menu'
+        className={`nav__mobile ${menuOpen ? "nav__mobile--open" : ""}`}
+      >
         <NavLink
           to='/work'
           onClick={() => setMenuOpen(false)}

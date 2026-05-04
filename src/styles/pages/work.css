@@ -45,7 +45,6 @@
   filter: opacity(0.4);
 }
 
-
 .work-card--hovered {
   border-color: var(--card-accent);
   box-shadow:
@@ -228,33 +227,6 @@
   transform: translateX(-50%) translateY(155px); /* Notification SVG height ~537px scaled, top ~107px visible */
 }
 
-.work-card__icon-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.work-card--hovered .work-card__icon {
-  opacity: 0.1;
-}
-
-/* Position icons so that only the top ~20% is visible (top of icon reaches card midpoint) */
-.work-card__icon--gauge {
-  transform: translateX(-50%) translateY(140px); /* Gauge SVG height ~577px scaled, top ~115px visible */
-}
-
-.work-card__icon--record {
-  transform: translateX(-50%) translateY(160px); /* Record SVG height ~537px scaled, top ~107px visible */
-}
-
-.work-card__icon--gamepad {
-  transform: translateX(-50%) translateY(150px); /* Gamepad SVG height ~537px scaled, top ~107px visible */
-}
-
-.work-card__icon--notification {
-  transform: translateX(-50%) translateY(155px); /* Notification SVG height ~537px scaled, top ~107px visible */
-}
-
 .work-card--hovered .work-card__arrow {
   transform: translateX(6px);
   opacity: 1;
@@ -269,7 +241,6 @@
   .work__grid {
     grid-template-columns: 1fr;
   }
-
 
   .work-card__main-text {
     font-size: var(--text-body-lg);
