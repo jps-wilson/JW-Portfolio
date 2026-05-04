@@ -2,8 +2,10 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
 import headshot from "../assets/images/jess.jpg";
 import "../styles/pages/about.css";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 function About() {
+  useDocumentTitle("About — Jess Wilson");
   const openingRef = useScrollAnimation();
   const act1Ref = useScrollAnimation();
   const act2Ref = useScrollAnimation();

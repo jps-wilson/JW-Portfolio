@@ -1,3 +1,4 @@
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -193,6 +194,7 @@ function ScrambleCard({ project, constraint, Icon, index }) {
 }
 
 function Work() {
+  useDocumentTitle("Work — Jess Wilson");
   const headerRef = useScrollAnimation();
 
   return (

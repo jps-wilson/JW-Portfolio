@@ -1,8 +1,10 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/contact.css";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 function Contact() {
+  useDocumentTitle("Contact — Jess Wilson");
   const mainRef = useScrollAnimation();
 
   return (
@@ -23,10 +25,7 @@ function Contact() {
       </div>
 
       <div className='contact__bottom'>
-        <a
-          href='mailto:contact@jessicapswilson.com'
-          className='contact__email'
-        >
+        <a href='mailto:contact@jessicapswilson.com' className='contact__email'>
           contact@jessicapswilson.com
         </a>
         <div className='contact__social'>
