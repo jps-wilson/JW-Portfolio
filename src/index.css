@@ -268,6 +268,26 @@ img {
 }
 
 /* --- RESPONSIVE --- */
+
+@media (max-width: 1200px) {
+  :root {
+    --grid-margin-desktop: 64px;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --text-hero: 60px;
+    --text-display: 44px;
+    --text-heading: 34px;
+  }
+
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --text-hero: 48px;
@@ -285,6 +305,35 @@ img {
   .section {
     padding-top: var(--space-80);
     padding-bottom: var(--space-80);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --text-hero: 40px;
+    --text-display: 30px;
+    --text-subheading: 18px;
+  }
+
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-hero: 34px;
+    --text-display: 26px;
+    --text-heading: 22px;
+    --text-subheading: 18px;
+    --text-body-lg: 15px;
+    --grid-margin-mobile: 16px;
+  }
+
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 
