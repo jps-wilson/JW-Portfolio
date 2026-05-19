@@ -5,6 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="preload" href="/fonts/neue-montreal/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/neue-montreal/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/satoshi/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
   <!-- SEO -->
   <title>Jess Wilson — Web Developer</title>
   <meta name="description" content="Web developer building thoughtful, human-centered interfaces. Vancouver, BC." />
@@ -22,8 +26,35 @@
   <meta name="twitter:description" content="Web developer building thoughtful, human-centered interfaces.">
   <meta name="twitter:image" content="https://jessicapswilson.com/og-image.png">
 
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jess Wilson",
+      "url": "https://jessicapswilson.com",
+      "jobTitle": "Web Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vancouver",
+        "addressRegion": "BC",
+        "addressCountry": "CA"
+      }
+    }
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MDWQRE0T3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-MDWQRE0T3C');
+</script>
 
 <body>
   <div id="root"></div>

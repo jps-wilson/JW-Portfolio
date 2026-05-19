@@ -1,3 +1,4 @@
+import ErrorBoundary from "./components/ui/ErrorBoundary";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense } from "react";
@@ -25,84 +26,86 @@ function App() {
     <div className='app'>
       <Navigation />
       <main className='app__main'>
-        <Suspense fallback={null}>
-          <AnimatePresence mode='wait'>
-            <Routes location={location} key={location.pathname}>
-              <Route
-                path='/'
-                element={
-                  <AnimatedPage>
-                    <Home />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='/about'
-                element={
-                  <AnimatedPage>
-                    <About />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='/work'
-                element={
-                  <AnimatedPage>
-                    <Work />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='/contact'
-                element={
-                  <AnimatedPage>
-                    <Contact />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='/work/pressure'
-                element={
-                  <AnimatedPage>
-                    <Pressure />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='/work/deadwax'
-                element={
-                  <AnimatedPage>
-                    <Deadwax />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='/work/nontendo'
-                element={
-                  <AnimatedPage>
-                    <Nontendo />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='/work/momentum'
-                element={
-                  <AnimatedPage>
-                    <Momentum />
-                  </AnimatedPage>
-                }
-              />
-              <Route
-                path='*'
-                element={
-                  <AnimatedPage>
-                    <NotFound />
-                  </AnimatedPage>
-                }
-              />
-            </Routes>
-          </AnimatePresence>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={null}>
+            <AnimatePresence mode='wait'>
+              <Routes location={location} key={location.pathname}>
+                <Route
+                  path='/'
+                  element={
+                    <AnimatedPage>
+                      <Home />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/about'
+                  element={
+                    <AnimatedPage>
+                      <About />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/work'
+                  element={
+                    <AnimatedPage>
+                      <Work />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/contact'
+                  element={
+                    <AnimatedPage>
+                      <Contact />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/work/pressure'
+                  element={
+                    <AnimatedPage>
+                      <Pressure />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/work/deadwax'
+                  element={
+                    <AnimatedPage>
+                      <Deadwax />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/work/nontendo'
+                  element={
+                    <AnimatedPage>
+                      <Nontendo />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/work/momentum'
+                  element={
+                    <AnimatedPage>
+                      <Momentum />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='*'
+                  element={
+                    <AnimatedPage>
+                      <NotFound />
+                    </AnimatedPage>
+                  }
+                />
+              </Routes>
+            </AnimatePresence>
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
       <BackToTop />

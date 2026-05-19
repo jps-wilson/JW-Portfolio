@@ -1,9 +1,15 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
-import headshot from "../assets/images/jess.jpg";
+import headshot from "../assets/images/jess.webp";
 import "../styles/pages/about.css";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function About() {
+  usePageMeta({
+    title: "About — Jess Wilson",
+    description:
+      "Learn about Jess Wilson — a Vancouver web developer driven by creativity, curiosity, and compassion.",
+  });
   const openingRef = useScrollAnimation();
   const act1Ref = useScrollAnimation();
   const act2Ref = useScrollAnimation();

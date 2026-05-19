@@ -1,8 +1,14 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/contact.css";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function Contact() {
+  usePageMeta({
+    title: "Contact — Jess Wilson",
+    description:
+      "Get in touch with Jess Wilson, web developer based in Vancouver, BC.",
+  });
   const mainRef = useScrollAnimation();
 
   return (
@@ -23,10 +29,7 @@ function Contact() {
       </div>
 
       <div className='contact__bottom'>
-        <a
-          href='mailto:info.jessicapswilson@gmail.com'
-          className='contact__email'
-        >
+        <a href='mailto:contact@jessicapswilson.com' className='contact__email'>
           contact@jessicapswilson.com
         </a>
         <div className='contact__social'>

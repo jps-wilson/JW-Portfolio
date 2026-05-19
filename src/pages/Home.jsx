@@ -7,6 +7,7 @@ import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/home.css";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const values = [
   {
@@ -27,6 +28,11 @@ const values = [
 ];
 
 function Home() {
+  usePageMeta({
+    title: "Jess Wilson — Web Developer",
+    description:
+      "Web developer building thoughtful, human-centered interfaces. Vancouver, BC.",
+  });
   const [ready] = useState(true);
   const { lineRef, nameRef, roleRef } = useOpeningAnimation(ready);
   const heroScrollRef = useHeroScroll();
@@ -104,6 +110,7 @@ function Home() {
               src={screenshots[projects[0].id]}
               alt={projects[0].title}
               className='home-featured__image'
+              loading='lazy'
             />
           </div>
         </Link>
@@ -117,7 +124,7 @@ function Home() {
       <section className='home-still-here' ref={stillHereRef}>
         <h2 className='home-still-here__heading'>Still here? Good.</h2>
         <a
-          href='mailto:info.jessicapswilson@gmail.com'
+          href='mailto:contact@jessicapswilson.com'
           className='home-still-here__email'
         >
           contact@jessicapswilson.com

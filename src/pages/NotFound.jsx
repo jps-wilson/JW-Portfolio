@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import "../styles/pages/not-found.css";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function NotFound() {
+  usePageMeta({
+    title: "404 — Jess Wilson",
+    description: "This page doesn't exist.",
+  });
   return (
     <div className='not-found'>
       <p className='not-found__code'>404</p>
