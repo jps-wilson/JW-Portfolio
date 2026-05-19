@@ -153,7 +153,6 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -163,6 +162,7 @@ body {
   color: var(--color-cream);
   background-color: var(--color-void);
   min-height: 100vh;
+  overscroll-behavior-y: none;
 }
 
 a {
@@ -354,5 +354,12 @@ img {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- SCROLL BEHAVIOR --- */
+@media (hover: hover) {
+  html {
+    scroll-behavior: smooth;
   }
 }

@@ -149,4 +149,9 @@
   .cs__section-code {
     position: static;
   }
+
+  .cs-snippet__pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
 }
