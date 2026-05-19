@@ -34,6 +34,7 @@ function About() {
             src={headshot}
             alt='Jess Wilson'
             className='about-opening__photo'
+            loading='lazy'
           />
         </div>
       </section>

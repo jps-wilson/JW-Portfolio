@@ -1,5 +1,6 @@
 .contact {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -104,5 +105,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-16);
+  }
+}
+/* hover none -> targets touch/pointer devices not just screen width */
+@media (hover: none) {
+  .contact__social-link {
+    opacity: 0.8;
   }
 }
