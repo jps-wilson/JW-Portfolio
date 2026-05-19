@@ -245,4 +245,8 @@
   .work-card__main-text {
     font-size: var(--text-body-lg);
   }
+
+  .work-card__icon {
+    display: none;
+  }
 }
