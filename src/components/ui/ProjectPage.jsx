@@ -34,6 +34,9 @@ function ProjectPage({ project, screenshot, children }) {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    if (window.matchMedia("(max-width: 768px)").matches) return;
+
     const el = imageRef.current;
     if (!el) return;
 

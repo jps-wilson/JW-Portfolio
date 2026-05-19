@@ -1,5 +1,6 @@
 .project-hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -138,7 +139,6 @@
   z-index: 1;
 }
 
-
 .project-case {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -272,6 +272,10 @@
 
   .project-hero__image-wrap {
     height: 400px;
+  }
+
+  .project-hero__url {
+    min-height: 44px;
   }
 
   .project-case {

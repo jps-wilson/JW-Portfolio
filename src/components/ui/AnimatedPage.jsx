@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const pageVariants = {
   initial: { opacity: 0, y: 16 },
@@ -13,13 +13,15 @@ const pageTransition = {
 };
 
 function AnimatedPage({ children }) {
+  const shouldReduce = useReducedMotion();
+
   return (
     <motion.div
       variants={pageVariants}
       initial='initial'
       animate='animate'
       exit='exit'
-      transition={pageTransition}
+      transition={shouldReduce ? { duration: 0 } : pageTransition}
     >
       {children}
     </motion.div>
