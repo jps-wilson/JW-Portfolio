@@ -7,15 +7,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          if (id.includes("react") || id.includes("react-dom")) {
-            return "vendor-react";
-          }
-          if (id.includes("framer-motion")) {
-            return "vendor-framer";
-          }
-          if (id.includes("gsap")) {
-            return "vendor-gsap";
+        manualChunks(id) {
+          if (
+            id.includes("react") ||
+            id.includes("react-dom") ||
+            id.includes("framer-motion") ||
+            id.includes("gsap")
+          ) {
+            return "vendor";
           }
         },
       },
