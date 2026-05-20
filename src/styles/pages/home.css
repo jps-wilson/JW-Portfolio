@@ -39,11 +39,6 @@
   letter-spacing: var(--tracking-caption);
 }
 
-.home-opening__line,
-.home-opening__name,
-.home-opening__role {
-  opacity: 0;
-}
 
 /* Thesis Section */
 .home-thesis {
