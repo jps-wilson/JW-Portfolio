@@ -111,6 +111,7 @@ function Home() {
               src={featuredScreenshot}
               alt={projects[0].title}
               className='home-featured__image'
+              fetchPriority='high'
             />
           </div>
         </Link>
