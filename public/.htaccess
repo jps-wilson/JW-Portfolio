@@ -2,19 +2,16 @@
   RewriteEngine On
   RewriteBase /
 
-  # Serve existing files directly
+  # If the requested file or directory exists, serve it directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # React Router fallback
+  # Otherwise, send everything to index.html so React Router can handle it
   RewriteRule ^ index.html [L]
 </IfModule>
 
-# -----------------------------------
-# Cache Expiration Rules
-# -----------------------------------
-
+# Cache static assets
 <IfModule mod_expires.c>
   ExpiresActive On
 
@@ -23,32 +20,13 @@
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/ico "access plus 1 year"
 
   # Fonts
   ExpiresByType font/woff "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
 
-  # CSS + JS
-  ExpiresByType text/css "access plus 1 year"
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType text/javascript "access plus 1 year"
-</IfModule>
-
-# -----------------------------------
-# Cache-Control Headers
-# -----------------------------------
-
-<IfModule mod_headers.c>
-
-  # Cache assets aggressively
-  <FilesMatch "\.(js|css|png|jpg|jpeg|gif|svg|webp|woff|woff2)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-
-  # Never aggressively cache index.html
-  <FilesMatch "^index\.html$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-  </FilesMatch>
-
+  # CSS and JS
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
