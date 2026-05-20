@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useOpeningAnimation } from "../hooks/useOpeningAnimation";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useHeroScroll } from "../hooks/useHeroScroll";
-import { screenshots } from "../data/screenshots";
+import featuredScreenshot from "../assets/screenshots/pressure.webp";
 import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
@@ -107,9 +107,10 @@ function Home() {
           <div className='home-featured__image-wrap'>
             <div className='home-featured__image-fade'></div>
             <img
-              src={screenshots[projects[0].id]}
+              src={featuredScreenshot}
               alt={projects[0].title}
               className='home-featured__image'
+              fetchpriority='high'
             />
           </div>
         </Link>

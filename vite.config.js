@@ -9,7 +9,13 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           if (id.includes("react") || id.includes("react-dom")) {
-            return "vendor";
+            return "vendor-react";
+          }
+          if (id.includes("framer-motion")) {
+            return "vendor-framer";
+          }
+          if (id.includes("gsap")) {
+            return "vendor-gsap";
           }
         },
       },
