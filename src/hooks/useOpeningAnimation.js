@@ -18,15 +18,12 @@ export function useOpeningAnimation(ready) {
       return;
     }
 
-    gsap.set([lineRef.current, nameRef.current, roleRef.current], {
-      opacity: 0,
-      y: 30,
-    });
+    gsap.set(lineRef.current, { y: 30 });
+    gsap.set([nameRef.current, roleRef.current], { opacity: 0, y: 30 });
 
     const t1 = gsap.timeline({ delay: 0.2 });
 
     t1.to(lineRef.current, {
-      opacity: 1,
       y: 0,
       duration: 1.2,
       ease: "power2.out",
