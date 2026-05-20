@@ -3,15 +3,21 @@ import react from "@vitejs/plugin-react";
 
 const inlineCss = {
   name: "inline-css",
-  transformIndexHtml(html, ctx) {
-    if (!ctx.bundle) return html;
-    const cssChunk = Object.values(ctx.bundle).find((c) =>
-      c.fileName.endsWith(".css"),
-    );
-    if (!cssChunk) return html;
-    const linkTag = `<link rel="stylesheet" crossorigin href="/${cssChunk.fileName}">`;
-    delete ctx.bundle[cssChunk.fileName];
-    return html.replace(linkTag, `<style>${cssChunk.source}</style>`);
+  transformIndexHtml: {
+    order: "post",
+    handler(html, ctx) {
+      if (!ctx.bundle) return html;
+      const cssChunk = Object.values(ctx.bundle).find(
+        (c) =>
+          c.type === "asset" &&
+          c.fileName.startsWith("assets/index") &&
+          c.fileName.endsWith(".css"),
+      );
+      if (!cssChunk) return html;
+      const linkTag = `<link rel="stylesheet" crossorigin href="/${cssChunk.fileName}">`;
+      delete ctx.bundle[cssChunk.fileName];
+      return html.replace(linkTag, `<style>${cssChunk.source}</style>`);
+    },
   },
 };
 
