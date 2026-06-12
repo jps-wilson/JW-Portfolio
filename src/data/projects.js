@@ -15,11 +15,29 @@ export const projects = [
       "I used WeatherAPI to pull real-time barometric pressure data based on the user's location. Rather than displaying raw numbers I translated pressure levels into human language — what it might mean for your energy, your focus, or your body that day. The challenge was making something technical feel warm and personal.",
     belief:
       "Pressure exists because I believe technology should translate the world for you, not just report it. Data without empathy is just noise.",
+    next: { title: "Margin", path: "/work/margin" },
+  },
+  {
+    id: "margin",
+    number: "02",
+    title: "Margin",
+    idea: "What if Figma's version history actually told you what changed?",
+    stack: "REACT · NODE · EXPRESS · FIGMA API",
+    url: "https://margindiff.vercel.app/",
+    accent: "#d85a30",
+    path: "/work/margin",
+    year: "2026",
+    problem:
+      "Figma tells you something changed. It never tells you what. You open a file, scroll through a list of unnamed auto-saves, pick two, and compare them by eye. For shared files with dozens of frames, that's not a workflow. It's a guessing game. I wanted a tool that could actually read the difference and tell you plainly.",
+    solution:
+      "I built a full-stack app that connects to the Figma API, pulls two file versions, and runs a structural diff against the node tree. Instead of squinting at two tabs, you get a changelog grouped by frame with real deltas: what was added, removed, moved, resized, or edited. Scrubber and overlay views let you verify changes visually. The challenge was turning deeply nested API data into something a designer could scan in seconds.",
+    belief:
+      "Margin exists because I believe tools should close the gap between what happened and what you know. Version history without clarity is just a timeline of doubt.",
     next: { title: "Deadwax", path: "/work/deadwax" },
   },
   {
     id: "deadwax",
-    number: "02",
+    number: "03",
     title: "Deadwax",
     idea: "What if playing music felt like a ritual again?",
     stack: "HTML · CSS · JS · API",
@@ -37,7 +55,7 @@ export const projects = [
   },
   {
     id: "nontendo",
-    number: "03",
+    number: "04",
     title: "Nontendo",
     idea: "What if joy needed no explanation?",
     stack: "HTML · CSS · JS",
@@ -55,7 +73,7 @@ export const projects = [
   },
   {
     id: "momentum",
-    number: "04",
+    number: "05",
     title: "Momentum",
     idea: "What if your tasks stayed yours and yours alone?",
     stack: "HTML · CSS · JS",

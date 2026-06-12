@@ -182,6 +182,18 @@ img {
   display: block;
 }
 
+/* --- ACCESSIBILITY --- */
+:focus-vissible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Remove focus style for mouse clicks */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* --- TYPOGRAPHY UTILITIES --- */
 .text-hero {
   font-family: var(--font-montreal);

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useOpeningAnimation } from "../hooks/useOpeningAnimation";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useHeroScroll } from "../hooks/useHeroScroll";
-// import featuredScreenshot from "../assets/screenshots/Pressure.webp";
 import featuredScreenshot from "../assets/screenshots/pressure.webp";
 import { projects } from "../data/projects";
 import { Link } from "react-router-dom";

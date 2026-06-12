@@ -15,6 +15,7 @@ const Pressure = lazy(() => import("./pages/Pressure"));
 const Deadwax = lazy(() => import("./pages/Deadwax"));
 const Nontendo = lazy(() => import("./pages/Nontendo"));
 const Momentum = lazy(() => import("./pages/Momentum"));
+const Margin = lazy(() => import("./pages/Margin"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 import "./styles/app.css";
@@ -91,6 +92,14 @@ function App() {
                   element={
                     <AnimatedPage>
                       <Momentum />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/work/margin'
+                  element={
+                    <AnimatedPage>
+                      <Margin />
                     </AnimatedPage>
                   }
                 />

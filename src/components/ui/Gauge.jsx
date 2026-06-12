@@ -2,6 +2,7 @@ export default function Gauge({ className }) {
   return (
     <svg
       className={className}
+      aria-hidden='true'
       viewBox='0 0 700 577'
       fill='none'
       stroke='currentColor'

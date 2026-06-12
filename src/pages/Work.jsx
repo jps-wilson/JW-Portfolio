@@ -11,6 +11,7 @@ import Gauge from "../components/ui/Gauge";
 import Gamepad from "../components/ui/Gamepad";
 import Notification from "../components/ui/Notification";
 import Record from "../components/ui/Record";
+import MarginIcon from "../components/ui/MarginIcon";
 import { projects } from "../data/projects";
 import "../styles/pages/work.css";
 
@@ -19,6 +20,7 @@ const CHARS =
 
 const ICONS_BY_ID = {
   pressure: Gauge,
+  margin: MarginIcon,
   nontendo: Gamepad,
   momentum: Notification,
   deadwax: Record,
@@ -26,6 +28,7 @@ const ICONS_BY_ID = {
 
 const constraints = [
   "No charts.\nNo numbers.\nNo Noise.",
+  "No zooming.\nNo hunting.\nNo missed changes.",
   "No streaming.\nNo shuffle.\nNo skip.",
   "No download.\nNo install.\nNo cartridge.",
   "No server.\nNo sign-up.\nNo strings.",
