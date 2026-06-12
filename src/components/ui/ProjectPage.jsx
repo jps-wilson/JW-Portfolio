@@ -144,7 +144,7 @@ function ProjectPage({ project, screenshot, children }) {
             <span className='project-nav__next-title'>{nextProject.title}</span>
           </Link>
         ) : (
-          <span className='project-nav__end'>That&apos;s all four.</span>
+          <span className='project-nav__end'>That&apos;s all five.</span>
         )}
       </nav>
     </div>

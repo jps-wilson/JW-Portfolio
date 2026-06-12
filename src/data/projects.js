@@ -69,6 +69,24 @@ export const projects = [
       "I built Momentum using local storage so tasks persist between sessions without ever leaving the user's device. No backend, no database, no account required. The interface is intentionally calm and uncluttered — because a task app should reduce anxiety, not create it.",
     belief:
       "Momentum exists because I believe your data belongs to you. Privacy isn't a premium feature. It's the baseline.",
+    next: { title: "Margin", path: "/work/margin" },
+  },
+  {
+    id: "margin",
+    number: "05",
+    title: "Margin",
+    idea: "What if Figma's version history actually told you what changed?",
+    stack: "REACT · NODE · EXPRESS · FIGMA API",
+    url: "https://margindiff.vercel.app/",
+    accent: "#d85a30",
+    path: "/work/margin",
+    year: "2026",
+    problem:
+      "Figma's version history shows you that something changed. It doesn't tell you what. You scroll through timestamps, pick two versions, and compare by eye. For shared files wit dozens of frames, that means missed updates, blind handoffs, and no reliable way to know what moved between reviews. I wanted a tool that actually read the difference.",
+    solution:
+      "I built Margin to connect to the Figma API, pull two versions of any file, and run a structural diff against the node tree. Instead of guessing, you get a real change log grouped by frame with concrete deltas: what was added, removed, resized, or edited. Scrubber and overlay views let you verify changes visually. The challenge was turning nested API data into something a designer could scan in seconds.",
+    belief:
+      "Margin exists because I believe tools should close the gap between what happened and what you know. Version history without clarity is just a timeline of doubt.",
     next: null,
   },
 ];

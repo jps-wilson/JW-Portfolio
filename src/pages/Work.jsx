@@ -29,6 +29,7 @@ const constraints = [
   "No streaming.\nNo shuffle.\nNo skip.",
   "No download.\nNo install.\nNo cartridge.",
   "No server.\nNo sign-up.\nNo strings.",
+  "No zooming.\nNo hunting.\nNo missed changes.",
 ];
 
 function ScrambleCard({ project, constraint, Icon, index }) {
