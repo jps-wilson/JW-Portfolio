@@ -2,6 +2,7 @@ export default function MarginIcon({ className }) {
   return (
     <svg
       className={className}
+      aria-hidden='true'
       viewBox='0 0 400 500'
       fill='none'
       stroke='currentColor'

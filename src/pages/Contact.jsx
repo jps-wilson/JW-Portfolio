@@ -34,7 +34,7 @@ function Contact() {
         </a>
         <div className='contact__social'>
           <a
-            href='https://www.linkedin.com/in/jess-wilson-876655380/'
+            href='https://www.linkedin.com/in/jess-wilson-876655380'
             target='_blank'
             rel='noopener noreferrer'
             className='contact__social-link'

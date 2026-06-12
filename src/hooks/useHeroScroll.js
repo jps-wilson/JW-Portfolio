@@ -14,8 +14,8 @@ export function useHeroScroll() {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const anim = gsap.to(el, {
       y: -60,
-      filter: isMobile ? {} : { filter: "blur(5px)" },
-      opacity: "none",
+      ...ScrollTrigger(isMobile ? {} : { filter: "blur(5px)" }),
+      opacity: 0,
       paused: true,
     });
 
