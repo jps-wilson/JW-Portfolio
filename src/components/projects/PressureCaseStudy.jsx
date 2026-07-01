@@ -1,4 +1,5 @@
 import CsSection from "../ui/CsSection";
+import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
 
 const sections = [
@@ -56,10 +57,13 @@ window.pressureDriftInterval = setInterval(() => {
 
 function PressureCaseStudy() {
   return (
-    <div className='cs'>
-      {sections.map((section, index) => (
-        <CsSection key={index} section={section} />
-      ))}
+    <div className='cs-wrapper'>
+      <CaseStudyNav sections={sections} />
+      <div className='cs'>
+        {sections.map((section, index) => (
+          <CsSection key={index} section={section} />
+        ))}
+      </div>
     </div>
   );
 }

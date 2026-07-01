@@ -5,6 +5,10 @@ import CodeSnippet from "./CodeSnippet";
 
 gsap.registerPlugin(ScrollTrigger);
 
+function slugify(text) {
+  return text.toLowerCase().replace(/\s+/g, "-");
+}
+
 function CsSection({ section }) {
   const codeRef = useRef(null);
 
@@ -30,6 +34,7 @@ function CsSection({ section }) {
 
   return (
     <div
+      id={slugify(section.label)}
       className={`cs__section ${section.snippet ? "cs__section--split" : "cs__section--intro"}`}
     >
       <div className='cs__section-text'>
