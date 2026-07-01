@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "../../styles/components/case-study-nav.css";
 
 function slugify(text) {
   return text.toLowerCase().replace(/\s+/g, "-");
@@ -55,7 +56,6 @@ function CaseStudyNav({ sections = [] }) {
             onClick={(e) => handleClick(e, id)}
             className={`cs-nav__item ${isActive ? "cs-nav__item--active" : ""}`}
           >
-            <span className='cs-nav__dot'></span>
             <span className='cs-nav__label'>{section.label}</span>
           </a>
         );
