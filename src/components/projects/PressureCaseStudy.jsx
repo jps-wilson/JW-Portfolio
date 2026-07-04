@@ -7,7 +7,7 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if your weather app spoke human?",
-    copy: "Pressure started with a simple frustration — weather apps tell you it's 1013 hPa and leave you to figure out what that means for your body, your mood, your day. The idea was to build something that does the translation for you. Not a dashboard. Not a data dump. A tool that takes atmospheric information and tells you something you can actually use.",
+    copy: "The concept was easy to say and harder to build: a weather app that interprets instead of reports. Not a dashboard of stats you have to decode yourself, but instead, three words and color that tell you more, faster, than a number ever could. Something you'd actually remember on your way out the door.",
     snippet: null,
   },
   {
