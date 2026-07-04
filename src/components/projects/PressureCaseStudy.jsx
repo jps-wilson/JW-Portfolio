@@ -1,3 +1,4 @@
+import PressureDialDemo from "./PressureDialDemo";
 import CsSection from "../ui/CsSection";
 import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
@@ -13,6 +14,7 @@ const sections = [
     label: "The Design",
     heading: "Numbers don't mean anything until they do.",
     copy: "The hardest design decision wasn't visual — it was linguistic. Raw pressure readings are meaningless to most people. The real design challenge was building a translation layer between the data and the person reading it. CALM. MODERATE. HEAVY. Three words that tell you how today might feel before you've even stepped outside. The atmospheric glow reinforces this — the interface shifts temperature with the weather, cold blue for low temperatures, warm amber for high. The data doesn't just update. It changes the mood of the whole screen.",
+    demo: PressureDialDemo,
     snippet: {
       filename: "script.js",
       language: "javascript",

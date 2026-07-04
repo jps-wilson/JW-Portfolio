@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CodeSnippet from "./CodeSnippet";
+import CodeDemoToggle from "./CodeDemoToggle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +48,11 @@ function CsSection({ section }) {
       </div>
       {section.snippet && (
         <div className='cs__section-code' ref={codeRef}>
-          <CodeSnippet snippet={section.snippet} />
+          {section.demo ? (
+            <CodeDemoToggle demo={section.demo} snippet={section.snippet} />
+          ) : (
+            <CodeSnippet snippet={section.snippet} />
+          )}
         </div>
       )}
     </div>
