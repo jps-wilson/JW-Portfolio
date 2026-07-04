@@ -14,7 +14,7 @@ export const projects = [
     solution:
       "I used WeatherAPI to pull real-time barometric pressure data based on the user's location. Rather than displaying raw numbers I translated pressure levels into human language. What it might mean for your energy, your focus, or your body that day. Presented this project at Web Summit Vancouver 2026 as part of a talk on AI as a storytelling amplifier.",
     belief:
-      "Pressure exists because I believe technology should translate the world for you, not just report it. Data without empathy is just noise.",
+      "Data without empathy is just noise. Pressure is my attempt at closing that gap: technology that translates the world instead of just reporting it.",
     next: { title: "Margin", path: "/work/margin" },
   },
   {
@@ -32,7 +32,7 @@ export const projects = [
     solution:
       "I built a full-stack app that connects to the Figma API, pulls two file versions, and runs a structural diff against the node tree. Instead of squinting at two tabs, you get a changelog grouped by frame with real deltas: what was added, removed, moved, resized, or edited. Scrubber and overlay views let you verify changes visually. The challenge was turning deeply nested API data into something a designer could scan in seconds.",
     belief:
-      "Margin exists because I believe tools should close the gap between what happened and what you know. Version history without clarity is just a timeline of doubt.",
+      "Version history without clarity is just a timeline of doubt. Margin is built on the idea that tool should close the gap between what happened and what you actually know.",
     next: { title: "Deadwax", path: "/work/deadwax" },
   },
   {
@@ -50,7 +50,7 @@ export const projects = [
     solution:
       "I built a working turntable interface that connects to Spotify's API, allowing users to browse and play records as though they were handling physical vinyl. The visual design was as important as the functionality — every interaction needed to feel analog and warm in a digital space. The challenge was making an API feel like a piece of furniture.",
     belief:
-      "Deadwax exists because I believe the way we interact with things changes how much we value them. Technology can restore ritual, not just replace it.",
+      "The way we interact with things changes how much we value them, and that's the belief behind Deadwax. Technology can restore ritual, not just replace it.",
     next: { title: "Nontendo", path: "/work/nontendo" },
   },
   {
@@ -68,7 +68,7 @@ export const projects = [
     solution:
       "I built a fully functional Game Boy interface from scratch using HTML and CSS, with Snake running inside it. Every detail of the hardware was considered — the buttons, the screen, the proportions. The challenge was making something that felt tactile and physical using nothing but code.",
     belief:
-      "Nontendo exists because I believe joy is a legitimate design goal. Not every interaction needs to be productive. Sometimes the best thing technology can do is make you smile.",
+      "Joy is a legitimate design goal, and not every interaction needs to be productive. Nontendo is proof that sometimes the best thing technology can do is make you smile.",
     next: { title: "Momentum", path: "/work/momentum" },
   },
   {
@@ -86,7 +86,7 @@ export const projects = [
     solution:
       "I built Momentum using local storage so tasks persist between sessions without ever leaving the user's device. No backend, no database, no account required. The interface is intentionally calm and uncluttered — because a task app should reduce anxiety, not create it.",
     belief:
-      "Momentum exists because I believe your data belongs to you. Privacy isn't a premium feature. It's the baseline.",
+      "Your data belongs to you. Privacy isn't a premium feature, it's the baseline. Momentum was built to actually mean that.",
     next: null,
   },
 ];

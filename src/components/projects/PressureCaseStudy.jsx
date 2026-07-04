@@ -7,7 +7,7 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if your weather app spoke human?",
-    copy: "The concept was easy to say and harder to build: a weather app that interprets instead of reports. Not a dashboard of stats you have to decode yourself, but instead, three words and color that tell you more, faster, than a number ever could. Something you'd actually remember on your way out the door.",
+    copy: "The concept was easy to say and harder to build: a weather app that interprets instead of reports. Not a dashboard of stats you have to decode yourself. Three words and color that tell you more, faster, than a number ever could. Something you'd actually remember on your way out the door.",
     snippet: null,
   },
   {
