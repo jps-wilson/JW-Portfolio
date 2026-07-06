@@ -1,0 +1,28 @@
+.cs-demo__tabs {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.cs-demo__tab {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.4;
+  background: none;
+  border: 1px solid var(--color-warm-dark);
+  border-radius: 4px;
+  padding: var(--space-8) var(--space-16);
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cs-demo__tab--active {
+  opacity: 1;
+  border-color: var(--color-ember);
+  color: var(--color-ember);
+}

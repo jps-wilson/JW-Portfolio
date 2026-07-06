@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CodeSnippet from "./CodeSnippet";
+import "../../styles/components/code-demo-toggle.css";
 
 function CodeDemoToggle({ demo: DemoComponent, snippet }) {
   const [view, setView] = useState("demo");

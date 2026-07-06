@@ -1,3 +1,4 @@
+import MarginScrubberDemo from "./MarginScrubberDemo";
 import CsSection from "../ui/CsSection";
 import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
@@ -6,25 +7,26 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if Figma had a changelog you could actually read?",
-    copy: "Figma's version history is a list of timestamps. If you're lucky, someone named their saves. If not, you're comparing two snapshots by eye and hoping you catch everything. Collaborative files with dozens of frames make that unrealistic. I wanted to build something that reads both file versions, walks the node tree, and produces a structured diff you can scan in seconds. Not a pixel overlay. A real changelog, grouped by frame, with concrete numbers.",
+    copy: "The decision was to rejext pixel comparison entirely. Not a side-by-side you eyeball, not an overlay you squint at, but a real changelog: what changed, grouped by frame, with actual numbers behind every entry.",
     snippet: null,
   },
   {
     label: "The Design",
     heading: "An editorial page, not a dashboard.",
     copy: "Margin borrows from print annotation. The vertical ember rule on the left side references a notebook margin. Fraunces and Fragment Mono give the interface a typeset quality without feeling heavy. Change-type badges (added, removed, moved, resized, text) are color-coded so you can scan a long changelog without reading every line. Sections collapse when a diff returns hundreds of changes. The browser mock on the paste page walks new users through finding their Figma URL with an animated copy-paste demonstration. Every screen was designed in Figma first, then built to match.",
+    demo: MarginScrubberDemo,
     snippet: {
       filename: "Scrubber.jsx",
       language: "jsx",
       code: `{/* clip-path reveals the "from" image as you drag */}
-      <img
-        className="scrubber-image scrubber-image--from"
-        src={fromImage}
-        alt="From version"
-        style={{
-          clipPath: \`inset(0 \${100 - sliderPos}% 0 0)\`
-        }}
-      />`,
+<img
+  className="scrubber-image scrubber-image--from"
+  src={fromImage}
+  alt="From version"
+  style={{
+    clipPath: \`inset(0 \${100 - sliderPos}% 0 0)\`
+  }}
+/>`,
     },
   },
   {
@@ -35,26 +37,29 @@ const sections = [
       filename: "diff.js",
       language: "javascript",
       code: `function compareNodes(fromMap, toMap) {
-        const changes = [];
+  const changes = [];
 
-        for (const [id, toNode] of toMap) {
-          const fromNode = fromMap.get(id);
+  for (const [id, toNode] of toMap) {
+    const fromNode = fromMap.get(id);
 
-          if (!fromNode) {
-            changes.push({ type: "added", node: toNode });
-            continue;
-          }
+    if (!fromNode) {
+      changes.push({ type: "added", node: toNode });
+      continue;
+    }
 
-          // Flag moves beyond 1px threshold
-          const dx = Math.abs(toNode.x - fromNode.x);
-          const dy = Math.abs(toNode.y - fromNode.y);
-          if (dx > 1 || dy > 1) {
-            changes.push({ type: "moved", node: toNode,
-              delta: { dx, dy } });
-          }
-        }
-          return changes;
-      }`,
+    // Flag moves beyond 1px threshold
+    const dx = Math.abs(toNode.x - fromNode.x);
+    const dy = Math.abs(toNode.y - fromNode.y);
+    if (dx > 1 || dy > 1) {
+      changes.push({ type: "moved", node: toNode,
+        delta: { dx, dy } });
+    }
+
+    // Additional checks for removed, resized, and edited nodes
+    // follow the same pattern — omitted here for length
+  }
+  return changes;
+}`,
     },
   },
 ];
