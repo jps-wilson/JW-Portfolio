@@ -1,3 +1,4 @@
+import DeadwaxLoaderDemo from "./DeadwaxLoaderDemo";
 import CsSection from "../ui/CsSection";
 import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
@@ -38,6 +39,7 @@ const sections = [
     label: "The Build",
     heading: "Drag, drop, and play.",
     copy: "The core interaction is a drag and drop system — pick up a record from the collection sidebar, drop it onto the platter, and the tonearm moves into position. Built with the native HTML5 Drag and Drop API with touch event support layered on top for mobile. Playback runs through the Spotify Iframe API, which handles the actual audio. The turntable controls — speed, pitch, volume — drive the visual state of the player. Every interaction is handled so the experience feels deliberate and physical rather than like a web page.",
+    demo: DeadwaxLoaderDemo,
     snippet: {
       filename: "app.js",
       language: "javascript",
