@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useOpeningAnimation } from "../hooks/useOpeningAnimation";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useHeroScroll } from "../hooks/useHeroScroll";
-import featuredScreenshot from "../assets/screenshots/pressure.webp";
 import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/ui/SectionLabel";
 import "../styles/pages/home.css";
 import { usePageMeta } from "../hooks/usePageMeta";
+import PressureFeaturedDemo from "../components/projects/PressureFeaturedDemo";
 
 const values = [
   {
@@ -105,13 +105,7 @@ function Home() {
 
           {/* Image */}
           <div className='home-featured__image-wrap'>
-            <div className='home-featured__image-fade'></div>
-            <img
-              src={featuredScreenshot}
-              alt={projects[0].title}
-              className='home-featured__image'
-              fetchPriority='high'
-            />
+            <PressureFeaturedDemo />
           </div>
         </Link>
 
