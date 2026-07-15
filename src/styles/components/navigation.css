@@ -19,6 +19,8 @@
 }
 
 .nav__logo {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-montreal);
   font-weight: 500;
   font-size: 18px;
@@ -34,7 +36,6 @@
 .nav__logo-expand,
 .nav__logo-space {
   display: inline-block;
-  vertical-align: baseline;
   max-width: 0;
   overflow: hidden;
   opacity: 0;
