@@ -52,7 +52,7 @@ function Home() {
             Jess Wilson
           </p>
           <p className='home-opening__role' ref={roleRef}>
-            Web Developer
+            Creative Developer
           </p>
         </div>
       </section>
