@@ -27,7 +27,7 @@ const ICONS_BY_ID = {
 };
 
 const constraints = [
-  "No charts.\nNo numbers.\nNo Noise.",
+  "No charts.\nNo numbers.\nNo noise.",
   "No zooming.\nNo hunting.\nNo missed changes.",
   "No streaming.\nNo shuffle.\nNo skip.",
   "No download.\nNo install.\nNo cartridge.",

@@ -6,13 +6,13 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if the game was the container, not just the content?",
-    copy: "Most browser games exist on a blank page. Nontendo started from a different question — what if the hardware was part of the experience? The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had to feel physical before the game felt fun.",
+    copy: "Most browser games exist on a blank page. Nontendo started from a different question: what if the hardware was part of the experience? The constraint was simple: build a Game Boy that actually works. Not a Game Boy skin over an existing game, but a device first, a game second. The shell had to feel physical before the game felt fun.",
     snippet: null,
   },
   {
     label: "The Design",
     heading: "Building hardware with CSS",
-    copy: "The Game Boy is built entirely from CSS — no images, no SVGs, no assets. Every surface, shadow, button, and screen is a div with carefully layered gradients, border-radius, and box-shadows. The goal was physical realism: the kind of depth you get from holding something in your hands. The power LED pulses. The screen has a scanline overlay. The buttons depress when you press them. None of it is necessary for the game to work. All of it is necessary for the game to feel right.",
+    copy: "Every surface, shadow, button, and screen is a div, layered with gradients, border-radius, and box-shadows until it reads as something with real depth. The power LED fades in and out with each press. The screen has a scanline overlay. The buttons depress when you press them. None of it is necessary for the game to work, but it is necessary for the game to feel right.",
     snippet: {
       filename: "styles.css",
       language: "css",
@@ -57,7 +57,7 @@ const sections = [
   {
     label: "The Build",
     heading: "Snake is a solved problem. Making it feel real isn't.",
-    copy: "The Snake game itself is vanilla JavaScript on an HTML canvas — grid-based movement, collision detection, food spawning, score tracking. The interesting engineering was everything around it. The boot sequence runs a loading bar animation before revealing the NONTENDO logo, then awaits for the user to press START. The power switch toggles the screen on and off with an LED fade. Touch events mirror keyboard input so the D-pad works on mobile. Every state transition — idle, booting, playing, paused, game over — is handled explicitly so nothing ever looks broken.",
+    copy: "The Snake game itself is vanilla JavaScript on an HTML canvas: grid-based movement, collision detection, food spawning, score tracking. The interesting engineering was everything around it. The boot sequence runs a loading bar animation before revealing the NONTENDO logo, then waits for the user to press START. The power switch toggles the screen on and off with an LED fade. Touch events mirror keyboard input so the D-pad works on mobile. Every state transition (idle, booting, playing, paused, game over) is handled explicitly so nothing ever looks broken.",
     snippet: {
       filename: "gameboy.js",
       language: "javascript",

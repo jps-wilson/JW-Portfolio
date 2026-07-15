@@ -1,3 +1,4 @@
+import DeadwaxLoaderDemo from "./DeadwaxLoaderDemo";
 import CsSection from "../ui/CsSection";
 import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
@@ -6,13 +7,13 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if your music player felt like the real thing?",
-    copy: "Deadwax started with a simple frustration — digital music players are functional but lifeless. You press play and something happens. There's no ritual, no physicality, no sense that you're doing anything meaningful. Deadwax was built to bring that back. A turntable you actually have to load. A record you drag onto the platter. A needle that moves. The music doesn't start until you make it start.",
+    copy: "A turntable you actually have to load. A record you drag onto the platter. A needle that moves. The music doesn't start until you make it start. Not a play button. A physical sequence you have to complete.",
     snippet: null,
   },
   {
     label: "The Design",
     heading: "Every surface built from scratch.",
-    copy: "The turntable is built entirely in CSS — no images, no external assets. The platter, the tonearm, the headshell, the stylus, the speed selector, the pitch slider, the volume knob, the LED, the speaker vents. Each element is layered gradients, box-shadows, and border-radius working together to simulate depth and material. The arm moves when you load a record. The LED glows when you press play. The platter pulses when music is playing. The detail isn't decoration — it's the whole point.",
+    copy: "The turntable is built entirely in CSS. No images, no external assets. The platter, tonearm, the headshell, the stylus, the speed selector, the pitch slider, the volume knob, the LED, the speaker vents. Each element is layered gradients, box-shadows, and border-radius working together to simulate depth and material. The arm moves when you load a record. The LED glows when you press play. The record spins the moment playback starts. The detail isn't just decoration, it's the foundation of the project.",
     snippet: {
       filename: "style.css",
       language: "css",
@@ -37,7 +38,8 @@ const sections = [
   {
     label: "The Build",
     heading: "Drag, drop, and play.",
-    copy: "The core interaction is a drag and drop system — pick up a record from the collection sidebar, drop it onto the platter, and the tonearm moves into position. Built with the native HTML5 Drag and Drop API with touch event support layered on top for mobile. Playback runs through the Spotify Iframe API, which handles the actual audio. The turntable controls — speed, pitch, volume — drive the visual state of the player. Every interaction is handled so the experience feels deliberate and physical rather than like a web page.",
+    copy: "The core interaction is a drag and drop system. Pick up a record from the collection sidebar, drop it onto the platter, and the tonearm moves into position. Built with the native HTML5 Drag and Drop API with touch event support layered on top for mobile. Playback runs through the Spotify Iframe API, which handles the actual audio. The turntable controls (speed, pitch, volume) drive the visual state of the player. Every interaction is handled so the experience feels deliberate and physical rather than like a web page.",
+    demo: DeadwaxLoaderDemo,
     snippet: {
       filename: "app.js",
       language: "javascript",

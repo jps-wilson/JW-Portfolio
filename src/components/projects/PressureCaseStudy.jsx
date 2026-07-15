@@ -1,3 +1,4 @@
+import PressureDialDemo from "./PressureDialDemo";
 import CsSection from "../ui/CsSection";
 import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
@@ -6,13 +7,14 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if your weather app spoke human?",
-    copy: "Pressure started with a simple frustration — weather apps tell you it's 1013 hPa and leave you to figure out what that means for your body, your mood, your day. The idea was to build something that does the translation for you. Not a dashboard. Not a data dump. A tool that takes atmospheric information and tells you something you can actually use.",
+    copy: "The concept was easy to say and harder to build: a weather app that interprets instead of reports. Not a dashboard of stats you have to decode yourself. Three words and color that tell you more, faster, than a number ever could. Something you'd actually remember on your way out the door.",
     snippet: null,
   },
   {
     label: "The Design",
     heading: "Numbers don't mean anything until they do.",
     copy: "The hardest design decision wasn't visual — it was linguistic. Raw pressure readings are meaningless to most people. The real design challenge was building a translation layer between the data and the person reading it. CALM. MODERATE. HEAVY. Three words that tell you how today might feel before you've even stepped outside. The atmospheric glow reinforces this — the interface shifts temperature with the weather, cold blue for low temperatures, warm amber for high. The data doesn't just update. It changes the mood of the whole screen.",
+    demo: PressureDialDemo,
     snippet: {
       filename: "script.js",
       language: "javascript",

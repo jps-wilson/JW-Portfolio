@@ -1,0 +1,135 @@
+.pressure-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-24);
+}
+
+.pressure-demo__dial {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(220, 210, 195, 0.35);
+  background: radial-gradient(
+    circle at center,
+    rgba(196, 161, 110, 0.08),
+    rgba(13, 15, 16, 0) 65%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pressure-demo__dial:active {
+  cursor: grabbing;
+}
+
+.pressure-demo__dial:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 4px;
+}
+
+.pressure-demo__ticks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pressure-demo__handle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform-origin: center center;
+}
+
+.pressure-demo__handle-dot {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  transform: translateX(-50%);
+}
+
+.pressure-demo__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.pressure-demo__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.pressure-demo__value {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-cream);
+  opacity: 0.7;
+}
+
+.pressure-demo--calm .pressure-demo__label {
+  color: #6e7c86;
+}
+.pressure-demo--moderate .pressure-demo__label {
+  color: #8f8574;
+}
+.pressure-demo--heavy .pressure-demo__label {
+  color: #c6a16e;
+}
+
+.pressure-demo--calm .pressure-demo__dial {
+  border-color: #6e7c86;
+  box-shadow:
+    0 0 30px rgba(110, 124, 134, 0.12),
+    inset 0 0 15px rgba(110, 124, 134, 0.08);
+}
+.pressure-demo--moderate .pressure-demo__dial {
+  border-color: #8f8574;
+  box-shadow:
+    0 0 35px rgba(143, 133, 116, 0.16),
+    inset 0 0 17px rgba(143, 133, 116, 0.1);
+}
+.pressure-demo--heavy .pressure-demo__dial {
+  border-color: #c6a16e;
+  box-shadow:
+    0 0 40px rgba(198, 161, 110, 0.18),
+    inset 0 0 20px rgba(198, 161, 110, 0.12);
+}
+
+.pressure-demo__insight {
+  font-family: var(--font-satoshi);
+  font-size: var(--text-body-lg);
+  color: var(--color-cream);
+  opacity: 0.75;
+  text-align: center;
+  max-width: 280px;
+}
+
+.pressure-demo__hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.3;
+  text-align: center;
+}
