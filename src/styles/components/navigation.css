@@ -31,6 +31,25 @@
   color: var(--color-ember);
 }
 
+.nav__logo-expand,
+.nav__logo-space {
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  transition:
+    max-width 0.4s ease,
+    opacity 0.3s ease;
+}
+
+.nav__logo:hover .nav__logo-expand,
+.nav__logo:hover .nav__logo-space {
+  max-width: 80px;
+  opacity: 1;
+}
+
 .nav__links {
   display: flex;
   align-items: center;
