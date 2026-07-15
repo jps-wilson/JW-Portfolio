@@ -2,15 +2,44 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: var(--space-24);
+  padding: var(--space-24);
   background-color: var(--color-surface);
 }
 
+/* LOCATION */
+.pressure-featured-demo__location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.pressure-featured-demo__city {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+}
+
+.pressure-featured-demo__region {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: rgba(240, 237, 232, 0.45);
+}
+
+/* DIAL */
 .pressure-featured-demo__dial {
   position: relative;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 2px solid rgba(220, 210, 195, 0.35);
   background: radial-gradient(
@@ -21,6 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: pressure-featured-demo-breathe 4s ease-in-out infinite;
 }
 
 .pressure-featured-demo__ticks {
@@ -40,10 +70,10 @@
 
 .pressure-featured-demo__handle-dot {
   position: absolute;
-  top: 8px;
+  top: 10px;
   left: 50%;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: var(--color-cream);
   transform: translateX(-50%);
@@ -53,23 +83,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   pointer-events: none;
 }
 
 .pressure-featured-demo__label {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: var(--tracking-mono);
   text-transform: uppercase;
-  transition: color 0.3s ease;
 }
 
 .pressure-featured-demo__value {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--color-cream);
   opacity: 0.7;
+}
+
+/*  INSIGHT */
+
+.pressure-featured-demo__insight {
+  max-width: 260px;
+  font-family: var(--font-satoshi);
+  font-size: 12px;
+  line-height: var(--leading-caption);
+  text-align: center;
+  color: rgba(240, 237, 232, 0.6);
+}
+
+/* STATE COLORS (BREATHING GLOW CONTROL AS WELL) */
+.pressure-featured-demo--calm {
+  --pressure-glow: rgba(110, 124, 134, 0.16);
+}
+.pressure-featured-demo--moderate {
+  --pressure-glow: rgba(143, 133, 116, 0.2);
+}
+.pressure-featured-demo--heavy {
+  --pressure-glow: rgba(198, 161, 110, 0.24);
 }
 
 .pressure-featured-demo--calm .pressure-featured-demo__label {
@@ -84,19 +135,45 @@
 
 .pressure-featured-demo--calm .pressure-featured-demo__dial {
   border-color: #6e7c86;
-  box-shadow:
-    0 0 30px rgba(110, 124, 134, 0.12),
-    inset 0 0 15px rgba(110, 124, 134, 0.08);
 }
 .pressure-featured-demo--moderate .pressure-featured-demo__dial {
   border-color: #8f8574;
-  box-shadow:
-    0 0 35px rgba(143, 133, 116, 0.16),
-    inset 0 0 17px rgba(143, 133, 116, 0.1);
 }
 .pressure-featured-demo--heavy .pressure-featured-demo__dial {
   border-color: #c6a16e;
-  box-shadow:
-    0 0 40px rgba(198, 161, 110, 0.18),
-    inset 0 0 20px rgba(198, 161, 110, 0.12);
+}
+
+/* MOTION */
+/* Same ambient pulse as the real app's idle "breathe" state - scale plus a glowing box-shadow in the current strain color. Flattened to a single still frame automatically by the site-wide prefers-reduced-motion rule in index.css */
+@keyframes pressure-featured-demo-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 40px var(--pressure-glow),
+      inset 0 0 20px var(--pressure-glow);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow:
+      0 0 60px var(--pressure-glow),
+      inset 0 0 30px var(--pressure-glow);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .pressure-featured-demo {
+    gap: var(--space-16);
+    padding: var(--space-16);
+  }
+
+  .pressure-featured-demo__dial {
+    width: 150px;
+    height: 150px;
+  }
+
+  .pressure-featured-demo__insight {
+    display: none;
+  }
 }

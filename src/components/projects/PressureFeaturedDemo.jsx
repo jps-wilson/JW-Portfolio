@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo, useEffect } from "react";
+import { useMemo } from "react";
 import "../../styles/components/pressure-featured-demo.css";
 
 const MIN_PRESSURE = 990;
@@ -6,7 +6,7 @@ const MAX_PRESSURE = 1030;
 const MIN_ANGLE = -150;
 const MAX_ANGLE = 150;
 
-// Translates raw hPa into a human-readable state - this is the core idea behind Pressure
+// Same three bands as the real app's setStrain() - keppt identical on purpose
 function getStrain(pressure) {
   if (pressure > 1018) {
     return {
@@ -34,6 +34,9 @@ function pressureToAngle(pressure) {
   const normalized = (pressure - MIN_PRESSURE) / (MAX_PRESSURE - MIN_PRESSURE);
   return MIN_ANGLE + normalized * (MAX_ANGLE - MIN_ANGLE);
 }
+
+// Static reading, not a live feed - no API call, no fetch
+const VANCOUVER = { city: "Vancouver", region: "Canada", pressure: 1009 };
 
 function DialTicks() {
   const ticks = [];
@@ -73,28 +76,20 @@ function DialTicks() {
 }
 
 function PressureFeaturedDemo() {
-  const [pressure, setPressure] = useState(1013);
-  const intervalRef = useRef(null);
-  const strain = useMemo(() => getStrain(pressure), [pressure]);
-  const angle = pressureToAngle(pressure);
-
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setPressure((p) => {
-        // Functional update avoids stale closure - interval would read the initial value forever otherwise
-        if (p >= MAX_PRESSURE) return MIN_PRESSURE;
-        return p + 1;
-      });
-    }, 50);
-
-    // Clear on unmount to prevent the interval firing after the component is gone
-    return () => clearInterval(intervalRef.current);
-  }, []);
+  const strain = useMemo(() => getStrain(VANCOUVER.pressure), []);
+  const angle = pressureToAngle(VANCOUVER.pressure);
 
   return (
     <div
       className={`pressure-featured-demo pressure-featured-demo--${strain.state}`}
     >
+      <div className='pressure-featured-demo__location'>
+        <span className='pressure-featured-demo__city'>{VANCOUVER.city}</span>
+        <span className='pressure-featured-demo__region'>
+          {VANCOUVER.region}
+        </span>
+      </div>
+
       <div className='pressure-featured-demo__dial'>
         <DialTicks />
         <div
@@ -105,9 +100,13 @@ function PressureFeaturedDemo() {
         </div>
         <div className='pressure-featured-demo__center'>
           <span className='pressure-featured-demo__label'>{strain.label}</span>
-          <span className='pressure-featured-demo__value'>{pressure} hPa</span>
+          <span className='pressure-featured-demo__value'>
+            {VANCOUVER.pressure} hPa
+          </span>
         </div>
       </div>
+
+      <p className='pressure-featured-demo__insight'>{strain.insight}</p>
     </div>
   );
 }
