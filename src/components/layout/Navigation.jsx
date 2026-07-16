@@ -16,7 +16,11 @@ function Navigation() {
     <nav className='nav'>
       <div className='nav__inner'>
         {/* Logo */}
-        <NavLink to='/' className='nav__logo'>J<span className='nav__logo-expand'>ess</span><span className='nav__logo-space'>&nbsp;</span>W<span className='nav__logo-expand'>ilson</span></NavLink>
+        <NavLink to='/' className='nav__logo'>
+          J<span className='nav__logo-expand'>ess</span>
+          <span className='nav__logo-space'>&nbsp;</span>W
+          <span className='nav__logo-expand'>ilson</span>
+        </NavLink>
 
         {/* Desktop Nav Links */}
         <div className='nav__links'>

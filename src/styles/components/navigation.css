@@ -72,11 +72,14 @@
   letter-spacing: var(--tracking-nav);
   text-transform: uppercase;
   color: var(--color-cream);
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    letter-spacing 0.3s cubic-bezier(0.25, 0, 0, 1);
 }
 
 .nav__link:hover {
   color: var(--color-ember);
+  letter-spacing: calc(var(--tracking-nav) + 0.03em);
 }
 
 .nav__link--active {
@@ -99,7 +102,9 @@
   width: 24px;
   height: 2px;
   background-color: var(--color-cream);
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   transform-origin: center;
 }
 
@@ -117,15 +122,30 @@
 
 /* Mobile Menu */
 .nav__mobile {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: var(--space-24);
   padding: var(--space-40) var(--grid-margin-mobile);
   background-color: var(--color-void);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.3s cubic-bezier(0.25, 0, 0, 1),
+    transform 0.3s cubic-bezier(0.25, 0, 0, 1),
+    visibility 0s linear 0.3s;
 }
 
 .nav__mobile--open {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity 0.3s cubic-bezier(0.25, 0, 0, 1),
+    transform 0.3s cubic-bezier(0.25, 0, 0, 1),
+    visibility 0s linear 0s;
 }
 
 /* --- RESPONSIVE --- */
