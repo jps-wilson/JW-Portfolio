@@ -1,0 +1,141 @@
+.pressure-visual {
+  /* real Pressure app tokens, scoped locally so they never leak into or collide with the portfolio's global --color-* vars */
+  --pv-background: #0d0f10;
+  --pv-secondary: #171a1c;
+  --pv-text-primary: #e8e6e3;
+  --pv-accent-env-alert: #c6a16e;
+  --pv-subtle-tone: #6e7c86;
+  --pv-cold-atmosphere: #1a232a;
+  --pv-mild-atmosphere: #171a1c;
+  --pv-warm-atmosphere: #2a2118;
+  --pv-temp-cold-glow: rgba(110, 180, 220, 0.24);
+  --pv-temp-mild-glow: rgba(198, 161, 110, 0.18);
+  --pv-temp-warm-glow: rgba(220, 140, 80, 0.22);
+
+  /* aliases used by the SVG/label classes below */
+  --pv-ink: var(--pv-text-primary);
+  --pv-ink-soft: var(--pv-subtle-tone);
+  --pv-accent: var(--pv-accent-env-alert);
+  --pv-line: rgba(232, 230, 227, 0.16);
+  --pv-line-faint: rgba(232, 230, 227, 0.07);
+  --pv-dur: 12s;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.pressure-visual__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      90% 90% at 18% 22%,
+      var(--pv-temp-cold-glow) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      90% 90% at 82% 78%,
+      var(--pv-temp-warm-glow) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      120% 120% at 50% 50%,
+      var(--pv-temp-mild-glow) 0%,
+      transparent 70%
+    ),
+    linear-gradient(
+      135deg,
+      var(--pv-cold-atmosphere),
+      var(--pv-mild-atmosphere) 45%,
+      var(--pv-warm-atmosphere) 100%
+    );
+  background-size: 280% 280%;
+  animation: pressure-visual-drift var(--pv-dur) ease-in-out infinite alternate;
+}
+
+@keyframes pressure-visual-drift {
+  0% {
+    background-position:
+      0% 30%,
+      100% 70%,
+      0% 0%;
+  }
+  50% {
+    background-position:
+      45% 65%,
+      55% 35%,
+      60% 55%;
+  }
+  100% {
+    background-position:
+      20% 55%,
+      80% 45%,
+      100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pressure-visual__bg {
+    animation: none;
+  }
+}
+
+.pressure-visual__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.pressure-visual__blueprint {
+  position: absolute;
+  z-index: 1;
+  width: 78%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stroke-thin {
+  fill: none;
+  stroke: var(--pv-ink);
+  stroke-width: 1;
+}
+
+.stroke-faint {
+  fill: none;
+  stroke: var(--pv-line-faint);
+  stroke-width: 1;
+}
+
+.stroke-guide {
+  fill: none;
+  stroke: var(--pv-line);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+}
+
+.stroke-accent {
+  fill: none;
+  stroke: var(--pv-accent);
+  stroke-width: 1.3;
+}
+
+.label-mono {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  fill: var(--pv-ink-soft);
+}
+
+.label-mono-accent {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  fill: var(--pv-accent);
+}

@@ -17,7 +17,7 @@ function splitAtFirstSentence(text) {
   return { hook: text.slice(0, idx + 1), rest: text.slice(idx + 2) };
 }
 
-function ProjectPage({ project, screenshot, children }) {
+function ProjectPage({ project, screenshot, visual, children }) {
   const heroRef = useScrollAnimation();
   const caseRef = useScrollAnimation();
   const beliefRef = useScrollAnimation();
@@ -91,16 +91,25 @@ function ProjectPage({ project, screenshot, children }) {
           </div>
         </div>
         <div className='project-hero__image-wrap'>
-          {screenshot && (
+          {visual ? (
             <>
-              <img
-                ref={imageRef}
-                src={screenshot}
-                alt={`${project.title} screenshot`}
-                className='project-hero__image'
-              />
+              <div ref={imageRef} className='project-hero__image'>
+                {visual}
+              </div>
               <div className='project-hero__image-fade'></div>
             </>
+          ) : (
+            screenshot && (
+              <>
+                <img
+                  ref={imageRef}
+                  src={screenshot}
+                  alt={`${project.title} screenshot`}
+                  className='project-hero__image'
+                />
+                <div className='project-hero__image-fade'></div>
+              </>
+            )
           )}
         </div>
       </section>
