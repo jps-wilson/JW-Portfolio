@@ -50,7 +50,7 @@ function Contact() {
             GitHub
           </a>
           <a
-            href='/resume/jess-wilson-resume.pdf'
+            href='/files/jess-wilson-resume.pdf'
             download
             className='contact__resume-btn'
           >
