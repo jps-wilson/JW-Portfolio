@@ -94,7 +94,20 @@
 .contact__social-link:hover {
   opacity: 1;
 }
+.contact__resume-btn {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.4;
+  border-bottom: 1px solid var(--color-ember);
+  transition: opacity 0.3s ease;
+}
 
+.contact__resume-btn:hover {
+  opacity: 1;
+}
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .contact {

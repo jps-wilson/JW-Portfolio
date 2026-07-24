@@ -17,6 +17,7 @@ const Nontendo = lazy(() => import("./pages/Nontendo"));
 const Momentum = lazy(() => import("./pages/Momentum"));
 const Margin = lazy(() => import("./pages/Margin"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Resume = lazy(() => import("./pages/Resume"));
 
 import "./styles/app.css";
 
@@ -100,6 +101,14 @@ function App() {
                   element={
                     <AnimatedPage>
                       <Margin />
+                    </AnimatedPage>
+                  }
+                />
+                <Route
+                  path='/resume'
+                  element={
+                    <AnimatedPage>
+                      <Resume />
                     </AnimatedPage>
                   }
                 />

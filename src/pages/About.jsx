@@ -114,15 +114,6 @@ function About() {
         <p className='about-act__closing'>
           Code is the craft. People are the point.
         </p>
-
-        <a
-          href='../../public/resume/jess-wilson-resume.pdf'
-          download
-          className='about-resume-btn'
-        >
-          <span className='about-resume-btn__label'>Download resume</span>
-          <span className='about-resume-btn__arrow'>&darr;</span>
-        </a>
       </section>
     </div>
   );
