@@ -116,7 +116,7 @@ function About() {
         </p>
 
         <a
-          href='../../public/resume/jess-wilson-resume.pdf'
+          href='/resume/jess-wilson-resume.pdf'
           download
           className='about-resume-btn'
         >
