@@ -47,7 +47,7 @@ function Resume() {
       <div className='resume__header'>
         <h1 className='resume__title'>Resume</h1>
         <a
-          href='/resume/jess-wilson-resume.pdf'
+          href='/files/jess-wilson-resume.pdf'
           download
           className='resume__download'
         >
@@ -55,7 +55,7 @@ function Resume() {
         </a>
       </div>
       <iframe
-        src='/resume/jess-wilson-resume.pdf'
+        src='/files/jess-wilson-resume.pdf'
         className='resume__viewer'
         title='Jess Wilson Resume'
         width='100%'
