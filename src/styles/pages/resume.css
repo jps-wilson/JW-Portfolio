@@ -1,0 +1,36 @@
+.resume {
+  padding: var(--space-120) var(--grid-margin-desktop);
+}
+
+.resume__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-32);
+}
+
+.resume__title {
+  font-family: var(--font-montreal);
+  font-size: var(--text-heading);
+  font-weight: 500;
+  color: var(--color-cream);
+}
+
+.resume__download {
+  font-family: var(--font-montreal);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  background-color: var(--color-ember);
+  color: var(--color-void);
+  padding: 12px 24px;
+  display: inline-block;
+}
+
+.resume__viewer {
+  width: 100%;
+  height: 80vh;
+  border: none;
+  display: block;
+}
