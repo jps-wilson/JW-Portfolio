@@ -1,0 +1,112 @@
+name: 🐛 Bug Report
+description: Report a QA issue found on the portfolio site (Assignment 2 format).
+title: "[Bug]: "
+labels: ["bug", "status:open"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill out every field below. This form follows the Assignment 1 bug report format exactly.
+        Use the sidebar **Assignees** field on the right to assign this issue (e.g. your instructor for retesting), and the sidebar **Labels** field to add a `severity:` and `priority:` label if not already applied by your selections below.
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      description: The current state of work on this bug.
+      options:
+        - Open
+        - Assigned
+        - In Progress
+        - Complete
+        - Closed
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: 3–5 sentences describing the issue in more detail, with important information.
+      placeholder: e.g. On the Projects page, clicking any project card's "View Live Site" link opens a blank tab instead of navigating to the live demo URL...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: A brief and clear set of steps to reliably recreate the issue.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Observe '...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Expected Result
+      description: What, in your mind, should the application be doing — and why it should behave that way.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-result
+    attributes:
+      label: Actual Result
+      description: What happened that differed from the expectation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration
+      description: The combination of hardware, device(s), operating system(s), browser (with version), and other software the bug appeared on.
+      placeholder: e.g. MacBook Pro, macOS 14.5, Safari 17.4, desktop, 1440x900 viewport
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: The level of risk to the user, user data, or application, and how disruptive the bug is to the task being attempted.
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: The importance to stakeholders of fixing this bug. Correlates highly with Severity.
+      options:
+        - P1 - Fix immediately
+        - P2 - Fix soon
+        - P3 - Fix when possible
+        - P4 - Nice to fix
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Paste your BetterBugs screenshot/recording link or attach the file here.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Assignee:** Set via the sidebar Assignees field on this issue (not a form field above), so it uses GitHub's actual assignee system rather than free text.
