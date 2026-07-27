@@ -10,15 +10,6 @@ function Resume() {
   });
 
   useEffect(() => {
-    // Canonical
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", "https://jessicapswilson.com/resume");
-
     // JSON-LD
     const script = document.createElement("script");
     script.type = "application/ld+json";
@@ -37,7 +28,6 @@ function Resume() {
     document.head.appendChild(script);
 
     return () => {
-      canonical.remove();
       script.remove();
     };
   }, []);
