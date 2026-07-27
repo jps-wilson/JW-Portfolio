@@ -7,7 +7,7 @@ const sections = [
   {
     label: "The Idea",
     heading: "What if Figma had a changelog you could actually read?",
-    copy: "The decision was to rejext pixel comparison entirely. Not a side-by-side you eyeball, not an overlay you squint at, but a real changelog: what changed, grouped by frame, with actual numbers behind every entry.",
+    copy: "The decision was to reject pixel comparison entirely. Not a side-by-side you eyeball, not an overlay you squint at, but a real changelog: what changed, grouped by frame, with actual numbers behind every entry.",
     snippet: null,
   },
   {
