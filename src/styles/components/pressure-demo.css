@@ -133,3 +133,9 @@
   opacity: 0.3;
   text-align: center;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .pressure-demo__hint-keyboard {
+    display: none;
+  }
+}

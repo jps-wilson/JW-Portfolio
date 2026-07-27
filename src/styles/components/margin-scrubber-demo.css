@@ -73,3 +73,9 @@
   opacity: 0.3;
   text-align: center;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .margin-scrubber__hint-keyboard {
+    display: none;
+  }
+}
