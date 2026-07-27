@@ -1,24 +1,26 @@
 import { useEffect } from "react";
 
-export function usePageMeta({ title, description }) {
+const SITE = "https://jessicapswilson.com";
+const DEFAULT_IMAGE = `${SITE}/og-image.png`;
+
+export function usePageMeta({ title, description, image }) {
   useEffect(() => {
+    const url = `${SITE}${window.location.pathname}`;
+    const ogImage = image ? `${SITE}${image}` : DEFAULT_IMAGE;
+
     document.title = title;
 
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute("content", description);
-    document
-      .querySelector('meta[property="og:title"]')
-      ?.setAttribute("content", title);
-    document
-      .querySelector('meta[property="og:description"]')
-      ?.setAttribute("content", description);
-    document
-      .querySelector('meta[property="og:url"]')
-      ?.setAttribute(
-        "content",
-        `https://jessicapswilson.com${window.location.pathname}`,
-      );
+    const setMeta = (selector, value) =>
+      document.querySelector(selector)?.setAttribute("content", value);
+
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[property="og:title"]', title);
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[property="og:url"]', url);
+    setMeta('meta[property="og:image"]', ogImage);
+    setMeta('meta[name="twitter:title"]', title);
+    setMeta('meta[name="twitter:description"]', description);
+    setMeta('meta[name="twitter:image"]', ogImage);
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -26,9 +28,6 @@ export function usePageMeta({ title, description }) {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute(
-      "href",
-      `https://jessicapswilson.com${window.location.pathname}`,
-    );
-  }, [title, description]);
+    canonical.setAttribute("href", url);
+  }, [title, description, image]);
 }
