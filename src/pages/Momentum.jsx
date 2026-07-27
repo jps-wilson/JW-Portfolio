@@ -9,6 +9,7 @@ function Momentum() {
     title: "Momentum — Jess Wilson",
     description:
       "A privacy-first task app using local storage — no account, no tracking, just your list.",
+    image: "/og/momentum.png",
   });
   const project = projects.find((p) => p.id === "momentum");
   return (

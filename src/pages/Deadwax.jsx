@@ -9,6 +9,7 @@ function Deadwax() {
     title: "Deadwax — Jess Wilson",
     description:
       "A digital turntable connected to Spotify that makes playing music feel like a ritual again.",
+    image: "/og/deadwax.png",
   });
   const project = projects.find((p) => p.id === "deadwax");
   return (
