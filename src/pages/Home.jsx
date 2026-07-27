@@ -48,9 +48,9 @@ function Home() {
           <p className='home-opening__line' ref={lineRef}>
             Code is the craft. People are the point.
           </p>
-          <p className='home-opening__name' ref={nameRef}>
+          <h1 className='home-opening__name' ref={nameRef}>
             Jess Wilson
-          </p>
+          </h1>
           <p className='home-opening__role' ref={roleRef}>
             Creative Developer
           </p>

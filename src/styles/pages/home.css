@@ -30,6 +30,7 @@
   text-transform: uppercase;
   color: var(--color-cream);
   margin-bottom: var(--space-8);
+  margin: 0;
 }
 
 .home-opening__role {
@@ -38,7 +39,6 @@
   color: var(--color-ember);
   letter-spacing: var(--tracking-caption);
 }
-
 
 /* Thesis Section */
 .home-thesis {
