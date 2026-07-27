@@ -9,6 +9,7 @@ function Margin() {
     title: "Margin — Jess Wilson",
     description:
       "A Figma diff tool that generates structured changelogs between file versions.",
+    image: "/og/margin.png",
   });
   const project = projects.find((p) => p.id === "margin");
   return (

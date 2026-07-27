@@ -9,6 +9,7 @@ function Pressure() {
     title: "Pressure — Jess Wilson",
     description:
       "A weather app that translates atmospheric pressure into human language.",
+    image: "/og/pressure.png",
   });
   const project = projects.find((p) => p.id === "pressure");
   return (

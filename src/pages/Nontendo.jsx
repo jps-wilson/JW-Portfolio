@@ -9,6 +9,7 @@ function Nontendo() {
     title: "Nontendo — Jess Wilson",
     description:
       "A fully functional Game Boy interface with playable Snake, built in HTML and CSS.",
+    image: "/og/nontendo.png",
   });
   const project = projects.find((p) => p.id === "nontendo");
   return (
