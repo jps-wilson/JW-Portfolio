@@ -133,6 +133,8 @@ function ScrambleCard({ project, constraint, Icon, index }) {
       aria-label={project.title}
       style={{ "--card-accent": project.accent }}
     >
+      <h2 className='sr-only'>{project.title}</h2>
+
       {/* Accent bar */}
       <span
         className='work-card__accent'
@@ -208,7 +210,7 @@ function Work() {
     <div className='work'>
       <div className='work__header' ref={headerRef}>
         <SectionLabel text='The Thesis, Applied' />
-        <p className='work__subtitle'>Latest Work</p>
+        <h1 className='work__subtitle'>Latest Work</h1>
       </div>
 
       <div className='work__grid'>
