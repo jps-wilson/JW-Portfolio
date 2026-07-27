@@ -372,7 +372,8 @@
   }
 
   .home-featured__image-wrap {
-    height: 200px;
+    height: auto;
+    min-height: 260px;
   }
 
   .home-featured__image-fade {
