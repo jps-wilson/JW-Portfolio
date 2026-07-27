@@ -89,11 +89,13 @@ function MarginScrubberDemo() {
           className='margin-scrubber__image margin-scrubber__image--to'
           src={toImage}
           alt='Updated version'
+          loading='lazy'
         />
         <img
           className='margin-scrubber__image margin-scrubber__image--from'
           src={fromImage}
           alt='Original version'
+          loading='lazy'
           style={{
             clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
           }}

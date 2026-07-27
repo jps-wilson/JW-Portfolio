@@ -106,6 +106,7 @@ function ProjectPage({ project, screenshot, visual, children }) {
                   src={screenshot}
                   alt={`${project.title} screenshot`}
                   className='project-hero__image'
+                  fetchPriority='high'
                 />
                 <div className='project-hero__image-fade'></div>
               </>
