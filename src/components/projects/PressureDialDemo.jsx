@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useMemo } from "react";
+import { useState, useRef, useCallback, useMemo, useEffect } from "react";
 import "../../styles/components/pressure-demo.css";
 
 const MIN_PRESSURE = 990;
@@ -125,6 +125,29 @@ function PressureDialDemo() {
     }
   };
 
+  const handleTouchStart = (e) => {
+    draggingRef.current = true;
+    const touch = e.touches[0];
+    updateFromPointer(touch.clientX, touch.clientY);
+  };
+
+  const handleTouchEnd = () => {
+    draggingRef.current = false;
+  };
+
+  useEffect(() => {
+    const el = dialRef.current;
+    if (!el) return;
+    const onTouchMove = (e) => {
+      if (!draggingRef.current) return;
+      e.preventDefault();
+      const touch = e.touches[0];
+      updateFromPointer(touch.clientX, touch.clientY);
+    };
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    return () => el.removeEventListener("touchmove", onTouchMove);
+  }, [updateFromPointer]);
+
   return (
     <div className={`pressure-demo pressure-demo--${strain.state}`}>
       <div
@@ -142,6 +165,8 @@ function PressureDialDemo() {
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
         onKeyDown={handleKeyDown}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         <DialTicks />
         <div
@@ -157,7 +182,10 @@ function PressureDialDemo() {
       </div>
       <p className='pressure-demo__insight'>{strain.insight}</p>
       <p className='pressure-demo__hint'>
-        Drag around the ring, or use arrow keys
+        Drag to turn
+        <span className='pressure-demo__hint-keyboard'>
+          , or use arrow keys
+        </span>
       </p>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import fromImage from "../../assets/screenshots/margin-demo-from.webp";
 import toImage from "../../assets/screenshots/margin-demo-to.webp";
 import "../../styles/components/margin-scrubber-demo.css";
@@ -44,6 +44,27 @@ function MarginScrubberDemo() {
     }
   };
 
+  const handleTouchStart = (e) => {
+    draggingRef.current = true;
+    updateFromPointer(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    draggingRef.current = false;
+  };
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const onTouchMove = (e) => {
+      if (!draggingRef.current) return;
+      e.preventDefault();
+      updateFromPointer(e.touches[0].clientX);
+    };
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    return () => el.removeEventListener("touchmove", onTouchMove);
+  }, [updateFromPointer]);
+
   return (
     <div className='margin-scrubber'>
       <div
@@ -61,6 +82,8 @@ function MarginScrubberDemo() {
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
         onKeyDown={handleKeyDown}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         <img
           className='margin-scrubber__image margin-scrubber__image--to'
@@ -87,7 +110,10 @@ function MarginScrubberDemo() {
         <span>From</span>
       </div>
       <p className='margin-scrubber__hint'>
-        Drag to compare, or use arrow keys
+        Drag to compare
+        <span className='margin-scrubber__hint-keyboard'>
+          , or use arrow keys
+        </span>
       </p>
     </div>
   );
