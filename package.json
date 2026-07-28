@@ -8,6 +8,7 @@
     "og": "node scripts/generate-og.mjs",
     "prebuild": "node scripts/generate-og.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/prerender-meta.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
