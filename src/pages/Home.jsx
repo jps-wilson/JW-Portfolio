@@ -77,7 +77,7 @@ function Home() {
           </div>
         </div>
         <Link to='/about' className='home-thesis__link'>
-          The story behind them →
+          About; The story behind them <span aria-hidden='true'>→</span>
         </Link>
       </section>
 
