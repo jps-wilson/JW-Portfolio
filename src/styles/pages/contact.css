@@ -1,11 +1,12 @@
 .contact {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: calc(100dvh - var(--nav-height));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--space-120) var(--grid-margin-desktop);
+  padding: clamp(var(--space-24), 6vh, var(--space-120))
+    var(--grid-margin-desktop);
   position: relative;
+  overflow: hidden;
 }
 
 .contact__label {
@@ -14,7 +15,7 @@
 
 .contact__heading {
   font-family: var(--font-montreal);
-  font-size: clamp(72px, 12vw, 160px);
+  font-size: clamp(56px, 12vw, 160px);
   font-weight: 500;
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -25,8 +26,32 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: var(--space-16);
+  justify-content: flex-start;
+  gap: clamp(var(--space-8), 3vh, var(--space-40));
+  min-height: 0;
+}
+
+/* Short viewports: the heading only scales with width above, so on a
+   short-but-wide window it needs a height-aware ceiling or it overflows
+   the fixed-height .contact and gets clipped. */
+@media (max-height: 700px) {
+  .contact__heading {
+    font-size: clamp(28px, min(10vw, 13vh), 120px);
+  }
+
+  .contact__main {
+    gap: clamp(var(--space-8), 2vh, var(--space-24));
+  }
+
+  .contact__bottom {
+    padding-top: clamp(var(--space-8), 2vh, var(--space-16));
+  }
+}
+
+@media (max-height: 420px) {
+  .contact__heading {
+    font-size: clamp(20px, min(9vw, 11vh), 80px);
+  }
 }
 
 .contact__intro {
@@ -47,6 +72,7 @@
   align-items: flex-end;
   justify-content: space-between;
   flex-shrink: 0;
+  padding-top: clamp(var(--space-16), 3vh, var(--space-32));
 }
 
 .contact__email {
@@ -111,7 +137,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .contact {
-    padding: var(--space-80) var(--grid-margin-mobile);
+    padding: clamp(var(--space-40), 6vh, var(--space-80))
+      var(--grid-margin-mobile);
   }
 
   .contact__bottom {
