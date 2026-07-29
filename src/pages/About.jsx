@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import SectionLabel from "../components/ui/SectionLabel";
 import headshot from "../assets/images/jess.webp";
@@ -114,6 +115,9 @@ function About() {
         <p className='about-act__closing'>
           Code is the craft. People are the point.
         </p>
+        <Link to='/work' className='about-act__work-link'>
+          See the work <span aria-hidden='true'>→</span>
+        </Link>
       </section>
     </div>
   );
