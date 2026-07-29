@@ -76,7 +76,7 @@
   font-family: var(--font-montreal);
   font-weight: 400;
   color: var(--color-cream);
-  cursor: pointer;
+  cursor: default;
   position: relative;
   padding-bottom: var(--space-8);
 }

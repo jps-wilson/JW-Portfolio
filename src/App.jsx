@@ -23,6 +23,7 @@ import "./styles/app.css";
 
 function App() {
   const location = useLocation();
+  const hideFooter = location.pathname === "/contact";
 
   return (
     <div className='app'>
@@ -125,7 +126,7 @@ function App() {
           </Suspense>
         </ErrorBoundary>
       </main>
-      <Footer />
+      {!hideFooter && <Footer />}
       <BackToTop />
     </div>
   );
