@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "../../styles/components/case-study-nav.css";
 
 function slugify(text) {
@@ -6,18 +6,32 @@ function slugify(text) {
 }
 
 function CaseStudyNav({ sections = [] }) {
-  const [activeId, setActiveId] = useState(
-    sections.length > 0 ? slugify(sections[0].label) : null,
+  const sectionIds = useMemo(
+    () => sections.map((section) => slugify(section.label)),
+    [sections],
   );
+
+  const [activeId, setActiveId] = useState(
+    sectionIds.length > 0 ? sectionIds[0] : null,
+  );
+
   const observerRef = useRef(null);
+
+  const safeActiveId =
+    activeId && sectionIds.includes(activeId)
+      ? activeId
+      : sectionIds.length > 0
+        ? sectionIds[0]
+        : null;
 
   useEffect(() => {
     if (sections.length === 0) return;
 
-    const ids = sections.map((s) => slugify(s.label));
-    const elements = ids
+    const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
+
+    observerRef.current?.disconnect();
 
     if (elements.length === 0) return;
 
@@ -35,7 +49,7 @@ function CaseStudyNav({ sections = [] }) {
     elements.forEach((el) => observerRef.current.observe(el));
 
     return () => observerRef.current?.disconnect();
-  }, [sections]);
+  }, [sectionIds, sections.length]);
 
   if (sections.length === 0) return null;
 
@@ -45,22 +59,28 @@ function CaseStudyNav({ sections = [] }) {
   };
 
   return (
-    <nav className='cs-nav' aria-label='Case study sections'>
-      {sections.map((section) => {
-        const id = slugify(section.label);
-        const isActive = activeId === id;
-        return (
-          <a
-            key={id}
-            href={`#${id}`}
-            onClick={(e) => handleClick(e, id)}
-            className={`cs-nav__item ${isActive ? "cs-nav__item--active" : ""}`}
-          >
-            <span className='cs-nav__label'>{section.label}</span>
-          </a>
-        );
-      })}
-    </nav>
+    <aside className='cs-nav-shell'>
+      <nav className='cs-nav' aria-label='Case study sections'>
+        {sections.map((section) => {
+          const id = slugify(section.label);
+          const isActive = safeActiveId === id;
+
+          return (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => handleClick(e, id)}
+              className={`cs-nav__item ${isActive ? "cs-nav__item--active" : ""}`}
+              aria-current={isActive ? "true" : undefined}
+              title={section.label}
+            >
+              <span className='cs-nav__dot' aria-hidden='true' />
+              <span className='cs-nav__label'>{section.label}</span>
+            </a>
+          );
+        })}
+      </nav>
+    </aside>
   );
 }
 
