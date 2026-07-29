@@ -1,14 +1,4 @@
 import "../../styles/visuals/PressureVisual.css";
-/**
- * - Animated blueprint visual for the Pressure project header
- * - Replaces the static screenshot. Sizeed to 886x818 (matches the original screenshot's size)
- *
- * - Usage:
- *  <PressureVisual />
- *
- * - No props needed
- * - Palette and animation are fixed to the Pressure in-app tokens
- */
 function PressureVisual() {
   return (
     <div className='pressure-visual'>
@@ -118,8 +108,6 @@ function PressureVisual() {
         <text x='298' y='408' className='label-mono'>
           62% RH
         </text>
-
-
       </svg>
     </div>
   );

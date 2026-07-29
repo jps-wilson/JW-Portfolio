@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -14,6 +15,10 @@ const pageTransition = {
 
 function AnimatedPage({ children }) {
   const shouldReduce = useReducedMotion();
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     <motion.div

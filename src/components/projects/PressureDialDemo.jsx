@@ -47,6 +47,11 @@ function DialTicks() {
   const cy = 100;
   const r = 88;
   for (let i = 0; i < 60; i++) {
+    // Skip the bottom dead zone: only draw ticks within the gauge's active arc
+    let fromTop = i * 6;
+    if (fromTop > 180) fromTop -= 360;
+    if (fromTop < MIN_ANGLE || fromTop > MAX_ANGLE) continue;
+
     const angle = (i / 60) * 2 * Math.PI - Math.PI / 2;
     const isMajor = i % 5 === 0;
     const len = isMajor ? 8 : 4;

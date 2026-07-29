@@ -119,7 +119,7 @@ function ProjectPage({ project, screenshot, visual, children }) {
       <section className='project-case' ref={caseRef}>
         <div className='project-case__divider'></div>
         <div className='project-case__column'>
-          <SectionLabel text='Problem' />
+          <SectionLabel text='Challenge' />
           <p className='project-case__hook'>{problemHook}</p>
           {problemRest && <p className='project-case__copy'>{problemRest}</p>}
         </div>
