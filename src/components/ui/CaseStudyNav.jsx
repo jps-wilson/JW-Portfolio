@@ -7,7 +7,7 @@ function slugify(text) {
 
 function CaseStudyNav({ sections = [] }) {
   const sectionIds = useMemo(
-    () => sections.map((section) => slugify(section.label)),
+    () => sections.map((section) => section.id || slugify(section.label)),
     [sections],
   );
 
@@ -56,13 +56,14 @@ function CaseStudyNav({ sections = [] }) {
   const handleClick = (e, id) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    e.currentTarget.blur();
   };
 
   return (
     <aside className='cs-nav-shell'>
       <nav className='cs-nav' aria-label='Case study sections'>
         {sections.map((section) => {
-          const id = slugify(section.label);
+          const id = section.id || slugify(section.label);
           const isActive = safeActiveId === id;
 
           return (

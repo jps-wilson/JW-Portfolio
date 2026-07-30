@@ -116,7 +116,7 @@ function ProjectPage({ project, screenshot, visual, children }) {
       </section>
 
       {/* Problem and Solution */}
-      <section className='project-case' ref={caseRef}>
+      <section id='challenge-solution' className='project-case' ref={caseRef}>
         <div className='project-case__divider'></div>
         <div className='project-case__column'>
           <SectionLabel text='Challenge' />
@@ -130,7 +130,7 @@ function ProjectPage({ project, screenshot, visual, children }) {
       </section>
 
       {/* Belief */}
-      <section className='project-belief' ref={beliefRef}>
+      <section id='belief' className='project-belief' ref={beliefRef}>
         <p className='project-belief__copy' ref={beliefTextRef}>
           {project.belief}
         </p>
