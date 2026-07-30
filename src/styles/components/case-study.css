@@ -1,9 +1,18 @@
 .cs {
   padding: var(--space-120) var(--grid-margin-desktop);
-  border-top: 1px solid var(--color-warm-dark);
   display: flex;
   flex-direction: column;
   gap: var(--space-80);
+}
+
+.cs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  border-top: 1px solid var(--color-warm-dark);
 }
 
 .cs__section {

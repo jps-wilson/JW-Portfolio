@@ -164,6 +164,7 @@ body {
   background-color: var(--color-void);
   min-height: 100vh;
   overscroll-behavior-y: none;
+  overflow-x: hidden;
 }
 
 a {

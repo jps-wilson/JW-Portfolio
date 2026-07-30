@@ -64,10 +64,16 @@ const sections = [
   },
 ];
 
+const navSections = [
+  { label: "The Approach", id: "challenge-solution" },
+  { label: "The Belief", id: "belief" },
+  ...sections,
+];
+
 function MarginCaseStudy() {
   return (
     <div className='cs-wrapper'>
-      <CaseStudyNav sections={sections} />
+      <CaseStudyNav sections={navSections} />
       <div className='cs'>
         {sections.map((section, index) => (
           <CsSection key={index} section={section} />
