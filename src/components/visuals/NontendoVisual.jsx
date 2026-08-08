@@ -59,95 +59,125 @@ function NontendoVisual() {
         <line x1='216' y1='86' x2='264' y2='86' className='stroke-thin' />
 
         <rect
-          x='156'
-          y='104'
-          width='168'
-          height='132'
+          x='150'
+          y='100'
+          width='180'
+          height='130'
           rx='8'
           className='stroke-thin'
         />
         <rect
-          x='168'
-          y='116'
-          width='144'
-          height='108'
+          x='158'
+          y='108'
+          width='164'
+          height='114'
           className='stroke-faint'
         />
         <g className='stroke-faint'>
-          <line x1='172' y1='132' x2='308' y2='132' />
-          <line x1='172' y1='152' x2='308' y2='152' />
-          <line x1='172' y1='172' x2='308' y2='172' />
-          <line x1='172' y1='192' x2='308' y2='192' />
+          <line x1='162' y1='124' x2='318' y2='124' />
+          <line x1='162' y1='144' x2='318' y2='144' />
+          <line x1='162' y1='164' x2='318' y2='164' />
+          <line x1='162' y1='184' x2='318' y2='184' />
         </g>
-        <text x='196' y='158' className='label-mono'>
+        <text x='240' y='150' textAnchor='middle' className='label-mono'>
           NONTENDO
         </text>
-        <text x='182' y='176' className='label-mono-accent' fontSize='8'>
+        <text
+          x='240'
+          y='168'
+          textAnchor='middle'
+          className='label-mono-accent'
+          fontSize='8'
+        >
           PRESS START
         </text>
 
-        <circle cx='328' cy='110' r='3' fill='var(--bp-accent)' />
-        <circle cx='328' cy='110' r='6' className='stroke-accent' />
+        <circle cx='340' cy='120' r='3' fill='var(--bp-accent)' />
+        <circle cx='340' cy='120' r='6' className='stroke-accent' />
 
         <g className='stroke-thin'>
-          <rect x='169' y='270' width='14' height='60' />
-          <rect x='146' y='293' width='60' height='14' />
+          <rect x='183' y='290' width='14' height='60' />
+          <rect x='160' y='313' width='60' height='14' />
         </g>
 
-        <circle cx='300' cy='290' r='14' className='stroke-thin' />
-        <text x='296' y='294' className='label-mono' fontSize='7'>
+        <circle cx='300' cy='336' r='14' className='stroke-thin' />
+        <text
+          x='300'
+          y='340'
+          textAnchor='middle'
+          className='label-mono'
+          fontSize='7'
+        >
           B
         </text>
-        <circle cx='326' cy='270' r='14' className='stroke-thin' />
-        <text x='322' y='274' className='label-mono' fontSize='7'>
+        <circle cx='326' cy='310' r='14' className='stroke-thin' />
+        <text
+          x='326'
+          y='314'
+          textAnchor='middle'
+          className='label-mono'
+          fontSize='7'
+        >
           A
         </text>
 
         <rect
-          x='190'
-          y='350'
-          width='34'
-          height='10'
-          rx='5'
+          x='196'
+          y='372'
+          width='40'
+          height='11'
+          rx='5.5'
           className='stroke-guide'
         />
-        <text x='192' y='372' className='label-mono' fontSize='6'>
+        <text
+          x='216'
+          y='392'
+          textAnchor='middle'
+          className='label-mono'
+          fontSize='6'
+        >
           SELECT
         </text>
         <rect
-          x='234'
-          y='350'
-          width='34'
-          height='10'
-          rx='5'
+          x='244'
+          y='372'
+          width='40'
+          height='11'
+          rx='5.5'
           className='stroke-guide'
         />
-        <text x='240' y='372' className='label-mono' fontSize='6'>
+        <text
+          x='264'
+          y='392'
+          textAnchor='middle'
+          className='label-mono'
+          fontSize='6'
+        >
           START
         </text>
 
         <g className='stroke-faint'>
-          <circle cx='300' cy='340' r='2' />
-          <circle cx='312' cy='340' r='2' />
-          <circle cx='324' cy='340' r='2' />
-          <circle cx='300' cy='350' r='2' />
-          <circle cx='312' cy='350' r='2' />
-          <circle cx='324' cy='350' r='2' />
-          <circle cx='300' cy='360' r='2' />
-          <circle cx='312' cy='360' r='2' />
-          <circle cx='324' cy='360' r='2' />
+          <circle cx='296' cy='404' r='2' />
+          <circle cx='308' cy='404' r='2' />
+          <circle cx='320' cy='404' r='2' />
+          <circle cx='296' cy='414' r='2' />
+          <circle cx='308' cy='414' r='2' />
+          <circle cx='320' cy='414' r='2' />
+          <circle cx='296' cy='424' r='2' />
+          <circle cx='308' cy='424' r='2' />
+          <circle cx='320' cy='424' r='2' />
         </g>
 
-        <rect x='150' y='460' width='60' height='24' className='stroke-guide' />
-        <text x='158' y='476' className='label-mono'>
+        <rect x='140' y='460' width='60' height='24' className='stroke-guide' />
+        <text x='148' y='476' className='label-mono'>
           SCORE · 12
         </text>
-        <rect x='220' y='460' width='60' height='24' className='stroke-guide' />
-        <text x='227' y='476' className='label-mono'>
+        <rect x='210' y='460' width='60' height='24' className='stroke-guide' />
+        <text x='216' y='476' className='label-mono'>
           SPEED · 4
         </text>
-        <rect x='290' y='460' width='60' height='24' className='stroke-guide' />
-        <text x='296' y='476' className='label-mono'>
+        <rect x='280' y='460' width='60' height='24' className='stroke-guide' />
+        <text x='286' y='476' className='label-mono'>
           GRID · 20
         </text>
       </svg>

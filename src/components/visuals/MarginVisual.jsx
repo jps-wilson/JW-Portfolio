@@ -202,16 +202,16 @@ function MarginVisual() {
           </text>
         </g>
 
-        <rect x='150' y='440' width='60' height='24' className='stroke-guide' />
-        <text x='158' y='456' className='label-mono'>
+        <rect x='140' y='440' width='60' height='24' className='stroke-guide' />
+        <text x='148' y='456' className='label-mono'>
           ADD · 4
         </text>
-        <rect x='220' y='440' width='60' height='24' className='stroke-guide' />
-        <text x='226' y='456' className='label-mono'>
+        <rect x='210' y='440' width='60' height='24' className='stroke-guide' />
+        <text x='217' y='456' className='label-mono'>
           MOV · 7
         </text>
-        <rect x='290' y='440' width='60' height='24' className='stroke-guide' />
-        <text x='294' y='456' className='label-mono'>
+        <rect x='280' y='440' width='60' height='24' className='stroke-guide' />
+        <text x='287' y='456' className='label-mono'>
           RSZ · 2
         </text>
       </svg>

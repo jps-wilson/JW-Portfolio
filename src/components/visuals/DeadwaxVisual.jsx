@@ -73,30 +73,36 @@ function DeadwaxVisual() {
           <circle cx='240' cy='260' r='30' className='stroke-thin' />
           <circle cx='240' cy='260' r='2' fill='var(--bp-ink)' />
 
-          <text x='214' y='256' className='label-mono'>
+          <text x='240' y='255' textAnchor='middle' className='label-mono'>
             TRACK
           </text>
-          <text x='218' y='272' className='label-mono-accent' fontSize='13'>
+          <text
+            x='240'
+            y='271'
+            textAnchor='middle'
+            className='label-mono-accent'
+            fontSize='13'
+          >
             A1
           </text>
         </g>
 
         <g>
-          <circle cx='338' cy='176' r='5' className='stroke-thin' />
-          <line x1='338' y1='176' x2='256' y2='234' className='stroke-accent' />
-          <circle cx='256' cy='234' r='3' fill='var(--bp-accent)' />
+          <circle cx='316' cy='150' r='5' className='stroke-thin' />
+          <line x1='316' y1='150' x2='260' y2='220' className='stroke-accent' />
+          <circle cx='260' cy='220' r='3' fill='var(--bp-accent)' />
         </g>
 
-        <rect x='150' y='392' width='60' height='24' className='stroke-guide' />
-        <text x='158' y='408' className='label-mono'>
+        <rect x='140' y='392' width='60' height='24' className='stroke-guide' />
+        <text x='148' y='408' className='label-mono'>
           RPM · 33
         </text>
-        <rect x='220' y='392' width='60' height='24' className='stroke-guide' />
-        <text x='226' y='408' className='label-mono'>
+        <rect x='210' y='392' width='60' height='24' className='stroke-guide' />
+        <text x='217' y='408' className='label-mono'>
           PITCH · 0
         </text>
-        <rect x='290' y='392' width='60' height='24' className='stroke-guide' />
-        <text x='294' y='408' className='label-mono'>
+        <rect x='280' y='392' width='60' height='24' className='stroke-guide' />
+        <text x='287' y='408' className='label-mono'>
           VOL · 70
         </text>
       </svg>

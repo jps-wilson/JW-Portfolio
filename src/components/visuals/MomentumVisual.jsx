@@ -90,10 +90,12 @@ function MomentumVisual() {
             fill='var(--bp-accent)'
           />
           <path
-            d='M143,156 L147,160 L153,152'
+            d='M142.5,156.5 L145,159 L150,152.5'
             stroke='var(--bp-atmosphere-2)'
             fill='none'
             strokeWidth='1.4'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           />
           <line x1='162' y1='157' x2='260' y2='157' className='stroke-faint' />
         </g>
@@ -156,24 +158,26 @@ function MomentumVisual() {
             fill='var(--bp-accent)'
           />
           <path
-            d='M143,306 L147,310 L153,302'
+            d='M142.5,306.5 L145,309 L150,302.5'
             stroke='var(--bp-atmosphere-2)'
             fill='none'
             strokeWidth='1.4'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           />
           <line x1='162' y1='307' x2='240' y2='307' className='stroke-faint' />
         </g>
 
-        <rect x='150' y='440' width='60' height='24' className='stroke-guide' />
-        <text x='158' y='456' className='label-mono'>
+        <rect x='140' y='440' width='60' height='24' className='stroke-guide' />
+        <text x='148' y='456' className='label-mono'>
           DONE · 4
         </text>
-        <rect x='220' y='440' width='60' height='24' className='stroke-guide' />
-        <text x='226' y='456' className='label-mono'>
+        <rect x='210' y='440' width='60' height='24' className='stroke-guide' />
+        <text x='216' y='456' className='label-mono'>
           LEFT · 3
         </text>
-        <rect x='290' y='440' width='60' height='24' className='stroke-guide' />
-        <text x='294' y='456' className='label-mono'>
+        <rect x='280' y='440' width='60' height='24' className='stroke-guide' />
+        <text x='286' y='456' className='label-mono'>
           TODAY · 6
         </text>
       </svg>
