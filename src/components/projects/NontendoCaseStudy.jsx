@@ -1,3 +1,4 @@
+import NontendoDemo from "./NontendoDemo";
 import CsSection from "../ui/CsSection";
 import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
@@ -58,6 +59,7 @@ const sections = [
     label: "The Build",
     heading: "Snake is a solved problem. Making it feel real isn't.",
     copy: "The Snake game itself is vanilla JavaScript on an HTML canvas: grid-based movement, collision detection, food spawning, score tracking. The interesting engineering was everything around it. The boot sequence runs a loading bar animation before revealing the NONTENDO logo, then waits for the user to press START. The power switch toggles the screen on and off with an LED fade. Touch events mirror keyboard input so the D-pad works on mobile. Every state transition (idle, booting, playing, paused, game over) is handled explicitly so nothing ever looks broken.",
+    demo: NontendoDemo,
     snippet: {
       filename: "gameboy.js",
       language: "javascript",

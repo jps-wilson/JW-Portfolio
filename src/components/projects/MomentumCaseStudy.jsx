@@ -1,3 +1,4 @@
+import MomentumDemo from "./MomentumDemo";
 import CsSection from "../ui/CsSection";
 import CaseStudyNav from "../ui/CaseStudyNav";
 import "../../styles/components/case-study.css";
@@ -53,6 +54,7 @@ const sections = [
     label: "The Build",
     heading: "State synchronization is the hard part",
     copy: "Momentum runs entirely client-side with vanilla JavaScript and localStorage. The task array is the single source of truth - every interaction updates this array, saves it to localStorage, and triggers a full re-render. This approach keeps the UI synchronized with stored data at all times. The categorization logic checks each task's due date and routes it to the correct section. Tasks without dates default to Today. Drag-and-drop reordering maps visual position back into the task array, preserving user-defined order across sessions. The staggered entrance animation applies a 40ms delay per card, creating a cascading effect without blocking the render. Date normalization strips time values to prevent timezone edge cases from breaking the Today filter.",
+    demo: MomentumDemo,
     snippet: {
       filename: "tasks.js",
       language: "javascript",
