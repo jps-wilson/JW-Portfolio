@@ -1,0 +1,110 @@
+/* Shared blueprint visual system, used by every animated project-hero visual */
+.visual-blueprint {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.visual-blueprint__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(90% 90% at 18% 22%, var(--bp-glow-1) 0%, transparent 60%),
+    radial-gradient(90% 90% at 82% 78%, var(--bp-glow-2) 0%, transparent 60%),
+    radial-gradient(120% 120% at 50% 50%, var(--bp-glow-3) 0%, transparent 70%),
+    linear-gradient(
+      135deg,
+      var(--bp-atmosphere-1),
+      var(--bp-atmosphere-2) 45%,
+      var(--bp-atmosphere-3) 100%
+    );
+  background-size: 280% 280%;
+  animation: visual-blueprint-drift var(--bp-dur, 12s) ease-in-out infinite
+    alternate;
+}
+
+@keyframes visual-blueprint-drift {
+  0% {
+    background-position:
+      0% 30%,
+      100% 70%,
+      0% 0%;
+  }
+  50% {
+    background-position:
+      45% 65%,
+      55% 35%,
+      60% 55%;
+  }
+  100% {
+    background-position:
+      20% 55%,
+      80% 45%,
+      100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-blueprint__bg {
+    animation: none;
+  }
+}
+
+.visual-blueprint__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.visual-blueprint__diagram {
+  position: absolute;
+  z-index: 1;
+  width: 78%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stroke-thin {
+  fill: none;
+  stroke: var(--bp-ink);
+  stroke-width: 1;
+}
+
+.stroke-faint {
+  fill: none;
+  stroke: var(--bp-line-faint);
+  stroke-width: 1;
+}
+
+.stroke-guide {
+  fill: none;
+  stroke: var(--bp-line);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+}
+
+.stroke-accent {
+  fill: none;
+  stroke: var(--bp-accent);
+  stroke-width: 1.3;
+}
+
+.label-mono {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  fill: var(--bp-ink-soft);
+}
+
+.label-mono-accent {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  fill: var(--bp-accent);
+}
