@@ -1,4 +1,4 @@
-import "../../styles/visuals/BlueprintVisual.css";
+import "../../styles/visuals/BluePrintVisual.css";
 import "../../styles/visuals/MarginVisual.css";
 
 function MarginVisual() {
