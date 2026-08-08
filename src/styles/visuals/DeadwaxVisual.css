@@ -1,0 +1,15 @@
+.deadwax-visual {
+  /* Deadwax's analog turntable palette: cool LED blue against warm wood dark */
+  --bp-atmosphere-1: #12181c;
+  --bp-atmosphere-2: #15130f;
+  --bp-atmosphere-3: #1a1410;
+  --bp-glow-1: rgba(30, 167, 255, 0.2);
+  --bp-glow-2: rgba(180, 120, 60, 0.18);
+  --bp-glow-3: rgba(30, 167, 255, 0.1);
+  --bp-ink: #ece7df;
+  --bp-ink-soft: #7d8a94;
+  --bp-accent: #1ea7ff;
+  --bp-line: rgba(236, 231, 223, 0.16);
+  --bp-line-faint: rgba(236, 231, 223, 0.07);
+  --bp-dur: 12s;
+}

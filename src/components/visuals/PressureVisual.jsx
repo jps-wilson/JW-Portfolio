@@ -1,8 +1,10 @@
+import "../../styles/visuals/BlueprintVisual.css";
 import "../../styles/visuals/PressureVisual.css";
+
 function PressureVisual() {
   return (
-    <div className='pressure-visual'>
-      <div className='pressure-visual__bg' />
+    <div className='pressure-visual visual-blueprint'>
+      <div className='visual-blueprint__bg' />
 
       <svg width='0' height='0' aria-hidden='true'>
         <filter id='pressureVisualGrain'>
@@ -19,7 +21,7 @@ function PressureVisual() {
         </filter>
       </svg>
       <svg
-        className='pressure-visual__grain'
+        className='visual-blueprint__grain'
         width='100%'
         height='100%'
         aria-hidden='true'
@@ -28,7 +30,7 @@ function PressureVisual() {
       </svg>
 
       <svg
-        className='pressure-visual__blueprint'
+        className='visual-blueprint__diagram'
         viewBox='0 0 480 700'
         xmlns='http://www.w3.org/2000/svg'
         role='img'
@@ -66,7 +68,7 @@ function PressureVisual() {
         <g>
           <circle cx='240' cy='278' r='86' className='stroke-thin' />
           <circle cx='240' cy='278' r='70' className='stroke-faint' />
-          <circle cx='240' cy='278' r='2.4' fill='var(--pv-ink)' />
+          <circle cx='240' cy='278' r='2.4' fill='var(--bp-ink)' />
 
           <g className='stroke-thin'>
             <line x1='240' y1='192' x2='240' y2='202' />

@@ -1,4 +1,4 @@
-.cs-wrapper {
+/* .cs-wrapper {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -22,19 +22,37 @@
   .cs-wrapper .cs {
     padding-left: 0;
   }
+} */
+.cs-wrapper {
+  position: relative;
+}
+
+.cs__section {
+  scroll-margin-top: 100px;
+}
+
+/* Shell lives in the left gutter, out of the flow, so it never indents or reflows the case study content */
+.cs-nav-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  pointer-events: none;
 }
 
 .cs-nav-shell {
   position: sticky;
   top: 100px;
-  margin-top: var(--space-120);
-  flex-shrink: 0;
+  margin-top: var(--space-80);
+  margin-left: 12px;
   width: 52px;
   overflow: hidden;
   border-radius: 12px;
   background-color: rgba(240, 237, 232, 0.05);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  pointer-events: auto;
   transition:
     width 0.25s ease,
     background-color 0.25s ease;

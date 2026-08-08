@@ -1,0 +1,15 @@
+.momentum-visual {
+  /* Momentum's calm, quiet palette: muted neutrals with a coral accent */
+  --bp-atmosphere-1: #1a1618;
+  --bp-atmosphere-2: #171517;
+  --bp-atmosphere-3: #1f1517;
+  --bp-glow-1: rgba(224, 108, 108, 0.16);
+  --bp-glow-2: rgba(140, 120, 130, 0.14);
+  --bp-glow-3: rgba(224, 108, 108, 0.08);
+  --bp-ink: #ece8e6;
+  --bp-ink-soft: #857d80;
+  --bp-accent: #e06c6c;
+  --bp-line: rgba(236, 232, 230, 0.16);
+  --bp-line-faint: rgba(236, 232, 230, 0.07);
+  --bp-dur: 12s;
+}

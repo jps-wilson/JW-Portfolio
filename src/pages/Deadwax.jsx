@@ -1,7 +1,7 @@
 import ProjectPage from "../components/ui/ProjectPage";
+import DeadwaxVisual from "../components/visuals/DeadwaxVisual";
 import DeadwaxCaseStudy from "../components/projects/DeadwaxCaseStudy";
 import { projects } from "../data/projects";
-import screenshot from "../assets/screenshots/deadwax.webp";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 function Deadwax() {
@@ -13,7 +13,7 @@ function Deadwax() {
   });
   const project = projects.find((p) => p.id === "deadwax");
   return (
-    <ProjectPage project={project} screenshot={screenshot}>
+    <ProjectPage project={project} visual={<DeadwaxVisual />}>
       <DeadwaxCaseStudy />
     </ProjectPage>
   );

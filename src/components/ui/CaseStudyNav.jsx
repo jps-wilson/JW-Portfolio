@@ -60,28 +60,29 @@ function CaseStudyNav({ sections = [] }) {
   };
 
   return (
-    <aside className='cs-nav-shell'>
-      <nav className='cs-nav' aria-label='Case study sections'>
-        {sections.map((section) => {
-          const id = section.id || slugify(section.label);
-          const isActive = safeActiveId === id;
-
-          return (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={(e) => handleClick(e, id)}
-              className={`cs-nav__item ${isActive ? "cs-nav__item--active" : ""}`}
-              aria-current={isActive ? "true" : undefined}
-              title={section.label}
-            >
-              <span className='cs-nav__dot' aria-hidden='true' />
-              <span className='cs-nav__label'>{section.label}</span>
-            </a>
-          );
-        })}
-      </nav>
-    </aside>
+    <div className='cs-nav-track'>
+      <aside className='cs-nav-shell'>
+        <nav className='cs-nav' aria-label='Case study sections'>
+          {sections.map((section) => {
+            const id = section.id || slugify(section.label);
+            const isActive = safeActiveId === id;
+            return (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={(e) => handleClick(e, id)}
+                className={`cs-nav__item ${isActive ? "cs-nav__item--active" : ""}`}
+                aria-current={isActive ? "true" : undefined}
+                title={section.label}
+              >
+                <span className='cs-nav__dot' aria-hidden='true' />
+                <span className='cs-nav__label'>{section.label}</span>
+              </a>
+            );
+          })}
+        </nav>
+      </aside>
+    </div>
   );
 }
 

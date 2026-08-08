@@ -1,0 +1,15 @@
+.margin-visual {
+  /* Margin's editorial/ember palette, scoped locally so it never leaks into or collides with the portfolio's global --color- vars */
+  --bp-atmosphere-1: #1c1613;
+  --bp-atmosphere-2: #171514;
+  --bp-atmosphere-3: #2a1712;
+  --bp-glow-1: rgba(216, 90, 48, 0.16);
+  --bp-glow-2: rgba(140, 100, 78, 0.16);
+  --bp-glow-3: rgba(216, 90, 48, 0.1);
+  --bp-ink: #ece7e0;
+  --bp-ink-soft: #8a7d72;
+  --bp-accent: #d85a30;
+  --bp-line: rgba(236, 231, 224, 0.16);
+  --bp-line-faint: rgba(236, 231, 224, 0.07);
+  --bp-dur: 12s;
+}

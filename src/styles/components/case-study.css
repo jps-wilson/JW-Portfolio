@@ -1,5 +1,5 @@
 .cs {
-  padding: var(--space-120) var(--grid-margin-desktop);
+  padding: var(--space-80) var(--grid-margin-desktop);
   display: flex;
   flex-direction: column;
   gap: var(--space-80);
