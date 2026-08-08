@@ -1,0 +1,197 @@
+.nontendo-dome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.nontendo-demo__shell {
+  width: 100%;
+  max-width: 280px;
+  background: var(--color-warm-dark);
+  border: 1px solid var(--color-warm-dark);
+  border-radius: 20px 20px 48px 20px;
+  padding: var(--space-24) var(--space-16) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  position: relative;
+}
+
+.nontendo-demo__led {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-warm-dark);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nontendo-demo__led--on {
+  background: var(--color-ember);
+  box-shadow: 0 0 8px rgba(196, 92, 46, 0.7);
+}
+
+.nontendo-demo__screen {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--color-void);
+  border: 1px solid var(--color-warm-dark);
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.nontendo-demo__message {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--space-16);
+}
+
+.nontendo-demo__logo {
+  color: var(--color-cream);
+  font-size: var(--text-mono-label);
+}
+
+.nontendo-demo__prompt {
+  color: var(--color-ember);
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.nontendo-demo__score {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.6;
+  padding: 6px 8px 0;
+}
+
+.nontendo-demo__grid {
+  flex: 1;
+  display: grid;
+  padding: 6px;
+  gap: 1px;
+}
+
+.nontendo-demo__cell {
+  background: rgba(240, 237, 232, 0.04);
+  border-radius: 1px;
+}
+
+.nontendo-demo__cell--snake {
+  background: var(--color-ember);
+  opacity: 0.75;
+}
+
+.nontendo-demo__cell--head {
+  background: var(--color-ember);
+  opacity: 1;
+  box-shadow: 0 0 4px rgba(196, 92, 46, 0.8);
+}
+
+.nontendo-demo__cell--food {
+  background: var(--color-cream);
+  border-radius: 50%;
+}
+
+.nontendo-demo__controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+}
+
+.nontendo-demo__dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 28px);
+  grid-template-rows: repeat(3, 28px);
+  gap: 2px;
+}
+
+.nontendo-demo__dbtn {
+  background: var(--color-void);
+  border: 1px solid var(--color-warm-dark);
+  color: var(--color-cream);
+  opacity: 0.6;
+  font-size: 11px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition:
+    opacity 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.nontendo-demo__dbtn:hover,
+.nontendo-demo__dbtn:active {
+  opacity: 1;
+  border-color: var(--color-ember);
+}
+
+.nontendo-demo__dbtn--up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.nontendo-demo__dbtn--left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.nontendo-demo__dbtn--right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.nontendo-demo__dbtn--down {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.nontendo-demo__start {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  background: none;
+  border: 1px solid var(--color-warm-dark);
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nontendo-demo__start:hover {
+  border-color: var(--color-ember);
+  color: var(--color-ember);
+}
+
+.nontendo-demo__hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.3;
+  text-align: center;
+}
