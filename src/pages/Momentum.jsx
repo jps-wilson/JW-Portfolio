@@ -1,7 +1,7 @@
 import ProjectPage from "../components/ui/ProjectPage";
+import MomentumVisual from "../components/visuals/MomentumVisual";
 import MomentumCaseStudy from "../components/projects/MomentumCaseStudy";
 import { projects } from "../data/projects";
-import screenshot from "../assets/screenshots/momentum.webp";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 function Momentum() {
@@ -13,7 +13,7 @@ function Momentum() {
   });
   const project = projects.find((p) => p.id === "momentum");
   return (
-    <ProjectPage project={project} screenshot={screenshot}>
+    <ProjectPage project={project} visual={<MomentumVisual />}>
       <MomentumCaseStudy />
     </ProjectPage>
   );

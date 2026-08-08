@@ -1,7 +1,7 @@
 import ProjectPage from "../components/ui/ProjectPage";
+import NontendoVisual from "../components/visuals/NontendoVisual";
 import NontendoCaseStudy from "../components/projects/NontendoCaseStudy";
 import { projects } from "../data/projects";
-import screenshot from "../assets/screenshots/nontendo.webp";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 function Nontendo() {
@@ -13,7 +13,7 @@ function Nontendo() {
   });
   const project = projects.find((p) => p.id === "nontendo");
   return (
-    <ProjectPage project={project} screenshot={screenshot}>
+    <ProjectPage project={project} visual={<NontendoVisual />}>
       <NontendoCaseStudy />
     </ProjectPage>
   );

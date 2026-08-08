@@ -1,7 +1,7 @@
 import ProjectPage from "../components/ui/ProjectPage";
+import MarginVisual from "../components/visuals/MarginVisual";
 import MarginCaseStudy from "../components/projects/MarginCaseStudy";
 import { projects } from "../data/projects";
-import screenshot from "../assets/screenshots/margin.webp";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 function Margin() {
@@ -13,7 +13,7 @@ function Margin() {
   });
   const project = projects.find((p) => p.id === "margin");
   return (
-    <ProjectPage project={project} screenshot={screenshot}>
+    <ProjectPage project={project} visual={<MarginVisual />}>
       <MarginCaseStudy />
     </ProjectPage>
   );
