@@ -14,7 +14,7 @@ function BackToTop() {
     const observer = footer
       ? new IntersectionObserver(
           ([entry]) => setFooterVisible(entry.isIntersecting),
-          { threshold: 0 }
+          { threshold: 0 },
         )
       : null;
     if (observer && footer) observer.observe(footer);
@@ -25,8 +25,7 @@ function BackToTop() {
     };
   }, []);
 
-  const scrollToTop = () =>
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <button
@@ -35,7 +34,7 @@ function BackToTop() {
       aria-label='Back to top'
     >
       <span className='back-to-top__arrow'>↑</span>
-      <span>JW</span>
+      <span className='back-to-top__label'>Top</span>
     </button>
   );
 }
